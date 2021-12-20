@@ -28,6 +28,60 @@ function theme_enqueue_styles() {
 }
 
 function add_child_theme_textdomain() {
-    load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
+    load_child_theme_textdomain( 'inharmonylife', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+
+
+
+if (!function_exists('str_contains')) {
+    function str_contains($haystack, $needle) {
+        return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+    }
+}
+
+
+// Include folder
+$inharmonylife_inc_dir = 'inc/';
+
+// Array of files to include.
+$inharmonylife_includes = array(
+    'debug',                                // debugging
+    'customizer',                           // WP customizer settings
+    'admin',                                // WP admin
+    'global',                               // site wide
+    'pages',                                // page content
+);
+
+
+// Include files.
+foreach ( $inharmonylife_includes as $file ) {
+    $ihl_file_path = './'. $inharmonylife_inc_dir . $file . '.php';
+    $theme_file_path = get_theme_file_path( $ihl_file_path );
+
+    if (!str_contains( $theme_file_path, $file )) {
+        $errmsg = $ihl_file_path . ' does not exist';
+        if ( function_exists( 'write_to_log' ) ) {
+            write_to_log($errmsg);
+        } else {
+            throw new Exception ($errmsg);
+        }
+    } else {
+        require_once $theme_file_path;
+    }
+}
+
+
+if ( ! function_exists( 'inharmony_hide_posted_on' ) ) {
+	/**
+	 * Hides the posted on markup in `understrap_posted_on()`.
+	 *
+	 * @param string $byline Posted by HTML markup.
+	 * @return string Maybe filtered posted by HTML markup.
+	 */
+	function inharmony_hide_posted_on( $byline ) {
+		return '';
+	}
+}
+add_filter( 'understrap_posted_on', 'inharmony_hide_posted_on' );

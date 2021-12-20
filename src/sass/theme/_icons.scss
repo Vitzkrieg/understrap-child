@@ -1,0 +1,23 @@
+.nav-icon {
+
+    a {
+        width: 64px;
+        height: 24px;
+        margin: 12px 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        text-indent: -9999px;
+        white-space: nowrap;
+    }
+
+    &.ih-life-img a {
+        background-image: url('../imgs/ih-life-64h.png');
+    }
+    &.ih-kids-img a {
+        background-image: url('../imgs/ih-kids-64h.png');
+    }
+    &.ih-arts-img a {
+        background-image: url('../imgs/ih-arts-64h.png');
+    }
+}

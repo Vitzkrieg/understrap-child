@@ -1,7 +1,7 @@
 {
-  "name": "understrap-child",
-  "version": "1.0.0",
-  "description": "Basic Child Theme for Understrap Theme Framework: https://github.com/understrap/understrap",
+  "name": "inharmonylife",
+  "version": "0.1.0",
+  "description": "Theme for inharmonylife.com",
   "main": "index.js",
   "scripts": {
     "bs": "browser-sync start --config src/build/browser-sync.config.js",
@@ -19,10 +19,6 @@
     "copy-assets": "node src/build/copy-assets.js",
     "dist": "npm-run-all --parallel css js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/understrap/understrap-child.git"
-  },
   "keywords": [
     "wordpress",
     "theme",
@@ -30,12 +26,8 @@
     "bootstrap",
     "underscores"
   ],
-  "author": "The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)",
-  "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/understrap/understrap-child/issues"
-  },
-  "homepage": "https://understrap.com",
+  "author": "In Harmony Arts",
+  "homepage": "https://inharmonyarts.com",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.0",

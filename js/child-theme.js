@@ -1,6 +1,6 @@
 /*!
-  * Understrap v1.0.0 (https://understrap.com)
-  * Copyright 2013-2021 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
+  * Understrap v0.1.0 (https://inharmonyarts.com)
+  * Copyright 2013-2021 In Harmony Arts
   * Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
   */
 (function (global, factory) {

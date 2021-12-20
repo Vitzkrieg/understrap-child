@@ -2,6 +2,15 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
+@import 'variables/colors';
+@import 'variables/fonts';
 
-$purple: #5533ff; // Thats a sample how you could change a BootStrap variable.
-$primary: $purple;  // Once we've changed the value, we'll also make it the primary brand color.
+
+// $headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family: $font-family-sans-serif-2 !default;
+$headings-font-weight: 300 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: $dark !default;
+
+// navbar
+$navbar-padding-x: 0.75em;
