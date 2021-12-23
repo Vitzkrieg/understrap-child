@@ -69,7 +69,7 @@ $has_header_image = isset($custom_header->url);
 						?>
 						<!-- end custom logo -->
 					</div>
-					<div class="nav-col col-lg-8 col-md-12 text-center">
+					<div class="nav-col col-lg-8 col-md-12 text-center mt-3">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 						<span class="navbar-toggler-icon"></span>
 					</button>
