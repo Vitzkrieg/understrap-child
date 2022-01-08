@@ -1,6 +1,18 @@
-$black: #333333;
-$blue: #82b3b4; // Thats a sample how you could change a BootStrap variable.
-$grey-lt: #efefef;
+/**
+ * Set custom theme color variables
+ */
 
-$primary: $black; // Once we've changed the value, we'll also make it the primary brand color.
-$dark: $black;
+
+
+
+/**
+ * Change default Bootstrap colors
+ */
+$black: #333333;
+$blue: #82b3b4; 
+$grey-lt: #efefef;
+$blue-dk: #78939e;
+
+$primary: $blue; 
+$secondary: $blue-dk;
+$dark: $blue-dk;

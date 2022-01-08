@@ -11,9 +11,18 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
+$header_container = get_theme_mod( 'inharmony_header_container_type' );
+if (! $header_container) {
+	$header_container = $container;
+}
 $custom_header = get_custom_header();
 $header_placement = get_theme_mod( 'inharmony_header_placement', 'top' );
-$has_header_image = isset($custom_header->url);
+$has_header_image = isset($custom_header->url) && $custom_header->url != '';
+
+$home_nav_style = '';
+if ( is_front_page() && is_home() ) {
+	$home_nav_style .=  ' d-' . get_theme_mod( 'inharmony_home_nav_display', 'block');
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -29,11 +38,18 @@ $has_header_image = isset($custom_header->url);
 <div class="site" id="page">
 	<header>
 <?php get_template_part( 'global-templates/header-menu' ); ?>
-<?php if ( $has_header_image && $header_placement == "above" ) : ?>
-	<?php get_template_part( 'global-templates/custom-header' ); ?>
-<?php endif; ?>
+<?php
+if ( $has_header_image && $header_placement == "above" ) :
+	?>
+	<!-- get_template_part( 'global-templates/custom-header' ) -->
+	<?php
+	get_template_part( 'global-templates/custom-header', '', array(
+		'custom_header' => $custom_header,
+	 ) );
+endif;
+?>
 	<!-- ******************* The Navbar Area ******************* -->
-		<div id="wrapper-navbar">
+		<div id="wrapper-navbar" class="<?php echo $home_nav_style; ?>">
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
@@ -43,12 +59,12 @@ $has_header_image = isset($custom_header->url);
 					<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 				</h2>
 
-			<?php if ( 'container' === $container ) : ?>
+			<?php if ( 'container' === $header_container ) : ?>
 				<div class="container flex-wrap">
 			<?php else : ?>
 				<div class="container-fluid flex-wrap">
 			<?php endif; ?>
-					<div class="brand-col col-lg-2 col-md-12 text-center">
+					<div class="brand-col col-lg-2 col-12 text-center">
 						<!-- Your site title as branding in the menu -->
 						<?php if ( ! has_custom_logo() ) { ?>
 
@@ -69,8 +85,8 @@ $has_header_image = isset($custom_header->url);
 						?>
 						<!-- end custom logo -->
 					</div>
-					<div class="nav-col col-lg-8 col-md-12 text-center mt-3">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+					<div class="nav-col col-lg-8 col-12 text-center mt-3">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
@@ -81,7 +97,7 @@ $has_header_image = isset($custom_header->url);
 							'theme_location'  => 'primary',
 							'container_class' => 'collapse navbar-collapse',
 							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar navbar-nav ml-auto mr-auto',
+							'menu_class'      => 'navbar navbar-nav ms-auto me-auto mt-3 mt-md-0',
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
 							'depth'           => 2,
@@ -103,7 +119,11 @@ $has_header_image = isset($custom_header->url);
 
 		</div><!-- #wrapper-navbar end -->
 
-<?php if ( $has_header_image && $header_placement == "below" ) : ?>
-		<?php get_template_part( 'global-templates/custom-header' ); ?>
-<?php endif; ?>
+<?php
+if ( $has_header_image && $header_placement == "below" ) :
+	get_template_part( 'global-templates/custom-header', '', array(
+		'custom_header' => $custom_header,
+	 ) );
+endif;
+?>
 	</header>

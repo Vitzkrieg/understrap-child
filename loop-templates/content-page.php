@@ -11,11 +11,10 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="<?php echo get_entry_header_style(); ?>">
 
 		<?php
-		//TODO: make this a setting to toggle
-		 //the_title( '<h1 class="entry-title">', '</h1>' );
+		 the_title( '<h1 class="entry-title">', '</h1>' );
 		  ?>
 
 	</header><!-- .entry-header -->

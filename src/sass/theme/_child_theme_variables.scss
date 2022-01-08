@@ -5,12 +5,32 @@
 @import 'variables/colors';
 @import 'variables/fonts';
 
+$colors: (
+  "link-color": var(#{--bs-primary}),
+  "headings-color": var(#{--bs-secondary})
+);
+
 
 // $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: $font-family-sans-serif-2 !default;
 $headings-font-weight: 300 !default;
 $headings-line-height: 1.2 !default;
-$headings-color: $dark !default;
+$headings-color: var(#{--bs-headings-color}) !default;
 
 // navbar
 $navbar-padding-x: 0.75em;
+
+// containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 920px,
+  xl: 920px
+) !default;
+
+// $link-color: var(#{--bs-primary});
+// $link-darken-val: 15%;
+// $link-color: $secondary;
+// $link-color: #{--bs-secondary};
+// $link-hover-color: hsl(var(#{--bs-secondary}),calc(var(#{$hl-link-darken-val}) - 5%));
+//darken($link-color, 15%) !default;

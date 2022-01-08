@@ -1,0 +1,31 @@
+.t-upper {
+    text-transform: uppercase;
+}
+
+.t-lower {
+    text-transform: lowercase;
+}
+
+.t-cap {
+    text-transform: capitalize;
+}
+
+.bg-primary,
+.bg-secondary,
+.bg-dark {
+    a {
+        @extend .text-light;
+    }
+}
+
+#content {
+    a {
+        text-decoration: none;
+        box-shadow: none;
+    
+        &:hover,
+        &:focus {
+            box-shadow: 0px -1.5px 0px 0px var(#{--bs-link-color}) inset;
+        }
+    }
+}

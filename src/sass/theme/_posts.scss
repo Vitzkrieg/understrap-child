@@ -12,4 +12,39 @@
     .wp-post-image {
         margin: 0 auto 3em;
     }
+
+    .sticky-img {
+        position: sticky;
+        top: 25vh;
+        max-height: 60vh;
+        overflow: hidden;
+    }
+}
+
+
+.ih-latest-posts_post {
+    position: relative;
+
+    .ih-latest-posts__featured-image {
+        position: relative;
+        overflow: hidden;
+        height: 240px;
+    }
+
+    .ih-latest-posts__text {
+        height: 8em;
+    }
+
+    .ih-latest-posts__post-excerpt {
+        font-size: 0.7em;
+        max-height: 0px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        bottom: 1.5em;
+    }
+
+    &:hover {
+        background-color: rgba(var(#{--bs-primary-rgb}), 0.25);
+    }
 }

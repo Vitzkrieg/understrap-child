@@ -1,9 +1,19 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+extract($args);
+
+if (! isset($custom_header->url) ) {
+    exit;
+}
+
 $header_show_title = get_theme_mod( "inharmony_header_show_title", false );
 $header_show_tagline = get_theme_mod( "inharmony_header_show_tagline", false );
 
 ?>
+
 <div id="site-header"  class="d-flex align-content-center justify-content-center" 
 style="background-image: url('<?php echo $custom_header->url; ?>'); background-repeat: no-repeat; background-size: cover; width: 2000px; height: 100vh; max-height: 800px; max-width: 100%;">
     <?php if ( $header_show_title || $header_show_tagline ) : ?>
@@ -16,5 +26,4 @@ style="background-image: url('<?php echo $custom_header->url; ?>'); background-r
         <?php endif; ?>
     </div>
     <?php endif; ?>
-    <!-- <img src="<?php echo $custom_header->url; ?>" width="<?php echo absint( $custom_header->width ); ?>" height="<?php echo absint( $custom_header->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"> -->
 </div>

@@ -8,6 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+define('SCRIPT_DEBUG', true);
+
 
 
 /**
@@ -33,13 +35,14 @@ function theme_enqueue_styles() {
 	$the_theme = wp_get_theme();
 
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$suffix = '';
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
 
 	wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $the_theme->get( 'Version' ), true );
+	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array( 'jquery' ), $the_theme->get( 'Version' ), true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -74,41 +77,32 @@ $inharmonylife_includes = array(
     'debug',                                // debugging
     'customizer',                           // WP customizer settings
     'admin',                                // WP admin
-    'global',                               // site wide
-    'pages',                                // page content
+    'theme',                               	// theme overrides
+	'functions/index',						// custom functions
 );
 
-
 // Include files.
-foreach ( $inharmonylife_includes as $file ) {
-    $ihl_file_path = './'. $inharmonylife_inc_dir . $file . '.php';
-    $theme_file_path = get_theme_file_path( $ihl_file_path );
-
-    if (!str_contains( $theme_file_path, $file )) {
-        $errmsg = $ihl_file_path . ' does not exist';
-        if ( function_exists( 'write_to_log' ) ) {
-            write_to_log($errmsg);
-        } else {
-            throw new Exception ($errmsg);
-        }
-    } else {
-        require_once $theme_file_path;
-    }
+foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_inc_dir . '*.php' ) as $file ) {
+	require_once $file;
 }
 
+// // Include files.
+// foreach ( $inharmonylife_includes as $file ) {
+//     $ihl_file_path = './'. $inharmonylife_inc_dir . $file . '.php';
+//     $theme_file_path = get_theme_file_path( $ihl_file_path );
 
-if ( ! function_exists( 'inharmony_hide_posted_on' ) ) {
-	/**
-	 * Hides the posted on markup in `understrap_posted_on()`.
-	 *
-	 * @param string $byline Posted by HTML markup.
-	 * @return string Maybe filtered posted by HTML markup.
-	 */
-	function inharmony_hide_posted_on( $byline ) {
-		return '';
-	}
-}
-add_filter( 'understrap_posted_on', 'inharmony_hide_posted_on' );
+//     if (!str_contains( $theme_file_path, $file )) {
+//         $errmsg = $ihl_file_path . ' does not exist';
+//         if ( function_exists( 'write_to_log' ) ) {
+//             write_to_log($errmsg);
+//         } else {
+//             throw new Exception ($errmsg);
+//         }
+//     } else {
+//         require_once $theme_file_path;
+//     }
+// }
+
 /**
  * Overrides the theme_mod to default to Bootstrap 5
  *

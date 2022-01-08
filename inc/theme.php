@@ -18,9 +18,9 @@ if ( ! function_exists( 'ihl_site_info_content' ) ) {
 		$name = esc_attr( get_bloginfo( 'name', 'display' ) );
 		$year = date('Y');
 
-		$left = '<span class="col-6 text-left">' . $name . ' &copy; ' . $year . '</span>';
+		$left = '<span class="col-6 text-start">' . $name . ' &copy; ' . $year . '</span>';
 
-		$right = '<span class="col-6 text-right">Site design by <a href="https://inharmonyarts.com" target="_blank">In Harmony Arts</a></span>';
+		$right = '<span class="col-6 text-end">Site design by <a href="https://inharmonyarts.com" target="_blank">In Harmony Arts</a></span>';
 		$site_info = '<div class="row">' . $left . $right . '</div>';
 
 		return $site_info;
@@ -69,3 +69,11 @@ if ( ! function_exists( 'ihl_setup' ) ) {
 }
 
 add_action( 'after_setup_theme', 'ihl_setup' );
+
+
+$inharmonylife_custom_dir = 'functions/';
+
+// Include files.
+foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_custom_dir . '*.php' ) as $file ) {
+	require_once $file;
+}
