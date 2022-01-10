@@ -1,0 +1,10 @@
+.btn-outline-primary,
+.wpcf7 input[type="submit"] {
+    color: var(--bs-button-color);
+    border-color: var(--bs-button-color);
+
+    &:hover {
+        background-color: var(--bs-button-color);
+        border-color: var(--bs-button-color);
+    }
+}

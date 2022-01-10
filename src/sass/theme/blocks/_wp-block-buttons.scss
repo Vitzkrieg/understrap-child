@@ -1,0 +1,31 @@
+#content {
+    .wp-block-buttons {
+        .wp-block-button {
+    
+            &.is-style-outline {
+                .wp-block-button__link {
+                    border-width: 1px;
+        
+                    &:hover,
+                    &:focus {
+                        border-width: 2px;
+                        border-color: var(--bs-primary);
+                        box-shadow: none;
+                        margin: -1px; //keep button from moving - diff in thickness
+                    }
+                }
+            }
+    
+            &.is-style-fill {
+                .wp-block-button__link {
+        
+                    &:hover,
+                    &:focus {
+                        background-color: var(--bs-primary);
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

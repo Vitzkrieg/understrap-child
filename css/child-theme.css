@@ -16678,14 +16678,8 @@ body {
   width: 100vw;
 }
 
-.wp-block-quote {
-  font-size: 0.85em;
-  margin-left: 5%;
-  border-left: 1.5px solid black;
-  padding-left: 5%;
-}
-.wp-block-quote cite {
-  font-size: 1em;
+.site > .wrapper:first-of-type {
+  flex-grow: 1;
 }
 
 .wp-block-group.masonry-grid-container > .wp-block-group__inner-container {
@@ -16869,6 +16863,41 @@ header .navbar-toggler .navbar-toggler-icon {
 }
 #content a:hover, #content a:focus {
   box-shadow: 0px -1.5px 0px 0px var(--bs-link-color) inset;
+}
+
+.wp-block-quote {
+  font-size: 0.85em;
+  margin-left: 5%;
+  border-left: 1.5px solid black;
+  padding-left: 5%;
+}
+.wp-block-quote cite {
+  font-size: 1em;
+}
+
+.btn-outline-primary,
+.wpcf7 input[type=submit] {
+  color: var(--bs-button-color);
+  border-color: var(--bs-button-color);
+}
+.btn-outline-primary:hover,
+.wpcf7 input[type=submit]:hover {
+  background-color: var(--bs-button-color);
+  border-color: var(--bs-button-color);
+}
+
+#content .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link {
+  border-width: 1px;
+}
+#content .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:hover, #content .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:focus {
+  border-width: 2px;
+  border-color: var(--bs-primary);
+  box-shadow: none;
+  margin: -1px;
+}
+#content .wp-block-buttons .wp-block-button.is-style-fill .wp-block-button__link:hover, #content .wp-block-buttons .wp-block-button.is-style-fill .wp-block-button__link:focus {
+  background-color: var(--bs-primary);
+  box-shadow: none;
 }
 
 .has-link-color-color,

@@ -29,3 +29,16 @@
         }
     }
 }
+
+
+
+.wp-block-quote {
+    font-size: 0.85em;
+    margin-left: 5%;
+    border-left: 1.5px solid black;
+    padding-left: 5%;
+    
+    cite {
+        font-size: 1em;
+    }
+}
