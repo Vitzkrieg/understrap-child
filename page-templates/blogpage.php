@@ -60,6 +60,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                         'post_type' => 'post', // Pulls posts from 'post' post type only
                         'ignore_sticky_posts' => true, // Ignores the sticky posts
                         'order' => 'DESC',
+                        'order_by' => 'date',
                     ));
 
                     while ($latest_post->have_posts()) :
@@ -110,6 +111,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                             'ignore_sticky_posts' => true, // Ignores the sticky posts
                             'post__not_in' => $ids, // ignore the first post
                             'order' => 'DESC',
+                            'order_by' => 'date',
                             'offset' => $offset,
                             'paged' => $args['paged'],
                         ));

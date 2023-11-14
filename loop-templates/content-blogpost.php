@@ -49,8 +49,7 @@ switch ($title_decoration) {
 
 ?>
 
-<<?php echo $post_element; ?> id="ih-sc-post" class="<?php echo $post_class; ?>">  
-    <!-- layout: <?php echo $layout; ?> -->
+<<?php echo $post_element; ?> id="ih-sc-post" class="<?php echo $post_class; ?>">
     <article class="<?php echo $article_style; ?>">
         <section class="section-image <?php echo $sec_image_style; ?>">        
             <a href="<?php the_permalink(); ?>" class="text-decoration-none">

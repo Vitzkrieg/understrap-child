@@ -15,6 +15,8 @@ function HexToRGB($hex) {
             $color['g'] = hexdec(substr($hex, 2, 2));
             $color['b'] = hexdec(substr($hex, 4, 2));
         }
+
+        return $color['r'] . "," . $color['g'] . "," . $color['b'];
  
-        return $color;
+        //return $color;
 }

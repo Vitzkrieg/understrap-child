@@ -1,3 +1,3 @@
 <?php
 
-// 'section' => 'title_tagline'
+$section = 'title_tagline';

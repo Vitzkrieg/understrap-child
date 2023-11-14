@@ -19,10 +19,16 @@ $custom_header = get_custom_header();
 $header_placement = get_theme_mod( 'inharmony_header_placement', 'top' );
 $has_header_image = isset($custom_header->url) && $custom_header->url != '';
 
+$logo_placement = get_theme_mod( 'inharmony_logo_placement', 'left' );
+$menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
+//TODO: check if any widgets are set for the header column
+$show_widget_column = get_theme_mod( 'inharmony_header_show_widgets', 1 );
+
 $home_nav_style = '';
 if ( is_front_page() && is_home() ) {
 	$home_nav_style .=  ' d-' . get_theme_mod( 'inharmony_home_nav_display', 'block');
 }
+$home_hide_header = is_front_page() && get_theme_mod( 'inharmony_home_hide_header' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -36,6 +42,7 @@ if ( is_front_page() && is_home() ) {
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
+	<?php if ( !$home_hide_header ) : ?>
 	<header>
 <?php get_template_part( 'global-templates/header-menu' ); ?>
 <?php
@@ -92,12 +99,25 @@ endif;
 
 					<!-- The WordPress Menu goes here -->
 					<?php
+					$menu_class = "navbar navbar-nav mt-3 mt-md-0 ms-auto me-auto";
+					switch ($menu_align) {
+						case 'left':
+							$menu_class .= ' ms-lg-0';
+							break;
+						case 'right':
+							$menu_class .= ' me-lg-0';
+							break;						
+						default:
+							$menu_class .= '';
+							break;
+					}
+
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
 							'container_class' => 'collapse navbar-collapse',
 							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar navbar-nav ms-auto me-auto mt-3 mt-md-0',
+							'menu_class'      => $menu_class,
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
 							'depth'           => 2,
@@ -106,7 +126,8 @@ endif;
 					);
 					?>
 					</div>
-					<div class="widget-col col-lg-2">
+					<?php $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
+					<div class="<?php echo $widget_class; ?>">
 					</div>
 				<?php if ( 'container' === $container ) : ?>
 				</div><!-- .container -->
@@ -127,3 +148,4 @@ if ( $has_header_image && $header_placement == "below" ) :
 endif;
 ?>
 	</header>
+	<?php endif; ?>

@@ -55,6 +55,7 @@ function inharmony_display_posts( $atts = array() ) {
         'post_type' => 'post',
         'ignore_sticky_posts' => true,
         'post__not_in' => [],
+        'order_by' => 'date',
     ), $atts, 'ih_posts');
 
     if ($disp_atts['ignore_first'] == true) {
@@ -63,6 +64,7 @@ function inharmony_display_posts( $atts = array() ) {
             'post_type' => 'post', // Pulls posts from 'post' post type only
             'ignore_sticky_posts' => true, // Ignores the sticky posts
             'order' => 'DESC',
+            'order_by' => 'date',
         ));
 
         while ($latest_post->have_posts()) :
@@ -151,6 +153,7 @@ function inharmony_display_post( $atts = array() ) {
         'page' => 0,
         'offset' => 0,
         'order' => 'desc',
+        'order_by' => 'date',
         'post_type' => 'post',
         'ignore_sticky_posts' => true,
         'post__not_in' => [],
@@ -182,3 +185,31 @@ function inharmony_display_post( $atts = array() ) {
 
 }
 add_shortcode('ih_post', 'inharmony_display_post');
+
+ 
+/**
+ * Display menu by name
+ */
+function inharmony_menu_shortcode($atts){
+ 
+	return wp_nav_menu(
+        shortcode_atts(array(  
+            'menu'            => '', 
+            'container'       => 'div', 
+            'container_class' => '', 
+            'container_id'    => '', 
+            'menu_class'      => 'menu', 
+            'menu_id'         => '',
+            'echo'            => false,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'depth'           => 0,
+            'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+            'theme_location'  => ''), 
+		$atts, 'ih_disp_menu')
+    );
+}
+add_shortcode('ih_disp_menu', 'inharmony_menu_shortcode');

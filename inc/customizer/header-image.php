@@ -4,6 +4,8 @@
 defined( 'ABSPATH' ) || exit;
 
 
+$section = 'header_image';
+
 
 $wp_customize->add_setting(
     'inharmony_header_placement',
@@ -22,7 +24,7 @@ $wp_customize->add_control(
         array(
             'label'       => __( 'Header Placement', 'inharmonylife' ),
             'description' => __( 'Where to place the header image.', 'inharmonylife' ),
-            'section'     => 'header_image',
+            'section'     => $section,
             'settings'    => 'inharmony_header_placement',
             'type'        => 'select',
             'choices'     => array(
@@ -52,7 +54,7 @@ $wp_customize->add_control(
         'inharmony_header_show_title',
         array(
             'label'       => __( 'Show Site Title', 'inharmonylife' ),
-            'section'     => 'header_image',
+            'section'     => $section,
             'settings'    => 'inharmony_header_show_title',
             'type'        => 'checkbox',
             'priority'    => 20,
@@ -77,7 +79,7 @@ $wp_customize->add_control(
         'inharmony_header_show_tagline',
         array(
             'label'       => __( 'Show Site Tagline', 'inharmonylife' ),
-            'section'     => 'header_image',
+            'section'     => $section,
             'settings'    => 'inharmony_header_show_tagline',
             'type'        => 'checkbox',
             'priority'    => 20,
@@ -103,7 +105,7 @@ $wp_customize->add_control(
         array(
             'label'       => __( 'Custom Header Text', 'inharmonylife' ),
             'description' => __( 'Add custom text to the header.', 'inharmonylife' ),
-            'section'     => 'header_image',
+            'section'     => $section,
             'settings'    => 'inharmony_header_custom_text',
             'type'        => 'textarea',
             'priority'    => 20,

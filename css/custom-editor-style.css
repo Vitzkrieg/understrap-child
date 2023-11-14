@@ -431,8 +431,14 @@ progress {
 }
 
 :root {
+  --bs-headings-color: var(--bs-primary);
   --bs-link-color: var(--bs-primary);
-  --bs-headings-color: var(--bs-secondary);
+  --bs-link-color-rgb: var(--bs-primary-rgb);
+  --bs-button-color: var(--bs-primary);
+  --bs-button-color-rgb: var(--bs-primary-rgb);
+  --bs-button-color-hover: var(--bs-primary);
+  --bs-button-color-hover-rgb: var(--bs-primary-rgb);
+  --bs-button-link-color-disabled: var(--bs-grey-600);
   --bs-gray-100: #f8f9fa;
   --bs-gray-200: #e9ecef;
   --bs-gray-300: #dee2e6;
@@ -808,6 +814,16 @@ progress {
   content: "— ";
 }
 
+.has-headings-color-color,
+.has-headings-color-color:visited {
+  color: var(--bs-primary);
+}
+
+.has-headings-color-background-color {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
 .has-link-color-color,
 .has-link-color-color:visited {
   color: var(--bs-primary);
@@ -818,14 +834,64 @@ progress {
   border-color: var(--bs-primary);
 }
 
-.has-headings-color-color,
-.has-headings-color-color:visited {
-  color: var(--bs-secondary);
+.has-link-color-rgb-color,
+.has-link-color-rgb-color:visited {
+  color: var(--bs-primary-rgb);
 }
 
-.has-headings-color-background-color {
-  background-color: var(--bs-secondary);
-  border-color: var(--bs-secondary);
+.has-link-color-rgb-background-color {
+  background-color: var(--bs-primary-rgb);
+  border-color: var(--bs-primary-rgb);
+}
+
+.has-button-color-color,
+.has-button-color-color:visited {
+  color: var(--bs-primary);
+}
+
+.has-button-color-background-color {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.has-button-color-rgb-color,
+.has-button-color-rgb-color:visited {
+  color: var(--bs-primary-rgb);
+}
+
+.has-button-color-rgb-background-color {
+  background-color: var(--bs-primary-rgb);
+  border-color: var(--bs-primary-rgb);
+}
+
+.has-button-color-hover-color,
+.has-button-color-hover-color:visited {
+  color: var(--bs-primary);
+}
+
+.has-button-color-hover-background-color {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.has-button-color-hover-rgb-color,
+.has-button-color-hover-rgb-color:visited {
+  color: var(--bs-primary-rgb);
+}
+
+.has-button-color-hover-rgb-background-color {
+  background-color: var(--bs-primary-rgb);
+  border-color: var(--bs-primary-rgb);
+}
+
+.has-button-link-color-disabled-color,
+.has-button-link-color-disabled-color:visited {
+  color: var(--bs-grey-600);
+}
+
+.has-button-link-color-disabled-background-color {
+  background-color: var(--bs-grey-600);
+  border-color: var(--bs-grey-600);
 }
 
 .has-primary-color,

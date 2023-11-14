@@ -4,6 +4,8 @@
 defined( 'ABSPATH' ) || exit;
 
 
+$section = 'colors';
+
 
 $wp_customize->add_setting(
     'inharmony_color_primary',
@@ -21,8 +23,7 @@ $wp_customize->add_control(
         'inharmony_color_primary',
         array(
             'label'       => __( 'Primary Color', 'inharmonylife' ),
-            'description' => __( 'The dominant color of the theme', 'inharmonylife' ),
-            'section'     => 'colors',
+            'section'     => $section,
             'settings'    => 'inharmony_color_primary',
             'priority'    => apply_filters( 'inharmony_color_primary_priority', 10 ),
         )
@@ -45,8 +46,7 @@ $wp_customize->add_control(
         'inharmony_color_secondary',
         array(
             'label'       => __( 'Secondary Color', 'inharmonylife' ),
-            'description' => __( 'The complimentary color of the theme', 'inharmonylife' ),
-            'section'     => 'colors',
+            'section'     => $section,
             'settings'    => 'inharmony_color_secondary',
             'priority'    => apply_filters( 'inharmony_color_secondary_priority', 10 ),
         )
@@ -69,8 +69,7 @@ $wp_customize->add_control(
         'inharmony_color_links',
         array(
             'label'       => __( 'Link Color', 'inharmonylife' ),
-            'description' => __( 'The link color of the theme', 'inharmonylife' ),
-            'section'     => 'colors',
+            'section'     => $section,
             'settings'    => 'inharmony_color_links',
             'priority'    => apply_filters( 'inharmony_color_links_priority', 10 ),
         )
@@ -93,10 +92,22 @@ $wp_customize->add_control(
         'inharmony_color_buttons',
         array(
             'label'       => __( 'Button Color', 'inharmonylife' ),
-            'description' => __( 'The button color of the theme', 'inharmonylife' ),
-            'section'     => 'colors',
+            'section'     => $section,
             'settings'    => 'inharmony_color_buttons',
             'priority'    => apply_filters( 'inharmony_color_buttons_priority', 10 ),
+        )
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Color_Control(
+        $wp_customize,
+        'inharmony_color_buttons_hover',
+        array(
+            'label'       => __( 'Button Hover Color', 'inharmonylife' ),
+            'section'     => $section,
+            'settings'    => 'inharmony_color_buttons_hover',
+            'priority'    => apply_filters( 'inharmony_color_buttons_hover_priority', 10 ),
         )
     )
 );

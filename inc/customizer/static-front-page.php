@@ -1,6 +1,6 @@
 <?php
 
-// section => 'static_front_page'
+$section = 'static_front_page';
 
 $wp_customize->add_setting(
     'inharmony_home_hide_header',
@@ -18,7 +18,7 @@ $wp_customize->add_control(
         'inharmony_home_hide_header',
         array(
             'label'       => __( 'Hide Header on Homepage', 'inharmonylife' ),
-            'section'     => 'static_front_page',
+            'section'     => $section,
             'settings'    => 'inharmony_home_hide_header',
             'type'        => 'checkbox',
             'priority'    => 20,

@@ -6,8 +6,14 @@
 @import 'variables/fonts';
 
 $colors: (
+  "headings-color": var(#{--bs-primary}),
   "link-color": var(#{--bs-primary}),
-  "headings-color": var(#{--bs-secondary})
+  "link-color-rgb": var(#{--bs-primary-rgb}),
+  "button-color": var(#{--bs-primary}),
+  "button-color-rgb": var(#{--bs-primary-rgb}),
+  "button-color-hover": var(#{--bs-primary}),
+  "button-color-hover-rgb": var(#{--bs-primary-rgb}),
+  "button-link-color-disabled": var(#{--bs-grey-600}),
 );
 
 

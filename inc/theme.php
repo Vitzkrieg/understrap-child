@@ -65,6 +65,8 @@ if ( ! function_exists( 'ihl_setup' ) ) {
 				'header' => __( 'Header Menu', 'inharmonylife' ),
 			)
 		);
+		
+		set_post_thumbnail_size( 800, 800 );
 	}
 }
 

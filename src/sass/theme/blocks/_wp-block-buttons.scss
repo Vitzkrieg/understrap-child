@@ -4,24 +4,29 @@
     
             &.is-style-outline {
                 .wp-block-button__link {
+                    color: var(#{--bs-button-color});
                     border-width: 1px;
+                    border-color: var(#{--bs-button-color});
         
                     &:hover,
                     &:focus {
-                        border-width: 2px;
-                        border-color: var(--bs-primary);
+                        color: var(#{--bs-primary});
+                        border-width: 1px;
+                        border-color: var(#{--bs-primary});
                         box-shadow: none;
-                        margin: -1px; //keep button from moving - diff in thickness
+                        //margin: -1px; //keep button from moving - diff in border thickness
                     }
                 }
             }
     
             &.is-style-fill {
                 .wp-block-button__link {
+                    background-color: var(#{--bs-button-color});
+                    border-color: var(#{--bs-button-color-hover});
         
                     &:hover,
                     &:focus {
-                        background-color: var(--bs-primary);
+                        background-color: var(#{--bs-button-color-hover});
                         box-shadow: none;
                     }
                 }

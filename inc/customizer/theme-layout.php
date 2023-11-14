@@ -1,6 +1,11 @@
 <?php
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+
+$section = 'understrap_theme_layout_options';
+
 
 $wp_customize->add_setting(
     'inharmony_header_container_type',
@@ -19,7 +24,7 @@ $wp_customize->add_control(
         array(
             'label'       => __( 'Header Container Width', 'understrap' ),
             'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'understrap' ),
-            'section'     => 'understrap_theme_layout_options',
+            'section'     => $section,
             'settings'    => 'inharmony_header_container_type',
             'type'        => 'select',
             'choices'     => array(
@@ -48,7 +53,7 @@ $wp_customize->add_control(
         array(
             'label'       => __( 'Header Menu Container Width', 'understrap' ),
             'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'understrap' ),
-            'section'     => 'understrap_theme_layout_options',
+            'section'     => $section,
             'settings'    => 'inharmony_header_menu_container_type',
             'type'        => 'select',
             'choices'     => array(

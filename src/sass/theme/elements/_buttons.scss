@@ -1,10 +1,27 @@
-.btn-outline-primary,
+.btn.btn-outline-primary,
 .wpcf7 input[type="submit"] {
-    color: var(--bs-button-color);
-    border-color: var(--bs-button-color);
+    color: var(#{--bs-button-color});
+    border-color: var(#{--bs-button-color});
 
     &:hover {
-        background-color: var(--bs-button-color);
-        border-color: var(--bs-button-color);
+        color: var(#{--bs-primary});
+        border-color: var(#{--bs-primary});
+        border-width: 1px;
+        background-color: transparent;
+    }
+}
+
+.btn {
+    &.btn-primary {
+        background-color: var(#{--bs-button-color})
+    }
+
+    &.menu-item {
+        padding: 0;
+        color: rgba(var(#{--bs-black-rgb}), 0.5);
+
+        a {
+            color: rgba(var(#{--bs-black-rgb}), 0.5);
+        }
     }
 }
