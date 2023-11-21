@@ -12,7 +12,7 @@ $wp_customize->add_setting(
     array(
         'default'           => 'container',
         'type'              => 'theme_mod',
-        'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
+        'sanitize_callback' => 'understrap_customize_sanitize_select',
         'capability'        => 'edit_theme_options',
     )
 );
@@ -41,7 +41,7 @@ $wp_customize->add_setting(
     array(
         'default'           => 'container',
         'type'              => 'theme_mod',
-        'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
+        'sanitize_callback' => 'understrap_customize_sanitize_select',
         'capability'        => 'edit_theme_options',
     )
 );
