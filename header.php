@@ -15,12 +15,15 @@ $header_container = get_theme_mod( 'inharmony_header_container_type' );
 if (! $header_container) {
 	$header_container = $container;
 }
+
 $custom_header = get_custom_header();
 $header_placement = get_theme_mod( 'inharmony_header_placement', 'top' );
 $has_header_image = isset($custom_header->url) && $custom_header->url != '';
+$header_size = get_theme_mod( 'inharmony_header_image_size', 'cover' );
 
 $logo_placement = get_theme_mod( 'inharmony_logo_placement', 'left' );
 $menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
+
 //TODO: check if any widgets are set for the header column
 $show_widget_column = get_theme_mod( 'inharmony_header_show_widgets', 1 );
 
@@ -28,7 +31,14 @@ $home_nav_style = '';
 if ( is_front_page() && is_home() ) {
 	$home_nav_style .=  ' d-' . get_theme_mod( 'inharmony_home_nav_display', 'block');
 }
+
 $home_hide_header = is_front_page() && get_theme_mod( 'inharmony_home_hide_header' );
+
+$container_classes = array(
+	'container' === $header_container ? 'container' : 'container-fluid',
+	'flex-wrap',
+	$header_placement == 'behind' ? 'site-header' : '',
+);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -36,23 +46,26 @@ $home_hide_header = is_front_page() && get_theme_mod( 'inharmony_home_hide_heade
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php if ($has_header_image) : ?>
+	<style id="inharmony-site-header">
+		.site-header {
+			background-image: url(<?php echo $custom_header->url; ?>);
+			background-size: <?php echo $header_size; ?>;
+		}
+	</style>
+	<?php endif; ?>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
-	<?php if ( !$home_hide_header ) : ?>
+<?php if ( !$home_hide_header ) : ?>
 	<header>
 <?php get_template_part( 'global-templates/header-menu' ); ?>
 <?php
-if ( $has_header_image && $header_placement == "above" ) :
-	?>
-	<!-- get_template_part( 'global-templates/custom-header' ) -->
-	<?php
-	get_template_part( 'global-templates/custom-header', '', array(
-		'custom_header' => $custom_header,
-	 ) );
+if ( $header_placement == "above" ) :
+	get_template_part( 'global-templates/custom-header', null, array() );
 endif;
 ?>
 	<!-- ******************* The Navbar Area ******************* -->
@@ -66,11 +79,7 @@ endif;
 					<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 				</h2>
 
-			<?php if ( 'container' === $header_container ) : ?>
-				<div class="container flex-wrap">
-			<?php else : ?>
-				<div class="container-fluid flex-wrap">
-			<?php endif; ?>
+				<div class="<?php echo join(' ', $container_classes) ?>">
 					<div class="brand-col col-lg-2 col-12 text-center">
 						<!-- Your site title as branding in the menu -->
 						<?php if ( ! has_custom_logo() ) { ?>
@@ -88,6 +97,10 @@ endif;
 							<?php
 						} else {
 							the_custom_logo();
+
+							if ( "behind" === $header_placement ) {
+								get_template_part( 'global-templates/site-info', '', false );
+							}
 						}
 						?>
 						<!-- end custom logo -->
@@ -129,23 +142,13 @@ endif;
 					<?php $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
 					<div class="<?php echo $widget_class; ?>">
 					</div>
-				<?php if ( 'container' === $container ) : ?>
 				</div><!-- .container -->
-			<?php else : ?>
-				<div class="container-fluid flex-wrap">
-				</div><!-- .container-fluid -->
-				<?php endif; ?>
-
 			</nav><!-- .site-navigation -->
-
 		</div><!-- #wrapper-navbar end -->
-
 <?php
-if ( $has_header_image && $header_placement == "below" ) :
-	get_template_part( 'global-templates/custom-header', '', array(
-		'custom_header' => $custom_header,
-	 ) );
+if ( $header_placement == "below" ) :
+	get_template_part( 'global-templates/custom-header', null, array() );
 endif;
 ?>
 	</header>
-	<?php endif; ?>
+<?php endif; //if ( !$home_hide_header ) ?>

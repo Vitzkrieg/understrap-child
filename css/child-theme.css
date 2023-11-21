@@ -17179,6 +17179,15 @@ body {
   flex-grow: 1;
 }
 
+.site-header {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2000px;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 800px;
+}
+
 .wp-block-group.masonry-grid-container > .wp-block-group__inner-container {
   display: flex;
   flex-wrap: wrap;
