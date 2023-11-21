@@ -17170,6 +17170,11 @@ body {
   width: 100vw;
 }
 
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .site > .wrapper:first-of-type {
   flex-grow: 1;
 }
