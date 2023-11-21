@@ -37,7 +37,7 @@ $home_hide_header = is_front_page() && get_theme_mod( 'inharmony_home_hide_heade
 $container_classes = array(
 	'container' === $header_container ? 'container' : 'container-fluid',
 	'flex-wrap',
-	$header_placement == 'behind' ? 'site-header' : '',
+	$header_placement == 'behind' ? 'site-header-image' : '',
 );
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ $container_classes = array(
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ($has_header_image) : ?>
 	<style id="inharmony-site-header">
-		.site-header {
+		.site-header-image {
 			background-image: url(<?php echo $custom_header->url; ?>);
 			background-size: <?php echo $header_size; ?>;
 		}
@@ -65,7 +65,9 @@ $container_classes = array(
 <?php get_template_part( 'global-templates/header-menu' ); ?>
 <?php
 if ( $header_placement == "above" ) :
-	get_template_part( 'global-templates/custom-header', null, array() );
+	get_template_part( 'global-templates/custom-header', null, array(
+		'has_header_image' => $has_header_image,
+	) );
 endif;
 ?>
 	<!-- ******************* The Navbar Area ******************* -->
@@ -99,7 +101,7 @@ endif;
 							the_custom_logo();
 
 							if ( "behind" === $header_placement ) {
-								get_template_part( 'global-templates/site-info', '', false );
+								get_template_part( 'global-templates/site-info', '', array() );
 							}
 						}
 						?>
@@ -147,7 +149,9 @@ endif;
 		</div><!-- #wrapper-navbar end -->
 <?php
 if ( $header_placement == "below" ) :
-	get_template_part( 'global-templates/custom-header', null, array() );
+	get_template_part( 'global-templates/custom-header', null, array(
+		'has_header_image' => $has_header_image,
+	) );
 endif;
 ?>
 	</header>

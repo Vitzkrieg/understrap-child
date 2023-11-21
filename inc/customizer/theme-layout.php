@@ -64,3 +64,32 @@ $wp_customize->add_control(
         )
     )
 );
+
+$wp_customize->add_setting(
+    'inharmony_fixed_width',
+    array(
+        'default'           => 'container',
+        'type'              => 'theme_mod',
+        'sanitize_callback' => 'understrap_customize_sanitize_select',
+        'capability'        => 'edit_theme_options',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        'inharmony_fixed_width',
+        array(
+            'label'       => __( 'Header Menu Container Width', 'understrap' ),
+            'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'understrap' ),
+            'section'     => $section,
+            'settings'    => 'inharmony_fixed_width',
+            'type'        => 'select',
+            'choices'     => array(
+                'container'       => __( 'Fixed width container', 'understrap' ),
+                'container-fluid' => __( 'Full width container', 'understrap' ),
+            ),
+            'priority'    => apply_filters( 'inharmony_fixed_width_priority', 10 ),
+        )
+    )
+);

@@ -17179,13 +17179,16 @@ body {
   flex-grow: 1;
 }
 
-.site-header {
-  background-repeat: no-repeat;
-  background-position: center;
+#site-header {
   width: 2000px;
   max-width: 100%;
   height: 100vh;
   max-height: 800px;
+}
+
+.site-header-image {
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .wp-block-group.masonry-grid-container > .wp-block-group__inner-container {
