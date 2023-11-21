@@ -4,13 +4,14 @@ $header_container = get_theme_mod( 'inharmony_header_container_type' );
 if (! $header_container) {
 	$header_container = $container;
 }
+
+$container_classes = array(
+    'container' === $header_container ? 'container' : 'container-fluid',
+    'flex-wrap',
+);
 ?>
 
-<?php if ( 'container' === $header_container ) : ?>
-    <div id="header-menu-container" class="container flex-wrap">
-<?php else : ?>
-    <div id="header-menu-container" class="container-fluid flex-wrap">
-<?php endif; ?>
+    <div id="header-menu-container" class="<?php echo join(' ', $container_classes); ?>">
     <!-- Header menu goes here -->
     <?php
     //TODO: make alignment/justify settings
