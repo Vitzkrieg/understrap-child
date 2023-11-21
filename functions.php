@@ -78,36 +78,12 @@ if (!function_exists('str_contains')) {
 // Include folder
 $inharmonylife_inc_dir = 'inc/';
 
-// Array of files to include.
-$inharmonylife_includes = array(
-    'debug',                                // debugging
-    'customizer',                           // WP customizer settings
-    'admin',                                // WP admin
-    'theme',                               	// theme overrides
-	'functions/index',						// custom functions
-);
 
 // Include files.
 foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_inc_dir . '*.php' ) as $file ) {
 	require_once $file;
 }
 
-// // Include files.
-// foreach ( $inharmonylife_includes as $file ) {
-//     $ihl_file_path = './'. $inharmonylife_inc_dir . $file . '.php';
-//     $theme_file_path = get_theme_file_path( $ihl_file_path );
-
-//     if (!str_contains( $theme_file_path, $file )) {
-//         $errmsg = $ihl_file_path . ' does not exist';
-//         if ( function_exists( 'write_to_log' ) ) {
-//             write_to_log($errmsg);
-//         } else {
-//             throw new Exception ($errmsg);
-//         }
-//     } else {
-//         require_once $theme_file_path;
-//     }
-// }
 
 /**
  * Overrides the theme_mod to default to Bootstrap 5
@@ -117,10 +93,10 @@ foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_inc_dir . '*.php' ) a
  *
  * @return string
  */
-function understrap_default_bootstrap_version() {
+function understrap_child_default_bootstrap_version() {
 	return 'bootstrap5';
 }
-add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20 );
+add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_child_default_bootstrap_version', 20 );
 
 
 
