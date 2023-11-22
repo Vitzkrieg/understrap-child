@@ -20,6 +20,7 @@ $custom_header = get_custom_header();
 $header_placement = get_theme_mod( 'inharmony_header_placement', 'top' );
 $has_header_image = isset($custom_header->url) && $custom_header->url != '';
 $header_size = get_theme_mod( 'inharmony_header_image_size', 'cover' );
+$header_height = get_theme_mod( 'inharmony_header_image_height', '800px' );
 
 $logo_placement = get_theme_mod( 'inharmony_logo_placement', 'left' );
 $menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
@@ -51,6 +52,10 @@ $container_classes = array(
 		.site-header-image {
 			background-image: url(<?php echo $custom_header->url; ?>);
 			background-size: <?php echo $header_size; ?>;
+			<?php if ( !empty( $header_height ) ) : ?>
+			height: 1000vh;
+			max-height: <?php echo $header_height; ?>;
+			<?php endif; ?>
 		}
 	</style>
 	<?php endif; ?>

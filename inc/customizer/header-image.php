@@ -67,6 +67,43 @@ $wp_customize->add_control(
     )
 );
 
+$wp_customize->add_setting(
+    'inharmony_header_image_height',
+    array(
+        'default'           => '800px',
+        'type'              => 'theme_mod',
+        'sanitize_callback' => 'inharmony_theme_slug_sanitize_height',
+        'capability'        => 'edit_theme_options',
+    )
+);
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        'inharmony_header_image_height',
+        array(
+            'label'       => __( 'Image Height', 'inharmonylife' ),
+            'description' => __( 'Use px, em, rem for static height, vh or vw for responsive height.', 'inharmonylife' ),
+            'section'     => $section,
+            'settings'    => 'inharmony_header_image_height',
+            'type'        => 'text',
+            'priority'    => apply_filters( 'inharmony_header_image_height_priority', 10 ),
+        )
+    )
+);
+
+$wp_customize->add_control( 'setting_id', array(
+    'type' => 'range',
+    'section' => 'title_tagline',
+    'label' => __( 'Range' ),
+    'description' => __( 'This is the range control description.' ),
+    'input_attrs' => array(
+      'min' => 0,
+      'max' => 10,
+      'step' => 2,
+    ),
+  ) );
+
 
 $wp_customize->add_setting(
     'inharmony_header_show_title',
