@@ -9,9 +9,11 @@ $container_classes = array(
     'container' === $header_container ? 'container' : 'container-fluid',
     'flex-wrap',
 );
+
+$show_widgets = get_theme_mod( 'inharmony_header_show_widgets', 1 );
 ?>
 
-    <div id="header-menu-container" class="<?php echo join(' ', $container_classes); ?>">
+<div id="header-menu-container" class="<?php echo join(' ', $container_classes); ?>">
     <!-- Header menu goes here -->
     <?php
     //TODO: make alignment/justify settings
@@ -28,4 +30,9 @@ $container_classes = array(
         )
     );
     ?>
+    <?php if ($show_widgets &&  is_active_sidebar( 'header-menu' ) ) : ?>
+    <aside class="widget-area header-menu-widget">
+        <?php dynamic_sidebar( 'header-menu' ); ?>
+    </aside><!-- .widget-area -->
+    <?php endif; ?>
 </div>

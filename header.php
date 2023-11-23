@@ -25,9 +25,6 @@ $header_height = get_theme_mod( 'inharmony_header_image_height', '800px' );
 $logo_placement = get_theme_mod( 'inharmony_logo_placement', 'left' );
 $menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
 
-//TODO: check if any widgets are set for the header column
-$show_widget_column = get_theme_mod( 'inharmony_header_show_widgets', 1 );
-
 $home_nav_style = '';
 if ( is_front_page() && is_home() ) {
 	$home_nav_style .=  ' d-' . get_theme_mod( 'inharmony_home_nav_display', 'block');
