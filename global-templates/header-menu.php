@@ -5,9 +5,14 @@ if (! $header_container) {
 	$header_container = $container;
 }
 
+$layout_mobile = get_theme_mod( 'inharmony_header_menu_layout_mobile' );
+$layout_desktop = get_theme_mod( 'inharmony_header_menu_layout_desktop' );
+
 $container_classes = array(
     'container' === $header_container ? 'container' : 'container-fluid',
-    'flex-wrap',
+    'd-flex',
+    inharmony_get_bs_css_from_theme_mod($layout_mobile),
+    inharmony_get_bs_css_from_theme_mod($layout_desktop, 'lg'),
 );
 
 $show_widgets = get_theme_mod( 'inharmony_header_show_widgets', 1 );
@@ -16,11 +21,10 @@ $show_widgets = get_theme_mod( 'inharmony_header_show_widgets', 1 );
 <div id="header-menu-container" class="<?php echo join(' ', $container_classes); ?>">
     <!-- Header menu goes here -->
     <?php
-    //TODO: make alignment/justify settings
     wp_nav_menu(
         array(
             'theme_location'  => 'header',
-            'container_class' => 'navbar navbar-expand container-fluid ml-auto justify-content-center justify-content-lg-end',
+            'container_class' => 'navbar navbar-expand d-flex',
             'container_id'    => 'navbarNavHeader',
             'menu_class'      => 'navbar-nav',
             'fallback_cb'     => '',
