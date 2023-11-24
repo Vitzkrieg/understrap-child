@@ -1,6 +1,7 @@
-@import '../assets/gfonts/gfonts';
+@import './fonts/bad_script';
+@import './fonts/josefin_sans';
+@import './fonts/open_sans';
 
-//TODO: use theme fonts
 
 .josefinsans {
     font-family: 'Josefin Sans', sans-serif;
@@ -9,14 +10,12 @@
     font-weight: 300;
 }
 
-
 .badscript {
     font-family: 'Bad Script', cursive;
     font-size: 26px;
     line-height: 1.2em;
     font-weight: 300;
 }
-
 
 .opensans {
     font-family: 'Open Sans', sans-serif;
