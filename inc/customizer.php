@@ -110,10 +110,11 @@ function inharmony_custom_colors() {
 	$secondary_rgb = HexToRGB( $secondary_hex );
 	$link_hex = get_theme_mod( 'inharmony_color_links', '#78939e');
 	$link_rgb = HexToRGB( $link_hex );
-	$button_hex = get_theme_mod( 'inharmony_color_buttons', '#82b3b4');
-	$button_rgb = HexToRGB( $button_hex );
-	$button_hover_hex = get_theme_mod( 'inharmony_color_buttons_hover', '#82b3b4');
-	$button_hover_rgb = HexToRGB( $button_hex );
+	$button_text_hex = get_theme_mod( 'inharmony_color_buttons_text', '#fff');
+	$button_bg_hex = get_theme_mod( 'inharmony_color_buttons_bg', '#82b3b4');
+	$button_bg_rgb = HexToRGB( $button_hex );
+	$button_bg_hover_hex = get_theme_mod( 'inharmony_color_buttons_bg_hover', '#82b3b4');
+	$button_bg_hover_rgb = HexToRGB( $button_hex );
 
 	echo "<style id='inharmony-theme-css' type='text/css'>";
 	echo ":root {";
@@ -123,12 +124,13 @@ function inharmony_custom_colors() {
 		echo "--bs-secondary-rgb: $secondary_rgb !important;";
 		echo "--bs-link-color: $link_hex !important;";
 		echo "--bs-link-color-rgb: $link_rgb !important;";
-		echo "--bs-button-color: $button_hex !important;";
-		echo "--bs-button-color-rgb: $button_rgb !important;";
-		echo "--bs-button-color-hover: $button_hover_hex !important;";
-		echo "--bs-button-color-hover-rgb: $button_hover_rgb !important;";
-		echo "--tec-color-button-primary: $button_hex !important;";
-		echo "--tec-color-button-primary-hover: $button_hex !important;";
+		echo "--bs-btn-color: $button_text_hex !important;";
+		echo "--bs-button-color: $button_bg_hex !important;";
+		echo "--bs-button-color-rgb: $button_bg_rgb !important;";
+		echo "--bs-button-color-hover: $button_bg_hover_hex !important;";
+		echo "--bs-button-color-hover-rgb: $button_bg_hover_rgb !important;";
+		echo "--tec-color-button-primary: $button_bg_hex !important;";
+		echo "--tec-color-button-primary-hover: $button_bg_hex !important;";
 	echo "}";
 	echo "</style>";
 }

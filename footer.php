@@ -12,7 +12,6 @@ defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
 
-//TODO: setting - footer bg/text colors
 $footer_style = '';
 $footer_style .=  ' bg-' . get_theme_mod( 'inharmony_footer_bg', 'primary');
 $footer_style .=  ' text-' . get_theme_mod( 'inharmony_footer_text', 'light');

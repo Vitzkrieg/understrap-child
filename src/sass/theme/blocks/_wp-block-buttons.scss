@@ -4,7 +4,7 @@
     
             &.is-style-outline {
                 .wp-block-button__link {
-                    color: var(#{--bs-button-color});
+                    color: var(#{--bs-btn-color});
                     border-width: 1px;
                     border-color: var(#{--bs-button-color});
         
@@ -21,6 +21,7 @@
     
             &.is-style-fill {
                 .wp-block-button__link {
+                    color: var(#{--bs-btn-color});
                     background-color: var(#{--bs-button-color});
                     border-color: var(#{--bs-button-color-hover});
         
@@ -31,6 +32,16 @@
                     }
                 }
             }
+        }
+    }
+
+    a {
+        &.wp-element-button {
+            @extend .text-light;
+        }
+
+        &:hover, &:focus {
+            box-shadow: none;
         }
     }
 }
