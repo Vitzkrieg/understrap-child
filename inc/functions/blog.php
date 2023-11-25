@@ -130,7 +130,7 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 		} else {
 			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-primary text-light understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
 				'Read More...',
-				'understrap'
+				'inharmony'
 			) . '<span class="screen-reader-text"> from ' . get_the_title( get_the_ID() ) . '</span></a></p>';
 		}
 	}

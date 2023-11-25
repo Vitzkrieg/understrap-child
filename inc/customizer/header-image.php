@@ -6,176 +6,53 @@ defined( 'ABSPATH' ) || exit;
 
 $section = 'header_image';
 
-
-$wp_customize->add_setting(
+inharmony_add_select_setting($section,
     'inharmony_header_placement',
+    'above',
+    'Header Placement',
+    'Where to place the header image.',
     array(
-        'default'           => 'above',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'inharmony_theme_slug_sanitize_select',
-        'capability'        => 'edit_theme_options',
+        'above'     => __( 'Above header', 'inharmonylife' ),
+        'below'     => __( 'Below header', 'inharmonylife' ),
+        'behind'    => __( 'Behind header', 'inharmonylife' ),
     )
 );
 
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        'inharmony_header_placement',
-        array(
-            'label'       => __( 'Header Placement', 'inharmonylife' ),
-            'description' => __( 'Where to place the header image.', 'inharmonylife' ),
-            'section'     => $section,
-            'settings'    => 'inharmony_header_placement',
-            'type'        => 'select',
-            'choices'     => array(
-                'above'     => __( 'Above header', 'inharmonylife' ),
-                'below'     => __( 'Below header', 'inharmonylife' ),
-                'behind'    => __( 'Behind header', 'inharmonylife' ),
-            ),
-            'priority'    => apply_filters( 'inharmony_header_placement_priority', 10 ),
-        )
-    )
-);
-
-$wp_customize->add_setting(
+inharmony_add_select_setting($section,
     'inharmony_header_image_size',
+    'cover',
+    'Header Image Size',
+    'How the image displays in the area.',
     array(
-        'default'           => 'cover',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'inharmony_theme_slug_sanitize_select',
-        'capability'        => 'edit_theme_options',
+        'cover'     => __( 'Fill Header', 'inharmonylife' ),
+        'contain'   => __( 'Fit Image to Header', 'inharmonylife' ),
+        'auto'      => __( 'Original Image Size', 'inharmonylife' ),
     )
 );
 
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        'inharmony_header_image_size',
-        array(
-            'label'       => __( 'Header Placement', 'inharmonylife' ),
-            'description' => __( 'Where to place the header image.', 'inharmonylife' ),
-            'section'     => $section,
-            'settings'    => 'inharmony_header_image_size',
-            'type'        => 'select',
-            'choices'     => array(
-                'cover'     => __( 'Fill Header', 'inharmonylife' ),
-                'contain'     => __( 'Fit Image to Header', 'inharmonylife' ),
-                'auto'    => __( 'Original Image Size', 'inharmonylife' ),
-            ),
-            'priority'    => apply_filters( 'inharmony_header_image_size_priority', 10 ),
-        )
-    )
-);
-
-$wp_customize->add_setting(
-    'inharmony_header_image_height',
-    array(
-        'default'           => '800px',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'inharmony_theme_slug_sanitize_height',
-        'capability'        => 'edit_theme_options',
-    )
-);
-
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        'inharmony_header_image_height',
-        array(
-            'label'       => __( 'Image Height', 'inharmonylife' ),
-            'description' => __( 'Use px, em, rem for static height, vh or vw for responsive height.', 'inharmonylife' ),
-            'section'     => $section,
-            'settings'    => 'inharmony_header_image_height',
-            'type'        => 'text',
-            'priority'    => apply_filters( 'inharmony_header_image_height_priority', 10 ),
-        )
-    )
-);
-
-$wp_customize->add_control( 'setting_id', array(
-    'type' => 'range',
-    'section' => 'title_tagline',
-    'label' => __( 'Range' ),
-    'description' => __( 'This is the range control description.' ),
-    'input_attrs' => array(
-      'min' => 0,
-      'max' => 10,
-      'step' => 2,
-    ),
-  ) );
-
-
-$wp_customize->add_setting(
-    'inharmony_header_show_title',
-    array(
-        'default'           => '',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'wp_kses_post',
-        'capability'        => 'edit_theme_options',
-    )
-);
-
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        'inharmony_header_show_title',
-        array(
-            'label'       => __( 'Show Site Title', 'inharmonylife' ),
-            'section'     => $section,
-            'settings'    => 'inharmony_header_show_title',
-            'type'        => 'checkbox',
-            'priority'    => 20,
-        )
-    )
+inharmony_add_text_setting($section,
+    '800px',
+    'inharmony_theme_slug_sanitize_height',
+    'Image Height',
+    'Use px, em, rem for static height, vh or vw for responsive height.',
 );
 
 
-$wp_customize->add_setting(
+inharmony_add_checkbox_setting($section,
+  'inharmony_header_show_title',
+  '0',
+  'Show Site Title'
+);
+
+inharmony_add_checkbox_setting($section,
     'inharmony_header_show_tagline',
-    array(
-        'default'           => '',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'wp_kses_post',
-        'capability'        => 'edit_theme_options',
-    )
+    '0',
+    'Show Site Tagline'
 );
 
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        'inharmony_header_show_tagline',
-        array(
-            'label'       => __( 'Show Site Tagline', 'inharmonylife' ),
-            'section'     => $section,
-            'settings'    => 'inharmony_header_show_tagline',
-            'type'        => 'checkbox',
-            'priority'    => 20,
-        )
-    )
-);
-
-
-$wp_customize->add_setting(
+inharmony_add_textarea_setting($section,
     'inharmony_header_custom_text',
-    array(
-        'default'           => '',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'wp_kses_post',
-        'capability'        => 'edit_theme_options',
-    )
-);
-
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        'inharmony_header_custom_text',
-        array(
-            'label'       => __( 'Custom Header Text', 'inharmonylife' ),
-            'description' => __( 'Add custom text to the header.', 'inharmonylife' ),
-            'section'     => $section,
-            'settings'    => 'inharmony_header_custom_text',
-            'type'        => 'textarea',
-            'priority'    => 20,
-        )
-    )
+    '',
+    'Custom Header Text',
+    'Add custom text to the header.'
 );

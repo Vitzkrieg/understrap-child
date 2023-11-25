@@ -6,94 +6,25 @@ defined( 'ABSPATH' ) || exit;
 
 $section = 'understrap_theme_layout_options';
 
-$setting = 'inharmony_header_container_type';
-$wp_customize->add_setting(
-    $setting,
-    array(
-        'default'           => 'container',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'understrap_customize_sanitize_select',
-        'capability'        => 'edit_theme_options',
-    )
+$bs_container_choices = array(
+    'container'       => __( 'Fixed width container', 'inharmony' ),
+    'container-fluid' => __( 'Full width container', 'inharmony' ),
 );
 
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        $setting,
-        array(
-            'label'       => __( 'Header Container Width', 'inharmony' ),
-            'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'inharmony' ),
-            'section'     => $section,
-            'settings'    => $setting,
-            'type'        => 'select',
-            'choices'     => array(
-                'container'       => __( 'Fixed width container', 'inharmony' ),
-                'container-fluid' => __( 'Full width container', 'inharmony' ),
-            ),
-            'priority'    => apply_filters( $setting . '_priority', 10 ),
-        )
-    )
+inharmony_add_select_setting($section,
+    'inharmony_header_container_type',
+    'container',
+    'Header Container Width',
+    'Choose between Bootstrap\'s container and container-fluid',
+    $bs_container_choices
 );
-
-$setting = 'inharmony_header_menu_container_type';
-$wp_customize->add_setting(
-    $setting,
-    array(
-        'default'           => 'container',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'understrap_customize_sanitize_select',
-        'capability'        => 'edit_theme_options',
-    )
+inharmony_add_select_setting($section,
+    'inharmony_header_menu_container_type',
+    'container',
+    'Header Menu Container Width',
+    'Choose between Bootstrap\'s container and container-fluid',
+    $bs_container_choices
 );
-
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        $setting,
-        array(
-            'label'       => __( 'Header Menu Container Width', 'inharmony' ),
-            'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'inharmony' ),
-            'section'     => $section,
-            'settings'    => $setting,
-            'type'        => 'select',
-            'choices'     => array(
-                'container'       => __( 'Fixed width container', 'inharmony' ),
-                'container-fluid' => __( 'Full width container', 'inharmony' ),
-            ),
-            'priority'    => apply_filters( $setting . '_priority', 10 ),
-        )
-    )
-);
-
-// $wp_customize->add_setting(
-//     'inharmony_fixed_width',
-//     array(
-//         'default'           => 'container',
-//         'type'              => 'theme_mod',
-//         'sanitize_callback' => 'understrap_customize_sanitize_select',
-//         'capability'        => 'edit_theme_options',
-//     )
-// );
-
-// $wp_customize->add_control(
-//     new WP_Customize_Control(
-//         $wp_customize,
-//         'inharmony_fixed_width',
-//         array(
-//             'label'       => __( 'Header Menu Container Width', 'inharmony' ),
-//             'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'inharmony' ),
-//             'section'     => $section,
-//             'settings'    => 'inharmony_fixed_width',
-//             'type'        => 'select',
-//             'choices'     => array(
-//                 'container'       => __( 'Fixed width container', 'inharmony' ),
-//                 'container-fluid' => __( 'Full width container', 'inharmony' ),
-//             ),
-//             'priority'    => apply_filters( 'inharmony_fixed_width_priority', 10 ),
-//         )
-//     )
-// );
 
 $bs_flex_choices = array(
     'row-center'                => __( 'Row Center', 'inharmony' ),
@@ -112,56 +43,17 @@ $bs_flex_choices = array(
     'column-reverse-start'      => __( 'Column Reverse Start', 'inharmony' ),
 ); 
 
-$setting = 'inharmony_header_menu_layout_desktop';
-$wp_customize->add_setting(
-    $setting,
-    array(
-        'default'           => 'row-end',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'understrap_customize_sanitize_select',
-        'capability'        => 'edit_theme_options',
-    )
+inharmony_add_select_setting($section,
+    'inharmony_header_menu_layout_desktop',
+    'row-end',
+    'Header Menu Layout - Desktop',
+    'How to layout the header menu and widget area on desktop.',
+    $bs_flex_choices
 );
-
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        $setting,
-        array(
-            'label'       => __( 'Header Menu Layout - Desktop', 'inharmony' ),
-            'description' => __( 'How to layout the header menu and widget area on desktop.', 'inharmony' ),
-            'section'     => $section,
-            'settings'    => $setting,
-            'type'        => 'select',
-            'choices'     => $bs_flex_choices,
-            'priority'    => apply_filters( $setting . '_priority', 10 ),
-        )
-    )
-);
-
-$setting = 'inharmony_header_menu_layout_mobile';
-$wp_customize->add_setting(
-    $setting,
-    array(
-        'default'           => 'row-center',
-        'type'              => 'theme_mod',
-        'sanitize_callback' => 'understrap_customize_sanitize_select',
-        'capability'        => 'edit_theme_options',
-    )
-);
-
-$wp_customize->add_control(
-    new WP_Customize_Control(
-        $wp_customize,
-        $setting,
-        array(
-            'label'       => __( 'Header Menu Layout - Mobile', 'inharmony' ),
-            'description' => __( 'How to layout the header menu and widget area on mobile.', 'inharmony' ),
-            'section'     => $section,
-            'settings'    => $setting,
-            'type'        => 'select',
-            'choices'     => $bs_flex_choices,
-            'priority'    => apply_filters( $setting . '_priority', 10 ),
-        )
-    )
+inharmony_add_select_setting($section,
+    'inharmony_header_menu_layout_mobile',
+    'row-center',
+    'Header Menu Layout - Mobile',
+    'How to layout the header menu and widget area on mobile.',
+    $bs_flex_choices
 );
