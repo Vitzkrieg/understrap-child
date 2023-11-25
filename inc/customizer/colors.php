@@ -52,3 +52,19 @@ inharmony_add_select_setting($section,
     '',
     $bg_color_choices
 );
+
+
+inharmony_add_select_setting($section,
+    'inharmony_color_blog_buttons_text',
+    'light',
+    'Blog Button Text Color',
+    '',
+    $text_color_choices
+);
+inharmony_add_select_setting($section,
+    'inharmony_color_blog_buttons_bg',
+    $color_secondary,
+    'Blog Button BG Color',
+    '',
+    $bg_color_choices
+);

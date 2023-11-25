@@ -121,14 +121,21 @@ add_filter( 'excerpt_length', 'inharmony_custom_excerpt_length', 999 );
  *
  * @return string
  */
-//TODO: setting - button colors
 function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 	global $template;
 	if ( ! is_admin() ) {
 		if ( basename($template) == 'blogpage.php' ) {
 			$post_excerpt = $post_excerpt . ' [...]';
 		} else {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-primary text-light understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
+			$more_styles = array(
+				'test',
+				'btn',
+				'btn-' . get_theme_mod( 'inharmony_color_blog_buttons_bg', 'primary'),
+				'text-' . get_theme_mod( 'inharmony_color_blog_buttons_text', 'light'),
+				'understrap-read-more-link',
+			);
+
+			$post_excerpt = $post_excerpt . ' [...]<p><a class="' . join(' ', $more_styles). '" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
 				'Read More...',
 				'inharmony'
 			) . '<span class="screen-reader-text"> from ' . get_the_title( get_the_ID() ) . '</span></a></p>';
