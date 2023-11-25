@@ -3,10 +3,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$color_primary = '#78939e';
-$color_secondary = '#82b3b4';
-$color_white = '#fff';
-
 
 $section = 'colors';
 
@@ -42,26 +38,11 @@ inharmony_add_color_setting($section,
 );
 
 
-$text_color_choices = array(
-    'primary'       => 'Primary',
-    'secondary'     => 'Secondary',
-    'light'         => 'Light',
-    'dark'          => 'Dark',
-    'white'         => 'White',
-    'black'         => 'Black',
-);
-$bg_color_choices = array(
-    'primary'       => 'Primary',
-    'secondary'     => 'Secondary',
-    'light'         => 'Light',
-    'dark'          => 'Dark',
-    'white'         => 'White',
-    'transparent'   => 'Transparent',
-);
 inharmony_add_select_setting($section,
     'inharmony_footer_text',
     'light',
-    'Footer Text Color','',
+    'Footer Text Color',
+    '',
     $text_color_choices
 );
 inharmony_add_select_setting($section,
