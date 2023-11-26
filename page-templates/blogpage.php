@@ -39,6 +39,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
 				<main class="site-main" id="main" role="main">
                             <!-- $page: <?php echo $page; ?> -->
                             <!-- $offset: <?php echo $offset; ?> -->
+                            <!-- $display_count: <?php echo $display_count; ?> -->
                     <?php
                     $ids;
                     $latest_post = new WP_Query(array(

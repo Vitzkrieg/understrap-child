@@ -153,9 +153,9 @@ function inharmony_loadmore_ajax_handler(){
 	//TODO: setting - make/get skip first	
 	$skip_first = true;
 	$count = ($skip_first) ? 1 : 0;
-	$ids;
+	$ids = array();
 
-	$display_count = 6;
+	$display_count = get_theme_mod( 'inharmony_post_list_count', 6 );
 	$page = $_POST['page'] + 1;
 	$offset = ( $page - 1 ) * $display_count + $count;
  
@@ -253,3 +253,14 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 		<?php
 	}
 }
+
+
+function inharmony_pre_get_posts( $query ) {
+
+	if (is_front_page() && is_home()) {
+		$query->posts_per_page = get_theme_mod( 'inharmony_post_list_count', 6 );
+	}
+
+	return $query;
+}
+add_action( 'pre_get_posts', 'inharmony_pre_get_posts' );

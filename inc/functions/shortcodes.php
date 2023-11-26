@@ -10,16 +10,6 @@ function inharmony_display_posts( $atts = array() ) {
     $display_post_excerpt = get_theme_mod( 'inharmony_post_multi_display_excerpt', false );
     $display_post_read_time = get_theme_mod( 'inharmony_post_multi_display_read_time', false );
 
-    //TODO: setting - blog page post display count
-    if ( isset($atts['count'])) {
-        $atts['posts_per_page'] = $atts['count'];
-    } else {
-        $atts['posts_per_page'] =  get_theme_mod( 'inharmony_post_list_count', 6 );
-    }
-    $display_count = $atts['posts_per_page'] ||
-    $page = ( int ) $atts['page'];
-    $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
-
     // set up default parameters
     $disp_atts = shortcode_atts(array(
         'container_element' => 'div',
@@ -27,10 +17,15 @@ function inharmony_display_posts( $atts = array() ) {
         'container_class' => '',
         'post_element' => 'li',
         'post_class' => '',
+        'posts_per_page' => $atts['count'] ?? get_theme_mod( 'inharmony_post_list_count', 6 ),
         'ignore_first' => false,
         'load_more' => false,
         'title_style' => 'entry-title',
     ), $atts, 'ih_posts');
+
+    $display_count = $atts['posts_per_page'];
+    $page = ( int ) $atts['page'];
+    $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
 
     // set up default parameters
     $query_atts = shortcode_atts(array(
