@@ -7,23 +7,8 @@ function inharmony_display_posts( $atts = array() ) {
 
     ob_start();
     
-    $title_style = 'mt-3 mb-3';
-    //TODO: make title styling setting
     $display_post_excerpt = get_theme_mod( 'inharmony_post_multi_display_excerpt', false );
     $display_post_read_time = get_theme_mod( 'inharmony_post_multi_display_read_time', false );
-    $title_decoration = get_theme_mod( 'inharmony_post_multi_title_decoration', 'cap' );
-    switch ($title_decoration) {
-        case 'upper':
-            $title_style .= ' t-upper';
-        break;
-        case 'lower':
-            $title_style .= ' t-lower';
-        break;
-        case 'cap':
-            $title_style .= ' t-cap';
-        break;
-        default:
-    }
 
     //TODO: setting - blog page post display count
     if ( isset($atts['count'])) {
@@ -44,6 +29,7 @@ function inharmony_display_posts( $atts = array() ) {
         'post_class' => '',
         'ignore_first' => false,
         'load_more' => false,
+        'title_style' => 'entry-title',
     ), $atts, 'ih_posts');
 
     // set up default parameters
@@ -140,7 +126,7 @@ function inharmony_display_post( $atts = array() ) {
         'display_post_excerpt' => 0,
         'display_post_read_time' => 0,
         'title_decoration' => '',
-        'title_style' => 'mt-3 mb-3',
+        'title_style' => 'entry-title mt-3 mb-3',
         'title_element' => 'h3',
         'sec_image_style' => '',
         'sec_content_style' => '',

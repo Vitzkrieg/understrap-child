@@ -37,6 +37,8 @@ $container_classes = array(
 	'flex-wrap',
 	$header_placement == 'behind' ? 'site-header-image' : '',
 );
+
+$post_title_decoration = get_theme_mod( 'inharmony_post_title_decoration', 'capitalize' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -53,6 +55,9 @@ $container_classes = array(
 			height: 1000vh;
 			max-height: <?php echo $header_height; ?>;
 			<?php endif; ?>
+		}
+		.entry-title, .entry-title a {
+			text-transform: <?php echo $post_title_decoration; ?>;
 		}
 	</style>
 	<?php endif; ?>

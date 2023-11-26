@@ -173,6 +173,7 @@ function inharmony_loadmore_ajax_handler(){
 	$disp_atts = [];
 	$disp_atts['post_element'] = isset($_POST['post_element']) ? $_POST['post_element'] : 'li';
 	$disp_atts['post_class'] =  isset($_POST['post_class']) ? $_POST['post_class'] : '';
+	$disp_atta['title_style'] = 'entry-title';
  
 	// it is always better to use WP_Query but not here
 	query_posts( $args );

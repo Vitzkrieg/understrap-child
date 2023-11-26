@@ -12,9 +12,8 @@ extract(shortcode_atts(array(
     'post_element' => 'div',
     'post_class' => '',
     'image_size' => 'post-thumbnail',
-    'title_style' => 'mt-3 mb-3',
+    'title_style' => 'entry-title mt-3 mb-3',
     'title_element' => 'h3',
-    'title_decoration' => get_theme_mod( 'inharmony_post_single_title_decoration', 'cap' ),
     'display_post_excerpt' => get_theme_mod( 'inharmony_post_single_display_excerpt', false ),
     'display_post_read_time' => get_theme_mod( 'inharmony_post_single_display_read_time', false ),
     'layout' => 'none',
@@ -31,20 +30,6 @@ if ($layout == 'left') {
     $sec_content_style = 'col-sm-6';
 } else {
     $post_class = ($post_class != '') ? $post_class : 'text-center';
-}
-
-//TODO: make title styling setting
-switch ($title_decoration) {
-	case 'upper':
-		$title_style .= ' t-upper';
-	  break;
-	case 'lower':
-		$title_style .= ' t-lower';
-	  break;
-	case 'cap':
-		$title_style .= ' t-cap';
-	  break;
-	default:
 }
 
 ?>

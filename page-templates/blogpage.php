@@ -17,23 +17,9 @@ if ( is_front_page() ) {
 	get_template_part( 'global-templates/hero' );
 }
 
-$title_style = 'mt-3 mb-3';
-//TODO: make title styling setting
+$title_style = 'entry-title mt-3 mb-3';
 $display_post_excerpt = get_theme_mod( 'inharmony_display_post_excerpt', false );
 $display_post_read_time = get_theme_mod( 'inharmony_display_post_read_time', false );
-$title_decoration = get_theme_mod( 'inharmony_post_list_title_decoration', 'cap' );
-switch ($title_decoration) {
-	case 'upper':
-		$title_style .= ' t-upper';
-	  break;
-	case 'lower':
-		$title_style .= ' t-lower';
-	  break;
-	case 'cap':
-		$title_style .= ' t-cap';
-	  break;
-	default:
-}
 
 //TODO: setting - blog page post display count
 $display_count = get_theme_mod( 'inharmony_post_list_count', 6 );

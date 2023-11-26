@@ -9,20 +9,6 @@
 defined( 'ABSPATH' ) || exit;
 
 $title_style = 'entry-title';
-//TODO: make title styling setting
-$title_decoration = 'cap';
-switch ($title_decoration) {
-	case 'upper':
-		$title_style .= ' t-upper';
-	  break;
-	case 'lower':
-		$title_style .= ' t-lower';
-	  break;
-	case 'cap':
-		$title_style .= ' t-cap';
-	  break;
-	default:
-}
 
 $sec_image_style = '';
 $image_style = '';
