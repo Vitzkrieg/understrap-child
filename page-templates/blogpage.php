@@ -37,9 +37,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
 			<div class="col-md-12 content-area" id="primary">
 
 				<main class="site-main" id="main" role="main">
-                            <!-- $page: <?php echo $page; ?> -->
-                            <!-- $offset: <?php echo $offset; ?> -->
-                            <!-- $display_count: <?php echo $display_count; ?> -->
+
                     <?php
                     $ids;
                     $latest_post = new WP_Query(array(
@@ -120,6 +118,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                     <div id="load-older-posts" class="text-center">
                         <?php
                             if ( $latest_posts->max_num_pages > 1 ) :
+                                //TODO: use blog readmore settings here
                                 next_posts_link( __( '<button class="btn btn-primary text-light understrap-load-more-posts">More Posts</button>', 'inharmony' ), $latest_posts->max_num_pages );
                             endif;
                          ?>

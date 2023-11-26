@@ -15,7 +15,7 @@ add_filter( 'understrap_posted_on', 'inharmony_hide_posted_on' );
 
 if ( ! function_exists( 'inharmony_hide_posted_by' ) ) {
 	/**
-	 * Hides the posted on markup in `understrap_posted_on()`.
+	 * Hides the posted on markup in `understrap_posted_by()`.
 	 *
 	 * @param string $byline Posted by HTML markup.
 	 * @return string Maybe filtered posted by HTML markup.
