@@ -9,11 +9,11 @@
 defined( 'ABSPATH' ) || exit;
 
 extract(shortcode_atts(array(
-    'post_element' => 'li',
+    'post_element' => 'article',
     'post_class' => '',
     'title_style' => '',
-    'display_post_excerpt' => get_theme_mod( 'inharmony_post_multi_display_excerpt', false ),
-    'display_post_read_time' => get_theme_mod( 'inharmony_post_multi_display_read_time', false ),
+    'display_post_excerpt' => false,
+    'display_post_read_time' => false,
 ), $args));
 
 
@@ -39,9 +39,16 @@ $post_block_color = '';
 if ($post_block_color != '') {
     $post_block_style .= 'text-' . $post_block_color;
 }
+
+$post_classes = array(
+    'ih-latest-posts__list-item',
+    'ih-post-' . get_the_ID(),
+    'col-md-6 col-lg-4 text-center mb-3',
+    $post_class,
+);
 ?>
 
-<<?php echo $post_element; ?> class="ih-latest-posts__list-item col-md-6 col-lg-4 text-center mb-3 <?php echo $post_class; ?>">
+<<?php echo $post_element; ?> class="<?php echo join(' ', $post_classes); ?>">
     <a href="<?php the_permalink(); ?>" class="text-decoration-none">
         <div class="ih-latest-posts_post p-4 <?php echo $post_block_style; ?>">
             <div class="ih-latest-posts__featured-image mb-3">   

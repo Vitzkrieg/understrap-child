@@ -171,7 +171,7 @@ function inharmony_loadmore_ajax_handler(){
 	$args['offset'] = $offset;
 
 	$disp_atts = [];
-	$disp_atts['post_element'] = isset($_POST['post_element']) ? $_POST['post_element'] : 'li';
+	$disp_atts['post_element'] = isset($_POST['post_element']) ? $_POST['post_element'] : 'article';
 	$disp_atts['post_class'] =  isset($_POST['post_class']) ? $_POST['post_class'] : '';
 	$disp_atta['title_style'] = 'entry-title';
  

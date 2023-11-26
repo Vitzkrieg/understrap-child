@@ -88,7 +88,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                     ?>
                     
                     <div id="ih-latest-posts">
-                        <ul id="ih-latest-posts__list" class="list-unstyled row">
+                        <div id="ih-latest-posts__list" class="row">
                     <?php
                         $latest_posts = new WP_Query(array(
                             'posts_per_page' => $display_count, // Displays the latest # posts
@@ -113,7 +113,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                             );
                         endwhile;
                         ?>
-                        </ul>
+                        </div>
                     </div><!-- #ih-latest-posts -->
                     <div id="load-older-posts" class="text-center">
                         <?php
@@ -137,14 +137,14 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
 <?php
 	
 wp_localize_script( 'child-understrap-scripts', 'loadmore_params', array(
-    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-    'posts' => json_encode( $latest_posts->query_vars ), // everything about your loop is here
-    'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-    'max_page' => $latest_posts->max_num_pages,
-    'skip_ids' => $latest_posts->post__not_in,
-    'security' => wp_create_nonce( 'load_more_posts' ),
-    'page_count' => 6,
-    'str_loading' => "Loading...",
+    'ajaxurl'       => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+    'posts'         => json_encode( $latest_posts->query_vars ), // everything about your loop is here
+    'current_page'  => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+    'max_page'      => $latest_posts->max_num_pages,
+    'skip_ids'      => $latest_posts->post__not_in,
+    'security'      => wp_create_nonce( 'load_more_posts' ),
+    'page_count'    => get_theme_mod( 'inharmony_post_list_count', 6 ),
+    'str_loading'   => "Loading...",
     'str_load_more' => "More Posts",
 ) );
 

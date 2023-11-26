@@ -12,7 +12,7 @@ function inharmony_display_posts( $atts = array() ) {
 
     // set up default parameters
     $disp_atts = shortcode_atts(array(
-        'container_element' => 'div',
+        'container_element' => 'article',
         'container_id' => 'ih-sc-posts',
         'container_class' => '',
         'post_element' => 'li',
@@ -85,16 +85,16 @@ function inharmony_display_posts( $atts = array() ) {
         echo "</div>";
         
         wp_localize_script( 'child-understrap-scripts', 'loadmore_params', array(
-            'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-            'posts' => json_encode( $sc_query->query_vars ), // everything about your loop is here
-            'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-            'max_page' => $sc_query->max_num_pages,
-            'skip_ids' => $sc_query->post__not_in,
-            'security' => wp_create_nonce( 'load_more_posts' ),
-            'page_count' => $display_count,
-            'str_loading' => "Loading...",
+            'ajaxurl'       => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+            'posts'         => json_encode( $sc_query->query_vars ), // everything about your loop is here
+            'current_page'  => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+            'max_page'      => $sc_query->max_num_pages,
+            'skip_ids'      => $sc_query->post__not_in,
+            'security'      => wp_create_nonce( 'load_more_posts' ),
+            'page_count'    => $display_count,
+            'str_loading'   => "Loading...",
             'str_load_more' => "More Posts",
-            'container_id' => $container_id,
+            'container_id'  => $container_id,
         ) );
     }
 
