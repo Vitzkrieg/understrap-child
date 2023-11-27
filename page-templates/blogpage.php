@@ -21,7 +21,6 @@ $title_style = 'entry-title mt-3 mb-3';
 $display_post_excerpt = get_theme_mod( 'inharmony_display_post_excerpt', false );
 $display_post_read_time = get_theme_mod( 'inharmony_display_post_read_time', false );
 
-//TODO: setting - blog page post display count
 $display_count = get_theme_mod( 'inharmony_post_list_count', 6 );
 $page = ( int ) get_query_var( 'paged' );
 $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
@@ -71,7 +70,6 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                                 <?php the_excerpt(); ?>
                             </div>
                             <?php
-                            //TODO: setting - display read time
                             if ($display_post_read_time) :
                             ?>
                             <div class="ih-latest-post__post-read-time">

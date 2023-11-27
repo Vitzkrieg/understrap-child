@@ -70,7 +70,6 @@ $post_classes = array(
                 endif;
                 ?>
                 <?php
-                //TODO: setting - display read time
                 if ($display_post_read_time) :
                 ?>
                 <div class="ih-latest-posts__post-read-time small">
