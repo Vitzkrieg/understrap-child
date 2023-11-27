@@ -128,7 +128,6 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 			$post_excerpt = $post_excerpt . ' [...]';
 		} else {
 			$more_styles = array(
-				'test',
 				'btn',
 				'btn-' . get_theme_mod( 'inharmony_color_blog_buttons_bg', 'primary'),
 				'text-' . get_theme_mod( 'inharmony_color_blog_buttons_text', 'light'),

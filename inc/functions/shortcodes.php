@@ -79,8 +79,13 @@ function inharmony_display_posts( $atts = array() ) {
         
         echo "<div id='load-older-posts' class='text-center'>";
             if ( $sc_query->max_num_pages > 1 ) :
-                //TODO: use blog read more button settings here
-                next_posts_link( __( '<button class="btn btn-primary text-light understrap-load-more-posts">More Posts</button>', 'inharmony' ), $sc_query->max_num_pages );
+                $more_styles = array(
+                    'btn',
+                    'btn-' . get_theme_mod( 'inharmony_color_blog_buttons_bg', 'primary'),
+                    'text-' . get_theme_mod( 'inharmony_color_blog_buttons_text', 'light'),
+                    'understrap-load-more-posts',
+                );
+                next_posts_link( __( '<button class="' . join(' ', $more_styles) . '">More Posts</button>', 'inharmony' ), $sc_query->max_num_pages );
             endif;
         echo "</div>";
         

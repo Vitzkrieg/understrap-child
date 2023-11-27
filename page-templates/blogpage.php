@@ -118,8 +118,13 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
                     <div id="load-older-posts" class="text-center">
                         <?php
                             if ( $latest_posts->max_num_pages > 1 ) :
-                                //TODO: use blog readmore settings here
-                                next_posts_link( __( '<button class="btn btn-primary text-light understrap-load-more-posts">More Posts</button>', 'inharmony' ), $latest_posts->max_num_pages );
+                                $more_styles = array(
+                                    'btn',
+                                    'btn-' . get_theme_mod( 'inharmony_color_blog_buttons_bg', 'primary'),
+                                    'text-' . get_theme_mod( 'inharmony_color_blog_buttons_text', 'light'),
+                                    'understrap-load-more-posts',
+                                );
+                                next_posts_link( __( '<button class="' . join(' ', $more_styles) . '">More Posts</button>', 'inharmony' ), $latest_posts->max_num_pages );
                             endif;
                          ?>
                     </div>
