@@ -73,6 +73,23 @@ if ( ! function_exists( 'ihl_setup' ) ) {
 add_action( 'after_setup_theme', 'ihl_setup' );
 
 
+if ( ! function_exists( 'ihl_theme_comments_open' ) ) {
+	/**
+	 * Filters if the comments for post are enabled
+	 * 
+	 * inharmony_enable_comments toggles comments site wide
+	 * 
+	 * @param bool $comments_open comments status for the post
+	 * @param int $post_id
+	 */
+	function ihl_theme_comments_open( $comments_open, $post_id ) {
+		return $comments_open && get_theme_mod( 'inharmony_enable_comments', false );
+	}
+}
+
+add_filter( 'comments_open', 'ihl_theme_comments_open', 10, 2 );
+
+
 $inharmonylife_custom_dir = 'functions/';
 
 // Include files.

@@ -37,3 +37,8 @@ inharmony_add_select_setting($section,
 );
 
 
+inharmony_add_checkbox_setting($section,
+    'inharmony_enable_comments',
+    false,
+    'Enable Comments'
+);
