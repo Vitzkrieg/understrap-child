@@ -38,6 +38,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php
 				if ( have_posts() ) {
+				?>
+				<div id="ih-latest-posts__list" class="row">
+					<?php
 					// Start the Loop.
 					while ( have_posts() ) {
 						the_post();
@@ -49,6 +52,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 						 */
 						get_template_part( 'loop-templates/content', 'blogposts' );
 					}
+					?>
+					</div>
+				<?php
 				} else {
 					get_template_part( 'loop-templates/content', 'none' );
 				}
