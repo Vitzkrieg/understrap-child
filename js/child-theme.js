@@ -6761,6 +6761,7 @@
 	          // that's how we get params from wp_localize_script() function
 	          'page': loadmore_params.current_page,
 	          'skip_ids': loadmore_params.skip_ids,
+	          'posts_per_page': loadmore_params.posts_per_page,
 	          'security': loadmore_params.security
 	        };
 	      $.ajax({
@@ -6774,6 +6775,7 @@
 	        },
 
 	        success: function (data) {
+	          // exit if no data returned
 	          if (!data.length) {
 	            button.remove();
 	            return;
@@ -6799,6 +6801,9 @@
 
 	          // you can also fire the "post-load" event here if you use a plugin that requires it
 	          $(document.body).trigger('post-load');
+	        },
+	        error: function () {
+	          button.remove();
 	        }
 	      });
 	    });

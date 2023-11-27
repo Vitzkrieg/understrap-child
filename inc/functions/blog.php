@@ -154,7 +154,7 @@ function inharmony_loadmore_ajax_handler(){
 	$count = ($skip_first) ? 1 : 0;
 	$ids = array();
 
-	$display_count = get_theme_mod( 'inharmony_post_list_count', 6 );
+	$display_count = isset($_POST['posts_per_page']) ? $_POST['posts_per_page'] :  get_theme_mod( 'inharmony_post_list_count', 6 );
 	$page = $_POST['page'] + 1;
 	$offset = ( $page - 1 ) * $display_count + $count;
  

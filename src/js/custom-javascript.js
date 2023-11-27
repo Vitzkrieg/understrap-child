@@ -19,6 +19,7 @@ jQuery(function ($) {
                     'query': loadmore_params.posts, // that's how we get params from wp_localize_script() function
                     'page': loadmore_params.current_page,
                     'skip_ids': loadmore_params.skip_ids,
+                    'posts_per_page': loadmore_params.posts_per_page,
                     'security': loadmore_params.security
                 };
     

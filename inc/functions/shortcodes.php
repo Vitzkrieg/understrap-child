@@ -12,12 +12,12 @@ function inharmony_display_posts( $atts = array() ) {
 
     // set up default parameters
     $disp_atts = shortcode_atts(array(
-        'container_element' => 'article',
+        'container_element' => 'div',
         'container_id' => 'ih-sc-posts',
-        'container_class' => '',
-        'post_element' => 'li',
+        'container_class' => 'row justify-around',
+        'post_element' => 'article',
         'post_class' => '',
-        'posts_per_page' => $atts['count'] ?? get_theme_mod( 'inharmony_post_list_count', 6 ),
+        'posts_per_page' => get_theme_mod( 'inharmony_post_list_count', 6 ),
         'ignore_first' => false,
         'load_more' => false,
         'title_style' => 'entry-title',
@@ -88,19 +88,23 @@ function inharmony_display_posts( $atts = array() ) {
                 next_posts_link( __( '<button class="' . join(' ', $more_styles) . '">More Posts</button>', 'inharmony' ), $sc_query->max_num_pages );
             endif;
         echo "</div>";
-        
-        wp_localize_script( 'child-understrap-scripts', 'loadmore_params', array(
+
+        $params = array(
             'ajaxurl'       => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
             'posts'         => json_encode( $sc_query->query_vars ), // everything about your loop is here
             'current_page'  => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
             'max_page'      => $sc_query->max_num_pages,
             'skip_ids'      => $sc_query->post__not_in,
             'security'      => wp_create_nonce( 'load_more_posts' ),
-            'page_count'    => $display_count,
+            'posts_per_page' => $display_count,
             'str_loading'   => "Loading...",
             'str_load_more' => "More Posts",
             'container_id'  => $container_id,
-        ) );
+        );
+
+        echo '<script id="ih-posts-script">';
+        echo '  let loadmore_params=' . json_encode( $params ) . ';';
+        echo '</script>';
     }
 
     return ob_get_clean();
@@ -118,38 +122,27 @@ function inharmony_display_post( $atts = array() ) {
 
     // set up default parameters
     $disp_atts = shortcode_atts(array(
+        'id' => 0,
         'container_element' => 'div',
         'container_class' => 'text-center mb-5 pb-5',
         'post_element' => 'div',
         'post_class' => '',
         'image_size' => 'post-thumbnail',
         'ignore_first' => false,
-        'display_post_excerpt' => 0,
-        'display_post_read_time' => 0,
+        'display_post_excerpt' => get_theme_mod( 'inharmony_post_single_display_excerpt', false ),
+        'display_post_read_time' => get_theme_mod( 'inharmony_post_single_display_read_time', false ),
         'title_decoration' => '',
         'title_style' => 'entry-title mt-3 mb-3',
         'title_element' => 'h3',
         'sec_image_style' => '',
         'sec_content_style' => '',
         'layout' => '',
-    ), $atts, 'ih_posts');
+    ), $atts, 'ih_post');
 
-    // set up default parameters
-    $query_atts = shortcode_atts(array(
-        'posts_per_page' => 1,
-        'page' => 0,
-        'offset' => 0,
-        'order' => 'desc',
-        'order_by' => 'date',
-        'post_type' => 'post',
-        'ignore_sticky_posts' => true,
-        'post__not_in' => [],
-    ), $atts, 'ih_posts');
-
-    $sc_query = new WP_Query($query_atts);
-
-    //TODO: setting - blog page post display count
-    $display_count = $query_atts['posts_per_page'];
+    // update global $post object for use in template part
+    global $post;
+    $post = get_post( $disp_atts['id'] );
+    setup_postdata( $post );
 
     $container_element = $disp_atts['container_element'];
     $container_style = $disp_atts['container_class'];
@@ -158,15 +151,13 @@ function inharmony_display_post( $atts = array() ) {
         echo "<$container_element id='ih-sc-post' class='$container_style'>";
     }
 
-    while ($sc_query->have_posts()) :
-        $sc_query->the_post();
-
-        get_template_part( 'loop-templates/content', 'blogpost', $disp_atts );
-    endwhile;
+    get_template_part( 'loop-templates/content', 'blogpost', $disp_atts );
     
     if ($container_element != '') {
         echo "</$container_element>";
     }
+
+    wp_reset_postdata();
 
     return ob_get_clean();
 
