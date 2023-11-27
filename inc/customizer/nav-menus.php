@@ -34,7 +34,7 @@ inharmony_add_select_setting($section,
 
 inharmony_add_checkbox_setting($section,
     'inharmony_header_show_widgets',
-    '1',
+    true,
     'Show Widgets',
     ''
 );

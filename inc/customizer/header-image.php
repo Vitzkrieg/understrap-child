@@ -39,14 +39,14 @@ inharmony_add_text_setting($section,
 
 
 inharmony_add_checkbox_setting($section,
-  'inharmony_header_show_title',
-  '0',
-  'Show Site Title'
+    'inharmony_header_show_title',
+    false,
+    'Show Site Title'
 );
 
 inharmony_add_checkbox_setting($section,
     'inharmony_header_show_tagline',
-    '0',
+    false,
     'Show Site Tagline'
 );
 
