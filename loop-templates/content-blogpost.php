@@ -9,13 +9,14 @@
 defined( 'ABSPATH' ) || exit;
 
 extract(shortcode_atts(array(
+    'id' => 0,
     'post_element' => 'div',
     'post_class' => '',
     'image_size' => 'post-thumbnail',
     'title_style' => 'entry-title mt-3 mb-3',
     'title_element' => 'h3',
-    'display_post_excerpt' => get_theme_mod( 'inharmony_post_single_display_excerpt', false ),
-    'display_post_read_time' => get_theme_mod( 'inharmony_post_single_display_read_time', false ),
+    'display_post_excerpt' => false,
+    'display_post_read_time' => false,
     'layout' => 'none',
 ), $args));
     
@@ -51,11 +52,16 @@ if ($layout == 'left') {
                     the_title( $title_tag_open, $title_tag_close );
                 ?>
             </a>
+            <?php
+            if ( $display_post_excerpt ) :
+            ?>
             <div class="latest-post__post-excerpt">
                 <?php the_excerpt(); ?>
             </div>
+            <?php 
+            endif;
+            ?>
             <?php
-            //TODO: setting - display read time
             if ($display_post_read_time) :
             ?>
             <div class="ih-latest-post__post-read-time">
