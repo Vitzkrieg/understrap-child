@@ -1,9 +1,9 @@
 <?php
 
 function inharmony_visually_hide_entry_header() {
-    //TODO: setting - hide page title ['', 'home', 'blog', 'pages', 'homeblog', 'posts', 'homeposts', 'blogposts', 'all' ]; or custom array?
+    
     $hide_page_title = get_theme_mod( 'inharmony_hide_entry_header', 'pages' );
-    echo "<script id='ivheh'>let mod=" . json_encode($hide_page_title) . "</script>";
+    
     $do_hide = false;
 
     if (
