@@ -6,9 +6,6 @@
 function inharmony_display_posts( $atts = array() ) {
 
     ob_start();
-    
-    $display_post_excerpt = get_theme_mod( 'inharmony_post_multi_display_excerpt', false );
-    $display_post_read_time = get_theme_mod( 'inharmony_post_multi_display_read_time', false );
 
     // set up default parameters
     $disp_atts = shortcode_atts(array(
@@ -21,6 +18,8 @@ function inharmony_display_posts( $atts = array() ) {
         'ignore_first' => false,
         'load_more' => false,
         'title_style' => 'entry-title',
+        'display_post_excerpt' => get_theme_mod( 'inharmony_post_single_display_excerpt', false ),
+        'display_post_read_time' => get_theme_mod( 'inharmony_post_single_display_read_time', false ),
     ), $atts, 'ih_posts');
 
     $display_count = $atts['posts_per_page'];
