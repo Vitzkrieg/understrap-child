@@ -15,6 +15,7 @@ $image_style = '';
 $sec_content_style = '';
 $article_style = '';
 
+//TODO: add these settings
 $auto_format_post = get_theme_mod( 'inharmony_auto_format_post' , 'yes' );
 $sticky_image = get_theme_mod( 'inharmony_post_sticky_image', 'yes' );
 
