@@ -1,45 +1,58 @@
 <?php
 
-//add seo custom for site
+/**
+ * Adds SEO information about the site/page to each page
+ */
 function seo_information(){
+    //TODO: add SEO section to Customizer for this information
     //some of this can be customized.
-    $ogproperty1 = 'website'; //change base on your site's purpose, see the Open Graph documentation
-    $ogproperty2 = 'homestead'; // "
-    $twittercard = 'summary_large_image'; //look up twitter's card documentation for the type you want
-    $twittersite = 'inharmonylife'; // e.g. @someone
-    $seoimage = get_site_icon_url(null, 'https://inharmonylife.com/wp-content/uploads/2022/01/ih-life-site-icon.png'); //site icon!
-    $seosite_name = get_bloginfo('name');
-    if(is_single()){
+    $og_property_1 = 'website'; //change base on your site's purpose, see the Open Graph documentation
+    $og_property_2 = 'homestead'; // "
+    $twitter_card = 'summary_large_image'; //look up twitter's card documentation for the type you want
+    $twitter_site = 'inharmonylife'; // e.g. @someone
+    $seo_image = get_site_icon_url(null, 'https://inharmonylife.com/wp-content/uploads/2022/01/ih-life-site-icon.png'); //site icon!
+    $seo_site_name = get_bloginfo('name');
+    if ( is_single() ){
         $qpost = get_queried_object();
-        $seodescript = $qpost->post_excerpt;
-        $seotitle = $qpost->post_title;
-        $seoname = $qpost->post_name;
-        $seourl = home_url('/') . $seoname;
+        $seo_descript = $qpost->post_excerpt;
+        $seo_title = $qpost->post_title;
+        $seo_name = $qpost->post_name;
+        $seo_url = esc_url( get_permalink( $qpost->ID ) );;
     } else {
-        $seotitle = get_bloginfo('name');
-        $seodescript = get_bloginfo('description');
-        $seoname = get_bloginfo('name');
-        $seourl = home_url('/');
+        $seo_title = get_the_title();
+        $seo_descript = get_bloginfo('description');
+        $seo_name = get_bloginfo('name');
+        $seo_url = home_url('/');
     }
     //assemble meta in array.
-    $seo_array = array(
-        'og-property1' => '<meta content="' . $ogproperty1 . '" property="og:type">',
-        'og-property2' => '<meta content="' . $ogproperty2 . '" property="og:type">',
-        'og-description' => '<meta content="' . $seodescript . '" property="og:description">',
-        'og-url' => '<meta content="' . $seourl . '/" property="og:url">',
-        'og-title' => '<meta content="' . $seotitle . '" property="og:title">',
-        'og-image' => '<meta content="' . $seoimage . '" property="og:image">',
-        'og-site-name' => ' <meta content="' . $seosite_name . '" property="og:site_name">',
-        'twitter-card' => '<meta content="' . $twittercard . '" property="twitter:card">',
-        'twitter-site' => '<meta content="' . $twittersite . '" property="twitter:site">',
-        'twitter-title' => '<meta content="' . $seotitle . '" property="twitter:title">',
-        'twitter-description' => '<meta content="' . $seodescript . '" name="twitter:description">',
-        'twitter-url' => '<meta content="' . $seourl . '" property="twitter:url">',
-        'twitter-image' => '<meta content="' . $seoimage . '" property="twitter:image">'
+    //TODO: check "og:type" duplicate values is valid
+    $seo__array = array(
+        'og-type-1' => $og_property_1,
+        'og-type-2' => $og_property_2,
+        'og-url' => $seo_url,
+        'og-site_name' => $seo_site_name,
+        'og-description' => $seo_descript,
+        'og-title' => $seo_title,
+        'og-image' => $seo_image,
+        'twitter-card' => $twitter_card,
+        'twitter-site' => $twitter_site,
+        'twitter-title' => $seo_title,
+        'twitter-description' => $seo_descript,
+        'twitter-url' => $seo_url,
+        'twitter-image' => $seo_image,
+        'description' => $seo_descript,
     );
      //echo meta
-    foreach($seo_array as $item){
-        echo $item;
+    foreach($seo__array as $key => $value) {
+        if ( empty( $value ) || ! is_string( $key ) ) {
+            continue;
+        }
+
+        // work-around for duplicate "og:type" values
+        $prop = array_slice( explode( '-', $key ), 0, 2);
+        $type = $prop[0] == "og" ? "property" : "name";
+        $prop = join(':', $prop );
+        echo "<meta $type='$prop' content='$value'>";
     }
 }
 add_action('wp_head','seo_information');
