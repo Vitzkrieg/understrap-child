@@ -44,7 +44,7 @@ $post_thumbnail = get_the_post_thumbnail( $post->ID, 'full' );
 	</section><!-- .section-image -->
 
 	<section class="section-content <?php echo $sec_content_style; ?>">
-		<header class="post-content <?php echo get_entry_header_style(); ?>">
+		<header class="post-content entry-header">
 
 			<?php 
 			$title_tag_open = '<h1 class="'. $title_style . '">';

@@ -42,3 +42,35 @@ inharmony_add_checkbox_setting($section,
     false,
     'Enable Comments'
 );
+
+
+inharmony_add_checkbox_setting($section,
+    'inharmony_hide_entry_header[all]',
+    false,
+    'Hide Titles Everywhere'
+);
+inharmony_add_checkbox_setting($section,
+    'inharmony_hide_entry_header[pages]',
+    false,
+    'Hide Titles on Pages'
+);
+inharmony_add_checkbox_setting($section,
+    'inharmony_hide_entry_header[posts]',
+    false,
+    'Hide Titles on Posts'
+);
+inharmony_add_checkbox_setting($section,
+    'inharmony_hide_entry_header[blog]',
+    false,
+    'Hide Titles on Blog Page'
+);
+inharmony_add_checkbox_setting($section,
+    'inharmony_hide_entry_header[frontpage]',
+    false,
+    'Hide Titles on Front Page'
+);
+inharmony_add_checkbox_setting($section,
+    'inharmony_hide_entry_header[frontpageblog]',
+    false,
+    'Hide Titles on Front Blog Page'
+);
