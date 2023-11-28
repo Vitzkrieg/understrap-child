@@ -22,7 +22,7 @@ function inharmony_get_control_class($type) {
 }
 
 
-function inharmony_add_theme_mod(string $section, string $setting, string $default, string $sanitize, string $type, string $label, string $desc, array $choices) {
+function inharmony_add_theme_mod(string $section, string $setting, string $default, string $sanitize, string $type, string $label, string $desc, array $choices, $active_cb = null) {
     global $wp_customize;
 
     $wp_customize->add_setting(
@@ -49,6 +49,7 @@ function inharmony_add_theme_mod(string $section, string $setting, string $defau
                 'type'          => $type,
                 'choices'       => $choices,
                 'priority'      => apply_filters( $setting . '_priority', 10 ),
+                'active_callback' => $active_cb,
             )
         )
     );
@@ -66,8 +67,8 @@ function inharmony_add_select_setting(string $section, string $setting, string $
 }
 
 
-function inharmony_add_checkbox_setting(string $section, string $setting, string $default, string $label, string $desc = '') {
-    inharmony_add_theme_mod($section, $setting, $default, 'wp_kses_post', 'checkbox', $label, $desc, array());
+function inharmony_add_checkbox_setting(string $section, string $setting, string $default, string $label, string $desc = '', $active_cb = null) {
+    inharmony_add_theme_mod($section, $setting, $default, 'wp_kses_post', 'checkbox', $label, $desc, array(), $active_cb);
 }
 
 
