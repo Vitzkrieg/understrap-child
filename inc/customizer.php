@@ -33,46 +33,6 @@ add_theme_support( 'custom-header', $defaults );
 
 
 
-
-/**
- * Select sanitization function
- *
- * @param string               $input   Slug to sanitize.
- * @param WP_Customize_Setting $setting Setting instance.
- * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
- */
-function inharmony_theme_slug_sanitize_select( $input, $setting ) {
-
-    // Ensure input is a slug (lowercase alphanumeric characters, dashes and underscores are allowed only).
-    $input = sanitize_key( $input );
-
-    // Get the list of possible select options.
-    $choices = $setting->manager->get_control( $setting->id )->choices;
-
-    // If the input is a valid key, return it; otherwise, return the default.
-    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-
-}
-
-
-/**
- * Height sanitization function
- *
- * @param string               $input   Slug to sanitize.
- * @param WP_Customize_Setting $setting Setting instance.
- * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
- */
-function inharmony_theme_slug_sanitize_height( $input, $setting ) {
-
-    // Ensure input is a slug (lowercase alphanumeric characters, dashes and underscores are allowed only).
-    $input = sanitize_key( $input );
-
-    // If the input is a valid max-height value, return it; otherwise, return the default.
-    return ( preg_match('/^(\d+)(px|vh|vw|em|rem)$/', $input ) ? $input : $setting->default );
-
-}
-
-
 /*
 Title 					ID 					Priority (Order)
 Site Title & Tagline 	title_tagline 						20
