@@ -4,6 +4,8 @@
 $color_primary = '#78939e';
 $color_secondary = '#82b3b4';
 $color_white = '#fff';
+$color_white_off = '#fafafa';
+$color_grey_dark = '#333';
 
 $text_color_choices = array(
     'primary'       => 'Primary',

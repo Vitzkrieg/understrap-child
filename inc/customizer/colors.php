@@ -17,6 +17,11 @@ inharmony_add_color_setting($section,
     'Secondary Color'
 );
 inharmony_add_color_setting($section,
+    'inharmony_color_body',
+    $color_grey_dark,
+    'Body Text Color'
+);
+inharmony_add_color_setting($section,
     'inharmony_color_links',
     $color_primary,
     'Link Color'
