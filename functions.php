@@ -29,7 +29,7 @@ add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 /**
  * Enqueue our stylesheet and javascript file
  */
-function theme_enqueue_styles() {
+function inharmony_enqueue_styles() {
 
 	// Get the theme data.
 	$the_theme     = wp_get_theme();
@@ -43,17 +43,64 @@ function theme_enqueue_styles() {
 	
 	$css_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . $theme_styles );
 
-	wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version );
+	wp_enqueue_style( 'inharmony-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version );
 	wp_enqueue_script( 'jquery' );
 	
 	$js_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . $theme_scripts );
 	
-	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $js_version, true );
+	wp_enqueue_script( 'inharmony-scripts', get_stylesheet_directory_uri() . $theme_scripts, array( 'jquery' ), $js_version, true );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'inharmony_enqueue_styles' );
+
+function inharmony_admin_enqueue_scripts() {
+
+	// Get the theme data.
+	$the_theme     = wp_get_theme();
+	$theme_version = $the_theme->get( 'Version' );
+
+	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$suffix = '';
+	// Grab asset urls.
+	//$theme_styles  = "/css/child-admin{$suffix}.css";
+	$theme_scripts = "/js/child-admin{$suffix}.js";
+
+	//wp_enqueue_style( 'inharmony-admin-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version );
+	//wp_enqueue_script( 'jquery' );
+	
+	$js_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . $theme_scripts );
+	
+	wp_enqueue_script( 'inharmony-admin-scripts', get_stylesheet_directory_uri() . $theme_scripts, array( 'jquery' ), $js_version, true );
+	
+	$colors = array();
+	$primary_hex = get_theme_mod( 'inharmony_color_primary', '#78939e');
+	if ( !in_array($primary_hex, $colors) ) $colors[] = $primary_hex;
+	$secondary_hex = get_theme_mod( 'inharmony_color_secondary', '#82b3b4');
+	if ( !in_array($secondary_hex, $colors) ) $colors[] = $secondary_hex;
+	$link_hex = get_theme_mod( 'inharmony_color_links', '#78939e');
+	if ( !in_array($link_hex, $colors) ) $colors[] = $link_hex;
+	$button_text_hex = get_theme_mod( 'inharmony_color_buttons_text', '#fff');
+	if ( !in_array($button_text_hex, $colors) ) $colors[] = $button_text_hex;
+	$button_bg_hex = get_theme_mod( 'inharmony_color_buttons_bg', '#82b3b4');
+	if ( !in_array($button_bg_hex, $colors) ) $colors[] = $button_bg_hex;
+	$button_bg_hover_hex = get_theme_mod( 'inharmony_color_buttons_bg_hover', '#82b3b4');
+	if ( !in_array($button_bg_hover_hex, $colors) ) $colors[] = $button_bg_hover_hex;
+	
+	if ( count($colors) < 8) {
+		$colors[] = '#fafafa';
+	}
+	if ( count($colors) < 8) {
+		$colors[] = '#333';
+	}
+
+	wp_localize_script( 'inharmony-admin-scripts', 'ihl_admin', array(
+		'colors' => $colors
+	));
+}
+add_action( 'admin_enqueue_scripts', 'inharmony_admin_enqueue_scripts' );
 
 
 

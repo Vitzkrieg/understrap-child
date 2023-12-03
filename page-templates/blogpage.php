@@ -139,7 +139,7 @@ $offset = max(0, $page - 1) * $display_count; // max() = don't go below 0
 
 <?php
 	
-wp_localize_script( 'child-understrap-scripts', 'loadmore_params', array(
+wp_localize_script( 'inharmony-scripts', 'loadmore_params', array(
     'ajaxurl'       => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
     'posts'         => json_encode( $latest_posts->query_vars ), // everything about your loop is here
     'current_page'  => get_query_var( 'paged' ) ? get_query_var('paged') : 1,

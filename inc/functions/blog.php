@@ -192,6 +192,8 @@ add_action('wp_ajax_nopriv_loadmore', 'inharmony_loadmore_ajax_handler'); // wp_
 
 /**
  * Default post image
+ * 
+ * I don't recall why this was going to be used
  */
 //function to call first uploaded image in functions file
 function inharmony_get_post_image_default( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
@@ -219,7 +221,6 @@ function inharmony_get_post_image_default( $html, $post_id, $post_thumbnail_id, 
 
 	return $html;
 }
-//TODO: setting - set default post image
 //add_filter( 'post_thumbnail_html', 'inharmony_get_post_image_default', 10, 5 );
 
 
