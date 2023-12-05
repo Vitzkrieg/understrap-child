@@ -16,8 +16,17 @@ function inharmony_default_bootstrap_version() {
 }
 add_filter( 'theme_mod_understrap_bootstrap_version', 'inharmony_default_bootstrap_version', 20 );
 
+function inharmony_default_container_type() {
+	return get_theme_mod( 'inharmony_container_type', 'container' );
+}
+add_filter( 'theme_mod_understrap_container_type', 'inharmony_default_container_type', 20 );
+
+
 // Remove Bootstrap option
 $wp_customize->remove_control('understrap_bootstrap_version');
+
+// Remove Container option
+$wp_customize->remove_control('understrap_container_type');
 
 // Remove Footer Site Info Override
 $wp_customize->remove_control('understrap_site_info_override');

@@ -7,6 +7,14 @@ defined( 'ABSPATH' ) || exit;
 $section = 'understrap_theme_layout_options';
 
 inharmony_add_select_setting($section,
+    'inharmony_container_type',
+    'container',
+    'Container Width',
+    'Choose between Bootstrap\'s container and container-fluid options',
+    $bs_container_choices
+);
+
+inharmony_add_select_setting($section,
     'inharmony_header_container_type',
     'container',
     'Header Container Width',
