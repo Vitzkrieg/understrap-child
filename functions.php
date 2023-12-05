@@ -72,14 +72,23 @@ function inharmony_admin_enqueue_scripts() {
 	$button_bg_hover_hex = get_theme_mod( 'inharmony_color_buttons_bg_hover', '#82b3b4');
 	if ( !in_array($button_bg_hover_hex, $colors) ) $colors[] = $button_bg_hover_hex;
 	
-	if ( count($colors) < 8) {
-		$colors[] = '#fafafa';
+	$cp_count = 6;
+	$cp_index = 1;
+
+	while ( $cp_index <= $cp_count ) {
+		$cp_color = get_theme_mod( 'inharmony_color_picker_' . $cp_index, '');
+		if ( !empty( $cp_color) && !in_array($cp_color, $colors) ) $colors[] = $cp_color;
+		$cp_index++;
 	}
+
 	if ( count($colors) < 8) {
 		$colors[] = '#333';
 	}
+	if ( count($colors) < 8) {
+		$colors[] = '#fafafa';
+	}
 
-	wp_localize_script( 'inharmony-admin-scripts', 'ihl_admin', array(
+	wp_localize_script( 'customize-preview', 'ihl_admin', array(
 		'colors' => $colors
 	));
 }
@@ -136,3 +145,30 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+
+//Change the Customizer color palette presets
+function inharmony_customize_controls() {
+?>
+	<script>
+		function update_iris($) {
+			var $pickers = $('.wp-picker-container .color-picker-hex');
+			// check if iris is initialized
+			try {
+				$($pickers[0]).iris('option', 'width');
+			} catch (e) {
+				setTimeout( function() { update_iris($); }, 250 );
+				return;
+			}
+	
+			$pickers.iris('option', 'palettes', ihl_admin['colors']);
+		}
+	
+		jQuery(document).ready(function($){
+			update_iris($);
+		});
+	</script>
+<?php
+}
+add_action('customize_controls_print_footer_scripts', 'inharmony_customize_controls');
+	

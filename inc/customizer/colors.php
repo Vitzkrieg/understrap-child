@@ -43,6 +43,39 @@ inharmony_add_color_setting($section,
 );
 
 
+
+inharmony_add_color_setting($section,
+    'inharmony_color_picker_1',
+    '',
+    'Color Picker Option 1'
+);
+inharmony_add_color_setting($section,
+    'inharmony_color_picker_2',
+    '',
+    'Color Picker Option 2'
+);
+inharmony_add_color_setting($section,
+    'inharmony_color_picker_3',
+    '',
+    'Color Picker Option 3'
+);
+inharmony_add_color_setting($section,
+    'inharmony_color_picker_4',
+    '',
+    'Color Picker Option 4'
+);
+inharmony_add_color_setting($section,
+    'inharmony_color_picker_5',
+    '',
+    'Color Picker Option 5'
+);
+inharmony_add_color_setting($section,
+    'inharmony_color_picker_6',
+    '',
+    'Color Picker Option 6'
+);
+
+
 inharmony_add_select_setting($section,
     'inharmony_footer_text',
     'light',
