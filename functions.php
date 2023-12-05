@@ -117,20 +117,6 @@ foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_inc_dir . '*.php' ) a
 }
 
 
-/**
- * Overrides the theme_mod to default to Bootstrap 5
- *
- * This function uses the `theme_mod_{$name}` hook and
- * can be duplicated to override other theme settings.
- *
- * @return string
- */
-function understrap_child_default_bootstrap_version() {
-	return 'bootstrap5';
-}
-add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_child_default_bootstrap_version', 20 );
-
-
 
 /**
  * Loads javascript for showing customizer warning dialog.
