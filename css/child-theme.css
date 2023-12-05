@@ -16349,16 +16349,16 @@ header .navbar-toggler .navbar-toggler-icon {
 
 .ih-latest-posts_post {
   position: relative;
-}
-.ih-latest-posts_post .ih-latest-posts__featured-image {
-  position: relative;
   overflow: hidden;
+}
+.ih-latest-posts__featured-image {
+  position: relative;
   height: 240px;
 }
-.ih-latest-posts_post .ih-latest-posts__text {
+.ih-latest-posts__text {
   height: 8em;
 }
-.ih-latest-posts_post .ih-latest-posts__post-excerpt {
+.ih-latest-posts__post-excerpt {
   font-size: 0.7em;
   max-height: 0px;
   opacity: 0;
@@ -16366,7 +16366,7 @@ header .navbar-toggler .navbar-toggler-icon {
   position: absolute;
   bottom: 1.5em;
 }
-.ih-latest-posts_post:hover {
+.ih-latest-posts:hover {
   background-color: rgba(var(--bs-primary-rgb), 0.25);
 }
 

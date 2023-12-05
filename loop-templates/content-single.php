@@ -15,11 +15,10 @@ $image_style = '';
 $sec_content_style = '';
 $article_style = '';
 
-//TODO: add these settings
-$auto_format_post = get_theme_mod( 'inharmony_auto_format_post' , 'yes' );
-$sticky_image = get_theme_mod( 'inharmony_post_sticky_image', 'yes' );
+$auto_format_post = get_theme_mod( 'inharmony_auto_format_post' , false );
+$sticky_image = get_theme_mod( 'inharmony_post_sticky_image', false );
 
-if ($auto_format_post == 'yes') {
+if ($auto_format_post) {
 	$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 	//$meta =  [(str) src, (int) width, (int) height, (bool) resize]
 	$meta = wp_get_attachment_image_src($post_thumbnail_id, 'post-thumbnail');
@@ -27,7 +26,7 @@ if ($auto_format_post == 'yes') {
 	if ($meta && $meta[1] <= $meta[2]) {
 		$article_style = 'row g-0';
 		$sec_image_style = 'col-sm-6 pe-sm-4';
-		$image_style = 'sticky-img';
+		$image_style = $sticky_image ? 'sticky-img' : '';
 		$sec_content_style = 'col-sm-6';
 	}
 }

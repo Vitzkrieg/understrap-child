@@ -23,6 +23,21 @@ $bg_color_choices = array(
     'white'         => 'White',
     'transparent'   => 'Transparent',
 );
+$bg_opacity_choices = array(
+    '10'    => '10',
+    '25'    => '25',
+    '50'    => '50',
+    '75'    => '75',
+    '100'   => '100'
+);
+$bs_spacers = array(
+    '0'    => '0',
+    '1'    => '1',
+    '2'    => '2',
+    '3'    => '3',
+    '4'    => '4',
+    '5'    => '5'
+);
 
 
 $bs_container_choices = array(

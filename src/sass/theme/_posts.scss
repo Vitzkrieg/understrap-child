@@ -22,20 +22,22 @@
 }
 
 
-.ih-latest-posts_post {
-    position: relative;
-
-    .ih-latest-posts__featured-image {
+.ih-latest-posts {
+    &_post {
         position: relative;
         overflow: hidden;
+    }
+
+    &__featured-image {
+        position: relative;
         height: 240px;
     }
 
-    .ih-latest-posts__text {
+    &__text {
         height: 8em;
     }
 
-    .ih-latest-posts__post-excerpt {
+    &__post-excerpt {
         font-size: 0.7em;
         max-height: 0px;
         opacity: 0;

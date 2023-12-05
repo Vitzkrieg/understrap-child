@@ -61,3 +61,87 @@ inharmony_add_checkbox_setting($section,
     true,
     'Show Post Read Time'
 );
+
+
+inharmony_add_checkbox_setting($section,
+    'inharmony_auto_format_post',
+    false,
+    'Auto Format Posts'
+);
+
+inharmony_add_checkbox_setting($section,
+    'inharmony_post_sticky_image',
+    false,
+    'Sticky Post Image',
+    '',
+    'inharmony_is_auto_format_post'
+);
+
+function inharmony_is_auto_format_post() {
+    return get_theme_mod( 'inharmony_auto_format_post', true );
+}
+
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_bg',
+    'transparent',
+    'Post Block BG Color',
+    '',
+    $bg_color_choices
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_bg_opacity',
+    '100',
+    'Post Block BG Opacity',
+    '',
+    $bg_opacity_choices
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_border_size',
+    'primary',
+    'Post Block Border Size',
+    '',
+    $bs_spacers
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_border_color',
+    'primary',
+    'Post Block Border Color',
+    '',
+    $bg_color_choices
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_color',
+    'black',
+    'Post Block Text Color',
+    '',
+    $text_color_choices
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_padding',
+    '4',
+    'Post Block Padding',
+    '',
+    $bs_spacers
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_post_block_border_radius',
+    '0',
+    'Post Block Corner Radius',
+    '',
+    $bs_spacers
+);
+
+inharmony_add_text_setting($section,
+    'inharmony_post_block_image_height',
+    '300px',
+    'inharmony_theme_slug_sanitize_height',
+    'Post Block Image Height',
+    'Use px, em, rem for static height, vh or vw for responsive height.',
+);
