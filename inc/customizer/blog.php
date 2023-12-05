@@ -33,6 +33,11 @@ inharmony_add_number_setting($section,
     'Posts Per Page Count',
     'How many Posts to display per page.'
 );
+inharmony_add_checkbox_setting($section,
+    'inharmony_post_list_ski_first',
+    true,
+    'Skip First Post When Loading More'
+);
 
 
 inharmony_add_select_setting($section,

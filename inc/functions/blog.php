@@ -149,8 +149,7 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
  */
 function inharmony_loadmore_ajax_handler(){
 	check_ajax_referer('load_more_posts', 'security');
-	//TODO: setting - make/get skip first	
-	$skip_first = true;
+	$skip_first = ( isset($_POST['skip_first']) && !$_POST['skip_first'] ) ? false : get_theme_mod( 'inharmony_post_list_skip_first', true );
 	$count = ($skip_first) ? 1 : 0;
 	$ids = array();
 
