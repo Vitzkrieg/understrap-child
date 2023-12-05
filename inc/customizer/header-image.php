@@ -31,6 +31,7 @@ inharmony_add_select_setting($section,
 );
 
 inharmony_add_text_setting($section,
+    'inharmony_header_image_height',
     '800px',
     'inharmony_theme_slug_sanitize_height',
     'Image Height',
