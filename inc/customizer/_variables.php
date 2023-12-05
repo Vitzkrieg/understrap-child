@@ -41,8 +41,11 @@ $bs_spacers = array(
 
 
 $bs_container_choices = array(
-    'container'       => __( 'Fixed width container', 'inharmony' ),
-    'container-fluid' => __( 'Full width container', 'inharmony' ),
+    'container'         => __( 'Fixed width container', 'inharmony' ),
+    'container-fluid'   => __( 'Fluid width container', 'inharmony' ),
+    'container-sm'      => __( 'Fluid width small only', 'inharmony' ),
+    'container-md'      => __( 'Fluid width up to medium', 'inharmony' ),
+    'container-lg'      => __( 'Fluid width up to large', 'inharmony' ),
 );
 
 $bs_flex_choices = array(
