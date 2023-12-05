@@ -58,23 +58,6 @@ add_action( 'wp_enqueue_scripts', 'inharmony_enqueue_styles' );
 
 function inharmony_admin_enqueue_scripts() {
 
-	// Get the theme data.
-	$the_theme     = wp_get_theme();
-	$theme_version = $the_theme->get( 'Version' );
-
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	$suffix = '';
-	// Grab asset urls.
-	//$theme_styles  = "/css/child-admin{$suffix}.css";
-	$theme_scripts = "/js/child-admin{$suffix}.js";
-
-	//wp_enqueue_style( 'inharmony-admin-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version );
-	//wp_enqueue_script( 'jquery' );
-	
-	$js_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . $theme_scripts );
-	
-	wp_enqueue_script( 'inharmony-admin-scripts', get_stylesheet_directory_uri() . $theme_scripts, array( 'jquery' ), $js_version, true );
-	
 	$colors = array();
 	$primary_hex = get_theme_mod( 'inharmony_color_primary', '#78939e');
 	if ( !in_array($primary_hex, $colors) ) $colors[] = $primary_hex;
