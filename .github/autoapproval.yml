@@ -1,0 +1,12 @@
+from_owner:
+  - vitzkrieg
+required_labels:
+  - ready
+required_labels_mode
+  - one_of
+blacklisted_labels
+  - wip
+apply_labels
+  - merge
+auto_merge_labels
+  - auto-merge
