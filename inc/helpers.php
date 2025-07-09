@@ -1,7 +1,7 @@
 <?php
 
 // Convert Hex to RGB Value
-function HexToRGB($hex) {
+function ih_inharmony_HexToRGB($hex) {
 
     $hex = preg_replace("/#/i", "", $hex);
     $color = array();

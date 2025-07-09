@@ -8,9 +8,21 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-define('SCRIPT_DEBUG', true);
+
+if ( !defined( 'SCRIPT_DEBUG' ) ) {
+	define( 'SCRIPT_DEBUG', is_local() );
+}
 
 
+/**
+ * Check if the site is running on a local environment.
+ *
+ * @return bool True if local, false otherwise.
+ */
+function is_local() {
+	// Check if the site is running on a local environment.
+	return in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1', 'localhost', '.local' ) );
+}
 
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
