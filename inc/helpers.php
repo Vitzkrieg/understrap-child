@@ -1,10 +1,26 @@
 <?php
 
+/**
+ * Check if the site is running on a local environment.
+ *
+ * @return bool True if local, false otherwise.
+ */
+function is_local() {
+	// Check if the site is running on a local environment.
+	return in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1', 'localhost', '.local' ) );
+}
+
+
 // Convert Hex to RGB Value
-function ih_inharmony_HexToRGB($hex) {
+function inharmony_HexToRGB($hex) {
 
     $hex = preg_replace("/#/i", "", $hex);
     $color = array();
+
+    // defaults
+    $color['r'] = 255;
+    $color['g'] = 255;
+    $color['b'] = 255;
 
     if(strlen($hex) == 3) {
         $color['r'] = hexdec(substr($hex, 0, 1) . $r);
