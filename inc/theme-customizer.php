@@ -14,6 +14,47 @@ defined( 'ABSPATH' ) || exit;
 require get_parent_theme_file_path( '/inc/customizer.php' );
 
 
+/**
+ * Loads javascript for showing customizer warning dialog.
+ */
+function understrap_child_customize_controls_js() {
+	wp_enqueue_script(
+		'understrap_child_customizer',
+		get_stylesheet_directory_uri() . '/js/customizer-controls.js',
+		array( 'customize-preview' ),
+		'20130508',
+		true
+	);
+}
+add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+
+//Change the Customizer color palette presets
+function inharmony_customize_controls() {
+?>
+	<script>
+		function update_iris($) {
+			var $pickers = $('.wp-picker-container .color-picker-hex');
+			// check if iris is initialized
+			try {
+				$($pickers[0]).iris('option', 'width');
+			} catch (e) {
+				setTimeout( function() { update_iris($); }, 250 );
+				return;
+			}
+	
+			$pickers.iris('option', 'palettes', ihl_admin['colors']);
+		}
+	
+		jQuery(document).ready(function($){
+			update_iris($);
+		});
+	</script>
+<?php
+}
+add_action('customize_controls_print_footer_scripts', 'inharmony_customize_controls');
+
+
 
 $defaults = array(
 	'default-image'          => '',
@@ -73,9 +114,9 @@ function inharmony_custom_colors() {
 	$link_rgb = inharmony_HexToRGB( $link_hex );
 	$button_text_hex = get_theme_mod( 'inharmony_color_buttons_text', '#fff');
 	$button_bg_hex = get_theme_mod( 'inharmony_color_buttons_bg', '#82b3b4');
-	$button_bg_rgb = inharmony_HexToRGB( $button_hex );
+	$button_bg_rgb = inharmony_HexToRGB( $button_bg_hex );
 	$button_bg_hover_hex = get_theme_mod( 'inharmony_color_buttons_bg_hover', '#82b3b4');
-	$button_bg_hover_rgb = inharmony_HexToRGB( $button_hex );
+	$button_bg_hover_rgb = inharmony_HexToRGB( $button_bg_hover_hex );
 
 	echo "<style id='inharmony-theme-css' type='text/css'>";
 	echo ":root {";
