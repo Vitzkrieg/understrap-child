@@ -39,6 +39,8 @@ $container_classes = array(
 );
 
 $post_title_decoration = get_theme_mod( 'inharmony_post_title_decoration', 'capitalize' );
+
+ $show_widget_column = get_theme_mod( 'inharmony_header_show_widget_column', false );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

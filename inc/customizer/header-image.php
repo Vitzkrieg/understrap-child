@@ -18,6 +18,13 @@ inharmony_add_select_setting($section,
     )
 );
 
+inharmony_add_checkbox_setting($section,
+    'inharmony_header_show_widget_column',
+    false,
+    'Show Header Widget Column',
+    'Show the widget column in the header area.'
+);
+
 inharmony_add_select_setting($section,
     'inharmony_header_image_size',
     'cover',
