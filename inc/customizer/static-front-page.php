@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
 $section = 'static_front_page';
 
 inharmony_add_checkbox_setting($section,

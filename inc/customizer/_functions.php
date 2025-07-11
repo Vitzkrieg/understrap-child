@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
 function inharmony_get_control_class($type) {
     $accepted_control_types = [
         'checkbox'	     => WP_Customize_Control::class,
