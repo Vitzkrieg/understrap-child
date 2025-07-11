@@ -115,7 +115,6 @@ inharmony_add_checkbox_setting($section,
     'Hide Titles on Front Blog Page'
 );
 
-
 inharmony_add_select_setting($section,
     'inharmony_footer_widget_layout_direction',
     'center',
