@@ -1,15 +1,12 @@
 <?php
-$container = get_theme_mod( 'understrap_container_type' );
-$header_container = get_theme_mod( 'inharmony_header_container_type' );
-if (! $header_container) {
-	$header_container = $container;
-}
+$container = get_theme_mod( 'understrap_container_type', 'container' );
+$header_container = get_theme_mod( 'inharmony_header_container_type', $container );
 
 $layout_mobile = get_theme_mod( 'inharmony_header_menu_layout_mobile' );
 $layout_desktop = get_theme_mod( 'inharmony_header_menu_layout_desktop' );
 
 $container_classes = array(
-    'container' === $header_container ? 'container' : 'container-fluid',
+    $header_container,
     'd-flex',
     inharmony_get_bs_css_from_theme_mod($layout_mobile),
     inharmony_get_bs_css_from_theme_mod($layout_desktop, 'lg'),

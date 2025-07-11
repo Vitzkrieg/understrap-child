@@ -9,7 +9,7 @@ $section = 'header_image';
 inharmony_add_select_setting($section,
     'inharmony_header_placement',
     'above',
-    'Header Placement',
+    'Header Image Placement',
     'Where to place the header image.',
     array(
         'above'     => __( 'Above header', 'inharmonylife' ),

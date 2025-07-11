@@ -16309,6 +16309,22 @@ img.img-fill {
   max-width: 100%;
 }
 
+header .brand-col.sz-sm .navbar-brand img {
+  width: auto;
+  max-height: 50px;
+}
+header .brand-col.sz-md .navbar-brand img {
+  width: auto;
+  max-height: 75px;
+}
+header .brand-col.sz-lg .navbar-brand img {
+  width: auto;
+  max-height: 100px;
+}
+header .brand-col.sz-xl .navbar-brand img {
+  width: auto;
+  max-height: 150px;
+}
 header .navbar-brand.custom-logo-link img {
   width: auto;
   max-height: 50px;
