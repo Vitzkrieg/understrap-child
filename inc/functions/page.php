@@ -1,25 +1,32 @@
 <?php
 
 function inharmony_visually_hide_entry_header() {
+
+    $settings = array(
+        'all' => false,
+        'pages' => false,
+        'posts' => false,
+        'frontpageblog' => false,
+        'frontpage' => false,
+        'blog' => false
+    );
     
     $hide_page_title = get_theme_mod( 'inharmony_hide_entry_header', 'pages' );
-    
-    $do_hide = false;
+
+    if ( is_string( $hide_page_title ) ) {
+        $settings[$hide_page_title] = true;
+    } else if ( is_array( $hide_page_title ) ) {
+        $settings = array_merge( $settings, $hide_page_title );
+    }   
 
     if (
-        ( $hide_page_title['all'] ) ||
-        ( $hide_page_title['pages'] && ( 'page' == get_post_type() )) ||
-        ( $hide_page_title['posts'] && ( 'post' == get_post_type() )) ||
-        ( $hide_page_title['frontpageblog'] && ( is_front_page() && is_home() )) ||
-        ( $hide_page_title['frontpage'] && is_front_page()) ||
-        ( $hide_page_title['blog'] && is_home())
+        ( $settings['all'] ) ||
+        ( $settings['pages'] && ( 'page' == get_post_type() )) ||
+        ( $settings['posts'] && ( 'post' == get_post_type() )) ||
+        ( $settings['frontpageblog'] && ( is_front_page() && is_home() )) ||
+        ( $settings['frontpage'] && is_front_page()) ||
+        ( $settings['blog'] && is_home())
     ) {
-        $do_hide = true;
-    }
-
-    if ( !$do_hide ) {
-        return;
-    }
 
     echo "<style id='get-entry-header-style'>.entry-header{
         position: absolute !important;
@@ -32,6 +39,7 @@ function inharmony_visually_hide_entry_header() {
         white-space: nowrap !important;
         border: 0 !important;
         }</style>";
+    }
 }
 
 add_action( 'wp_head', 'inharmony_visually_hide_entry_header' );

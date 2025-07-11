@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
 function inharmony_get_control_class($type) {
     $accepted_control_types = [
         'checkbox'	     => WP_Customize_Control::class,
@@ -59,13 +63,13 @@ function inharmony_add_theme_mod(string $section, string $setting, string $defau
 }
 
 
-function inharmony_add_color_setting(string $section, string $setting, string $default, string $label) {
-    inharmony_add_theme_mod($section, $setting, $default, 'sanitize_hex_color', 'color', $label, '', array());
+function inharmony_add_color_setting(string $section, string $setting, string $default, string $label, string $desc = '', $active_cb = null) {
+    inharmony_add_theme_mod($section, $setting, $default, 'sanitize_hex_color', 'color', $label, $desc, array(), $active_cb);
 }
 
 
-function inharmony_add_select_setting(string $section, string $setting, string $default, string $label, string $desc, array $choices) {
-    inharmony_add_theme_mod($section, $setting, $default, 'understrap_customize_sanitize_select', 'select', $label, $desc, $choices);
+function inharmony_add_select_setting(string $section, string $setting, string $default, string $label, string $desc, array $choices, $active_cb = null) {
+    inharmony_add_theme_mod($section, $setting, $default, 'understrap_customize_sanitize_select', 'select', $label, $desc, $choices, $active_cb);
 }
 
 
@@ -74,19 +78,19 @@ function inharmony_add_checkbox_setting(string $section, string $setting, string
 }
 
 
-function inharmony_add_textarea_setting(string $section, string $setting, string $default, string $label, string $desc = '') {
-    inharmony_add_theme_mod($section, $setting, $default, 'wp_kses_post', 'textarea', $label, $desc, array());
+function inharmony_add_textarea_setting(string $section, string $setting, string $default, string $label, string $desc = '', $active_cb = null) {
+    inharmony_add_theme_mod($section, $setting, $default, 'wp_kses_post', 'textarea', $label, $desc, array(), $active_cb);
 }
 
 
-function inharmony_add_text_setting(string $section, string $setting, string $default, string $sanitize, string $label, string $desc = '', $atts = array()) {
+function inharmony_add_text_setting(string $section, string $setting, string $default, string $sanitize, string $label, string $desc = '', $atts = array(), $active_cb = null) {
     if ( empty($sanitize) ) $sanitize = 'wp_kses_post';
-    inharmony_add_theme_mod($section, $setting, $default, $sanitize, 'text', $label, $desc, array(), null, $atts);
+    inharmony_add_theme_mod($section, $setting, $default, $sanitize, 'text', $label, $desc, array(), $active_cb, $atts);
 }
 
 
-function inharmony_add_number_setting(string $section, string $setting, string $default, string $label, string $desc = '') {
-    inharmony_add_theme_mod($section, $setting, $default, 'wp_kses_post', 'number', $label, $desc, array());
+function inharmony_add_number_setting(string $section, string $setting, string $default, string $label, string $desc = '', $active_cb = null) {
+    inharmony_add_theme_mod($section, $setting, $default, 'wp_kses_post', 'number', $label, $desc, array(), $active_cb);
 }
 
 

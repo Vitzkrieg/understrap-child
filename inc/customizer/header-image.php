@@ -9,13 +9,20 @@ $section = 'header_image';
 inharmony_add_select_setting($section,
     'inharmony_header_placement',
     'above',
-    'Header Placement',
+    'Header Image Placement',
     'Where to place the header image.',
     array(
         'above'     => __( 'Above header', 'inharmonylife' ),
         'below'     => __( 'Below header', 'inharmonylife' ),
         'behind'    => __( 'Behind header', 'inharmonylife' ),
     )
+);
+
+inharmony_add_checkbox_setting($section,
+    'inharmony_header_show_widget_column',
+    false,
+    'Show Header Widget Column',
+    'Show the widget column in the header area.'
 );
 
 inharmony_add_select_setting($section,

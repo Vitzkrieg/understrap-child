@@ -12,3 +12,15 @@ if ( ! function_exists( 'write_to_log' ) ) {
 	}
 
 }
+
+
+if ( ! function_exists( 'debug_log' ) ) {
+	function debug_log($data)
+	{
+		if (is_array($data) || is_object($data)) {
+			error_log(json_encode($data, true));
+		} else {
+			error_log($data);
+		}
+	}
+}

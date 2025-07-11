@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
 
 $color_primary = '#78939e';
 $color_secondary = '#82b3b4';

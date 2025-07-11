@@ -26,3 +26,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.no-gutters {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}

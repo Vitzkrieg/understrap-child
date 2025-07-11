@@ -2,13 +2,48 @@
 
 header {
 
+    .brand-col {
+        &.sz-sm {
+            .navbar-brand {
+                img {
+                    width: auto;
+                    max-height: 50px;
+                }
+            }
+        }
+        &.sz-md {
+            .navbar-brand {
+                img {
+                    width: auto;
+                    max-height: 75px;
+                }
+            }
+        }
+        &.sz-lg {
+            .navbar-brand {
+                img {
+                    width: auto;
+                    max-height: 100px;
+                }
+            }
+        }
+        &.sz-xl {
+            .navbar-brand {
+                img {
+                    width: auto;
+                    max-height: 150px;
+                }
+            }
+        }
+    }
+
     .navbar-brand {
         &.custom-logo-link {
             img {
                 width: auto;
                 max-height: 50px;
             }
-        } 
+        }
     } 
 
     #header-menu-container {

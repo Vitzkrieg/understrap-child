@@ -10,20 +10,15 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
-$header_container = get_theme_mod( 'inharmony_header_container_type' );
-if (! $header_container) {
-	$header_container = $container;
-}
+$container = get_theme_mod( 'understrap_container_type', 'container' );
+$header_container = get_theme_mod( 'inharmony_header_container_type', $container );
 
 $custom_header = get_custom_header();
-$header_placement = get_theme_mod( 'inharmony_header_placement', 'top' );
-$has_header_image = isset($custom_header->url) && $custom_header->url != '';
-$header_size = get_theme_mod( 'inharmony_header_image_size', 'cover' );
-$header_height = get_theme_mod( 'inharmony_header_image_height', '800px' );
+$has_header_image = !empty($custom_header->url);
+$header_placement = $has_header_image ? get_theme_mod( 'inharmony_header_placement', 'top' ) : 'top';
+$header_size = $has_header_image ? get_theme_mod( 'inharmony_header_image_size', 'cover' ) : 'cover';
+$header_height = $has_header_image ? get_theme_mod( 'inharmony_header_image_height', '800px' ) : '800px';
 
-$logo_placement = get_theme_mod( 'inharmony_logo_placement', 'left' );
-$menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
 
 $home_nav_style = '';
 if ( is_front_page() && is_home() ) {
@@ -39,6 +34,35 @@ $container_classes = array(
 );
 
 $post_title_decoration = get_theme_mod( 'inharmony_post_title_decoration', 'capitalize' );
+
+$show_widget_column = get_theme_mod( 'inharmony_header_show_widget_column', false );
+
+$logo_placement = get_theme_mod( 'inharmony_logo_placement', 'above' );
+$logo_alignment = get_theme_mod( 'inharmony_logo_alignment', 'center' );
+$logo_desktop_size = $logo_placement == 'inline' ? 'col-lg-2' : 'col-lg-12';
+
+
+$logo_classes = array(
+	'brand-col',
+	$logo_desktop_size,
+	'col-12',
+	'd-flex',
+	'justify-content-' . $logo_alignment,
+	'sz-' . get_theme_mod( 'inharmony_logo_size_desktop', 'md' ),
+);
+
+$menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
+$menu_margin_bottom = get_theme_mod( 'inharmony_menu_margin_bottom', '0' );
+$nav_col_classes = array(
+	'nav-col',
+	$show_widget_column ? 'col-lg-8' : 'col-lg-10',
+	'col-12',
+	'd-flex',
+	'justify-content-center',
+	'justify-content-md-' . $menu_align,
+	'mt-3',
+	'mb-' . $menu_margin_bottom,
+);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -69,7 +93,10 @@ $post_title_decoration = get_theme_mod( 'inharmony_post_title_decoration', 'capi
 <div class="site" id="page">
 <?php if ( !$home_hide_header ) : ?>
 	<header>
-<?php get_template_part( 'global-templates/header-menu' ); ?>
+<?php
+// This menu displays at the top of the page
+get_template_part( 'global-templates/header-menu' );
+?>
 <?php
 if ( $header_placement == "above" ) :
 	get_template_part( 'global-templates/custom-header', null, array(
@@ -89,7 +116,7 @@ endif;
 				</h2>
 
 				<div class="<?php echo join(' ', $container_classes) ?>">
-					<div class="brand-col col-lg-2 col-12 text-center">
+					<div class="<?php echo join(' ', $logo_classes); ?>">
 						<!-- Your site title as branding in the menu -->
 						<?php if ( ! has_custom_logo() ) { ?>
 
@@ -114,39 +141,39 @@ endif;
 						?>
 						<!-- end custom logo -->
 					</div>
-					<div class="nav-col col-lg-8 col-12 text-center mt-3">
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+					<div class="<?php echo join(' ', $nav_col_classes); ?>">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 
-					<!-- The WordPress Menu goes here -->
-					<?php
-					$menu_class = "navbar navbar-nav mt-3 mt-md-0 ms-auto me-auto";
-					switch ($menu_align) {
-						case 'left':
-							$menu_class .= ' ms-lg-0';
-							break;
-						case 'right':
-							$menu_class .= ' me-lg-0';
-							break;						
-						default:
-							$menu_class .= '';
-							break;
-					}
+						<!-- The WordPress Menu goes here -->
+						<?php
+						$menu_class = "navbar navbar-nav mt-3 mt-md-0 ms-auto me-auto";
+						switch ($menu_align) {
+							case 'left':
+								$menu_class .= ' ms-lg-0 flex-grow-0';
+								break;
+							case 'right':
+								$menu_class .= ' me-lg-0 flex-grow-0';
+								break;						
+							default:
+								$menu_class .= '';
+								break;
+						}
 
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => $menu_class,
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'depth'           => 2,
-							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-						)
-					);
-					?>
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								'container_class' => 'collapse navbar-collapse',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => $menu_class,
+								'fallback_cb'     => '',
+								'menu_id'         => 'main-menu',
+								'depth'           => 2,
+								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+							)
+						);
+						?>
 					</div>
 					<?php $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
 					<div class="<?php echo $widget_class; ?>">

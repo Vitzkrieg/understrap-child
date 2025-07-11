@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
 $section = 'inharmony_blog_layout_options';
 
 // Blog layout settings.
