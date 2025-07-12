@@ -96,3 +96,9 @@ $inharmonylife_custom_dir = 'functions/';
 foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_custom_dir . '*.php' ) as $file ) {
 	require_once $file;
 }
+
+$inharmonylife_custom_dir = 'client/';
+// Include client files.
+foreach ( glob( dirname( __FILE__ ) . '/' . $inharmonylife_custom_dir . '*.php' ) as $file ) {
+	require_once $file;
+}
