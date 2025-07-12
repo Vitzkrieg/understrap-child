@@ -1,0 +1,31 @@
+/*
+ * Variables
+ */
+
+
+/* Fonts */
+$ihk-josefin-font: 'Josefin Sans', sans-serif !default;
+$ihk-open-sans-font: 'Open Sans', 'Arial', sans-serif !default;
+
+
+
+
+$width-phone:       480px;
+$width-tablet:      560px;
+$width-desktop:     782px;
+$width-medium:      960px;
+$width-large:       1280px;
+$width-wide:        1300px;
+
+$width-phone-max:  calc($width-phone - 1px);
+$width-mobile-max:  calc($width-desktop - 1px);
+$width-not-large:  calc($width-large - 1px);
+
+$screen-phone: "screen and (max-width: " + $width-phone-max + ")";
+$screen-mobile: "screen and (max-width: " + $width-mobile-max + ")";
+$screen-desktop: "screen and (min-width: " + $width-desktop+ ")";
+$screen-medium: "screen and (min-width: " + $width-medium+ ")";
+$screen-only-medium: "only screen and (min-width: " + $width-desktop + ") and (max-width: " + $width-medium + ")";
+$screen-only-desktop: "only screen and (min-width: " + $width-tablet + ") and (max-width: " + $width-wide + ")";
+$screen-not-large: "screen and (max-width: " + $width-not-large + ")";
+$screen-large: "screen and (min-width: " + $width-large + ")";

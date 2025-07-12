@@ -1,0 +1,76 @@
+
+/* 
+ * Colors
+ */
+ :root {
+    /* months */
+    --ihk-may: #efd5cb;
+    --ihk-jun: #efbba4;
+    --ihk-nov: #efa17c;
+    --ihk-aug: #e3aa56; // hover / active color
+    --ihk-oct: #d6b22f;
+    --ihk-sep: #ad9f45;
+    --ihk-mar: #b8c190;
+    --ihk-apr: #c3e3db;
+    --ihk-jul: #82b3b4; // link / button color
+    --ihk-dec: #41828c;
+    --ihk-jan: #78939e;
+    --ihk-feb: #aea3b0;
+
+    /* cycles */
+    --ihk-seeds:        var(--ihk-aug);
+    --ihk-roots:        var(--ihk-mar);
+    --ihk-sprouts:      var(--ihk-jan);
+    --ihk-buds:         var(--ihk-feb);
+    --ihk-blooms:       var(--ihk-may);
+    --ihk-fruits:       var(--ihk-oct);
+    --ihk-twilights:    var(--ihk-jul);
+
+    /* seasons */
+    --ihk-spring:       #c5bf1f;
+    --ihk-summer:       #d899c5;
+    --ihk-autumn:       #dc8a30;;
+    --ihk-winter:       #3c71a0;
+
+    /* gray scale */
+    --ihk-white: #fff;
+    --ihk-gray-lt: #f7f7f7;
+    --ihk-gray: #a7a7a7;
+    --ihk-gray-med: #666;
+    --ihk-gray-dark: #333;
+    --ihk-black: #000;
+
+    /* months rbg */
+    --ihk-rgb-may: 239, 213, 203;
+    --ihk-rgb-jun: 239, 187, 164;
+    --ihk-rgb-nov: 239, 161, 124;
+    --ihk-rgb-aug: 227, 170, 86;
+    --ihk-rgb-oct: 214, 178, 47;
+    --ihk-rgb-sep: 173, 159, 69;
+    --ihk-rgb-mar: 184, 193, 144;
+    --ihk-rgb-apr: 195, 227, 219;
+    --ihk-rgb-jul: 130, 179, 180;
+    --ihk-rgb-dec: 65, 130, 140;
+    --ihk-rgb-jan: 120, 147, 158;
+    --ihk-rgb-feb: 174, 163, 176;
+
+    /* gray scale rgb */
+    --ihk-rgb-white: 255, 255, 255;
+    --ihk-rgb-gray-lt: 247, 247, 247;
+    --ihk-rgb-gray: 167, 167, 167;
+    --ihk-rgb-gray-med: 102, 102, 102;
+    --ihk-rgb-gray-dark: 51, 51, 51;
+    --ihk-rgb-black: 0, 0, 0;
+    --ihk-bg-opacity: 0.22;
+    --ihk-fg-opacity: 0.78;
+    --ihk-overlay: 0.5;
+    
+    /* HARMONY U */
+    --ihk-africa: #ff6875;
+    --ihk-east-asia: #ffbd77;
+    --ihk-west-asia: #eed24e;
+    --ihk-europe: #c5d483;
+    --ihk-north-america: #6cccce;
+    --ihk-south-america: #6f9acd;
+    --ihk-oceania: #a681bc;
+}

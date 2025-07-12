@@ -1,0 +1,9 @@
+body {
+    &.single {
+        #content {
+            .title {
+                padding-bottom: 24px;
+            }
+        }
+    }
+}

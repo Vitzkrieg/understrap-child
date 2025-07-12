@@ -1,0 +1,106 @@
+.home {
+
+    .superblockslider {
+        height: 75vh !important;
+        width: 100%;
+        max-height: 460px !important;
+    
+        .superblockslider__controls {
+            &.superblockslider__buttons {
+                .superblockslider__button {
+                    opacity: 1;
+
+                    span {
+                        border-radius: 50%;
+                        height: 16px;
+                        width: 16px;
+                        border: 2px solid var(--ihk-gray);
+                    }
+        
+                    &:nth-of-type(1) {
+                        span {
+                            border-color: var(--ihk-africa);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-africa);
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        span {
+                            border-color: var(--ihk-east-asia);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-east-asia);
+                            }
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        span {
+                            border-color: var(--ihk-west-asia);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-west-asia);
+                            }
+                        }
+                    }
+                    &:nth-of-type(4) {
+                        span {
+                            border-color: var(--ihk-europe);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-europe);
+                            }
+                        }
+                    }
+                    &:nth-of-type(5) {
+                        span {
+                            border-color: var(--ihk-north-america);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-north-america);
+                            }
+                        }
+                    }
+                    &:nth-of-type(6) {
+                        span {
+                            border-color: var(--ihk-south-america);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-south-america);
+                            }
+                        }
+                    }
+                    &:nth-of-type(7) {
+                        span {
+                            border-color: var(--ihk-oceania);
+                        }
+                        &:hover, &.superblockslider__button--active {
+                            span {
+                                background-color: var(--ihk-oceania);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .inner-blocks {
+            overflow: hidden;
+            
+            .wp-block-column {
+                &:nth-of-type(2) {
+                    @media #{$screen-mobile} {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

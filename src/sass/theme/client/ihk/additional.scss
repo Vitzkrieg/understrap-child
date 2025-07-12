@@ -1,0 +1,81 @@
+
+
+
+
+.wp-block-kadence-advancedbtn.white .kt-btn-wrap .button {
+	border-color: #fff;	
+}
+
+.wp-block-kadence-advancedbtn.white  .kt-btn-wrap .kt-btn-inner-text {
+	color: #fff;	
+}
+
+/* cover block link text */
+.wp-block-cover a {
+	color: #fff;
+	font-weight: normal;
+}
+
+.wp-block-cover a:hover {
+	color: #fff;
+	font-weight: bold;
+}
+
+/* row layout block */
+@media only screen and (min-width: $width-tablet) and (max-width: $width-wide) {
+	#content .kt-row-column-wrap.kt-row-layout-equal.kt-has-5-columns {
+		display: block;
+		text-align: center;
+	}
+  #content .kt-row-column-wrap.kt-row-layout-equal.kt-has-5-columns .wp-block-kadence-column {
+		display: inline-block;
+		max-width: 360px;
+		width: 50%;
+		padding: 0;
+		margin: 0 10px 40px;
+		flex: none;
+  	}
+}
+
+@media only screen and (min-width: 1006px) {
+	  #content .kt-row-column-wrap.kt-row-layout-equal.kt-has-4-columns .wp-block-kadence-column {
+		flex-grow: 2;
+	}
+	  #content .kt-row-column-wrap.kt-row-layout-equal.kt-has-4-columns .wp-block-kadence-column.kvs-md-false.kvs-sm-false {
+		flex-grow: 1;
+	}
+}
+
+/* footer logo */
+#footer .footer-logo img {
+	max-width:150px;
+}
+
+
+/* Events */
+@media only screen and (max-width: 479px) {
+	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+		width: 96% !important;
+	}
+	.container {
+		width:100%;
+	}
+}
+
+body .event-tickets .tribe-tickets__rsvp-attendance {
+	display: none;
+}
+
+.tribe-tickets__rsvp-availability-quantity {
+	display: flex;
+	font-size: var(--tec-font-size-7);
+}
+
+:root {
+	--tec-color-icon-focus: var(--ihk-dec);
+	--tec-color-event-icon-hover: var(--ihk-dec);
+	--tec-color-accent-primary: var(--ihk-dec);
+	--tec-color-accent-primary-hover: var(--ihk-dec);
+	--tec-color-accent-primary-active: var(--ihk-dec);
+	--tec-color-link-accent-hover: var(--ihk-dec);
+}

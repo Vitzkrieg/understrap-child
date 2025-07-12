@@ -1,0 +1,31 @@
+.single.single-bulletins {
+    header.title {
+        border-bottom: 1px dashed var(--ihk-gray-dark);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .ihk-bulletins-title {
+        font-size: 44px;
+        font-weight: 300;
+        text-transform: none;
+    }
+    .ihk-bulletins--subtitle {
+        font-size: 17px;
+    }
+
+    &.has-parent {
+
+        .ihk-bulletins-title {
+            font-size: 22px;
+            margin-bottom: 26px
+        }
+        .ihk-bulletins--subtitle {
+            font-size: 44px;
+            font-weight: 300;
+        }
+        .ihk-bulletins-class-date {
+            font-size: 17px;
+        }
+    }
+}

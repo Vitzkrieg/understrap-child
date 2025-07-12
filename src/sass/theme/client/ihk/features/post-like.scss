@@ -1,0 +1,108 @@
+
+.post-like-container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    z-index: 9;
+
+    > div {
+        min-height: 33px;
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        > div {
+            a {
+                color: var(--ihk-gray-dark);
+                background-color: var(--ihk-white);
+            }
+        }
+    }
+    .qtip {
+        width: 33px;
+        overflow: hidden;
+        text-align: center;
+    }
+    i {
+        font-size: 22px;
+    }
+    span {
+        &.label {
+            display: inline-block;
+            width: fit-content;
+            height: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 3px 0;
+        }
+    }
+    a {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 2em;
+        width: fit-content;
+        align-items: center;
+        &:hover, &.disabled {
+            overflow: visible;
+            .qtip {
+                overflow: visible;
+            }
+            .label {
+                height: fit-content;
+                overflow: visible;
+                padding: 3px 7px;
+                background-color: var(--ihk-white);
+            }
+            i {
+                color: var(--ihk-jul);
+
+                &.fa-solid {
+                    color: var(--ihk-jul);
+                }
+            }
+        }
+        &.disabled {
+            pointer-events: none!important;
+            cursor: not-allowed!important;
+            i {
+                &:before {
+                    color: var(--ihk-gray)!important;
+                }
+            }
+        }
+    }
+
+    @media only #{$screen-medium} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        flex-direction: column;
+
+        > div {
+            height: 2em;
+            width: 33px;
+            justify-content: flex-start;
+        }
+        .qtip {
+            padding-right: 7px;
+        }
+        span {
+            &.label {
+                width: 0;
+                height: fit-content;
+                transition: 0.2s ease-out;
+            }
+        }
+        a {
+            flex-direction: row;
+            align-items: flex-end;
+            &:hover, &.disabled {
+                .label {
+                    width: fit-content;
+                    padding: 3px 7px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+/* Fonts */
+.josephinsans {
+    font-family: $ihk-josefin-font;
+    font-size: 26px;
+    line-height: 1.2em;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+    font-family: $ihk-josefin-font;
+}
+
+body h1, body h2 {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+/* Copy */
+body h1, .ihk-heading-1, .page-title {
+    font-size: 44px;
+}
+body h1 {
+    text-transform: uppercase;
+}
+.ihk-heading-1, .page-title {
+    font-weight: 300!important;
+}
+body h2 {
+    font-size: 33px;
+    margin-top: 0.5em
+}
+body h3, body h4 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+body h3 {
+    font-weight: 400;
+}
+body h4 {
+    font-weight: 300;
+}
+
+.ihk-subheading-1 {
+    font-size: 33px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.page-title {
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+
+    h1 {
+        padding: 0;
+        margin: 0;
+        line-height: 1em;
+    }
+}
+
+a {
+    color: var(--ihk-jul);
+    &:hover, &:active {
+        color: var(--ihk-aug);
+    }
+    &.disabled {
+        pointer-events: none!important;
+        color: var(--ihk-gray);
+    }
+}
+
+@media #{$screen-mobile} {
+    body h4 {
+        font-weight: 500;
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,150 @@
+
+/* button hover background */
+.button:hover {
+	background-color: var(--ihk-dec)!important;
+}
+
+
+/*
+ * Page content
+ */
+
+#page-wrap {
+    padding: 50px 0;
+}
+
+
+#content {
+    min-height: calc(100vh - 567px);
+    
+    @media only screen and (max-width: 782px) {
+        min-height: calc(100vh - 422px);
+    }
+        
+
+    .wp-block-quote { // <blockquote>
+        padding: 10px 40px 10px;
+        font-weight: normal;
+        p {
+            font-weight: normal;
+        }
+    }
+
+    > .wp-block-kadence-column {
+        &:last-of-type {
+            .wp-block-columns {
+                margin-bottom: 0; // remove margin from last column block
+            }
+        }
+    }
+
+    &.skinny {
+        max-width: 785px;
+    }
+}
+
+#header {
+    &.header8 {
+        .logo {
+            padding: 20px 0 0 0;
+        }
+        #navigation-block {
+            .search-and-open {
+                width: 15%;
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+#navigation-block {
+    .search-and-open {
+
+        a {
+            color: var(--ihk-gray-dark);
+            font-size: unset;
+            
+            &:visited {
+                color: var(--ihk-gray-dark);
+            }
+        }
+        i {
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    .account-link {
+        a {
+            i {
+                font-size: 15px;
+                line-height: 15px;
+            }
+        }
+
+        &.logged-in {
+            a {
+                color: var(--ihk-sep);
+                &:visited {
+                    color: var(--ihk-sep);
+                }
+            }
+        }
+    }
+
+    .menu-item {
+        .sub-menu {
+            .menu-item {
+                a {
+                    &:hover, &:active {
+                        &:before {
+                            border-color: var(--ihk-jul);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    #navigation {
+        .logged-in {
+            display: none;
+        }
+    }
+    &.logged-in {
+        #navigation {
+            .logged-in {
+                display: inline-block;
+            }
+            .not-logged-in {
+                display: none;
+            }
+        }
+    }
+}
+
+.has-background {
+    padding: 22px;
+}
+
+a,
+input[type="submit"],
+.button,
+.error-button,
+button[type="submit"],
+#content .tnp-subscription input.tnp-submit,
+#content .woocommerce #respond input#submit {
+    &.membership {
+        color: var(--ihk-gray-dark);
+        background-color: var(--ihk-white);
+        border: 1px solid var(--ihk-gray-dark);
+    
+        &:hover, &:active {
+            color: var(--ihk-white) !important;
+            background-color: var(--ihk-sep) !important;
+            border-color: var(--ihk-sep) !important;
+        }
+    }
+}

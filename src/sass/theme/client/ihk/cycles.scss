@@ -1,0 +1,93 @@
+.ihk-home-cycles {
+
+    .kt-blocks-carousel {
+
+        .splide__track {
+            margin-bottom: 20px;
+        }
+
+        ul.splide__pagination {
+            bottom: -30px;
+
+            li {
+                width: 40px;
+                
+                button {
+                    &.splide__pagination__page {
+                        height: 16px;
+                        width: 16px;
+                        border: 2px solid var(--ihk-gray);
+                        background: none;
+                        box-shadow: none;
+                        opacity: 1;
+                    }
+                }
+        
+                &:nth-of-type(1) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-seeds);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-seeds);
+                        }
+                    }
+                }
+                &:nth-of-type(2) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-roots);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-roots);
+                        }
+                    }
+                }
+                &:nth-of-type(3) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-sprouts);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-sprouts);
+                        }
+                    }
+                }
+                &:nth-of-type(4) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-buds);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-buds);
+                        }
+                    }
+                }
+                &:nth-of-type(5) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-blooms);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-blooms);
+                        }   
+                    }
+                }
+                &:nth-of-type(6) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-fruits);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-fruits);
+                        }
+                    }
+                }
+                &:nth-of-type(7) {
+                    button.splide__pagination__page {
+                        border-color: var(--ihk-twilights);
+
+                        &:hover, &.is-active {
+                            background-color: var(--ihk-twilights);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

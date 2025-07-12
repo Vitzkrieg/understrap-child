@@ -1,0 +1,66 @@
+/* IHK Category */
+
+.archive {
+    #content {
+        header {
+            &.page-title {
+                margin-bottom: 60px;
+                margin-top: 0;
+            }
+    
+            .tax-icon-wrap {
+                height: 100px;
+    
+                .tax-icon {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            p {
+                @extend .ihk-heading-1;
+                font-size: 33px;
+            }
+    
+            &.title {
+                text-align: center;
+            }
+        }
+
+        h2 {
+            text-align: left;
+        }
+        h3 {
+            text-align: center;
+            font-weight: 300;
+            text-transform: uppercase;
+            padding: 10px;
+        }
+    }
+    #tax-posts {
+        flex-wrap: wrap;
+    }
+    .post {
+        padding-right: 10px;
+    }
+    
+    #page-wrap-blog {
+        padding: 50px 0;
+    }
+
+    .post-content-block {
+        padding: 0 5px;
+
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+.tax-icon-wrap {
+    height: 100px;
+
+    .tax-icon {
+        height: 100%;
+        width: auto;
+    }
+}

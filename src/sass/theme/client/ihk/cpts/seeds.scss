@@ -1,0 +1,127 @@
+$seed: '.seed';
+
+.single-seeds {
+
+    .post-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 7px;
+        margin-bottom: 17px
+    }
+
+    .seed-scientific-name {
+        text-align: center;
+        font-size: 22px;
+        font-style: italic;
+    }
+
+    .seed-cover {
+
+        &-inner {
+            overflow: hidden;
+            position: relative;
+            max-width: 400px;
+            max-height: 600px;
+            margin: 0 auto;
+
+            .post-img {
+                padding: 33px;
+            }
+        }
+
+        @media only #{$screen-mobile} {
+            margin-bottom: 22px;
+
+            // &-inner {
+            //     position: absolute;
+            //     top: 44px;
+            //     left: 50%;
+            //     transform: translateX(-50%);
+            //     width: auto;
+            //     min-width: 90%;
+            //     clear: both;
+            // }
+        }
+    }
+
+
+    .seed-author {
+        font-size: 22px;
+
+    }
+
+    header {
+        margin-bottom: 44px;
+    }
+
+    .seed-info {
+        margin-bottom: 44px;
+    }
+
+    #{$seed} {
+        &-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 44px;
+        }
+        &-list {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 44px;
+        }
+        &-item {
+            padding: 0;
+            flex-basis: 44%;
+            max-width: 50%;
+
+            a {
+                display: block;
+                padding: 3px 7px;
+                text-align: center;
+                color: var(--ihk-gray-dark);
+                background-color: var(--ihk-white);
+                border: 1px solid var(--ihk-gray-dark);
+
+                &:hover, &:active {
+                    color: var(--ihk-white);
+                    background-color: var(--ihk-dec);
+                    border-color: var(--ihk-dec);
+                }
+            }
+        }
+
+        &-type {
+            background-color: var(--ihk-gray-lt);
+            flex-basis: 30%;
+
+            p {
+                text-align: center;
+                margin-bottom: 7px;
+            }
+        }
+
+        @media only #{$screen-mobile} {
+            &-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            &-type {
+                flex-basis: 100%;
+            }
+            &-item {
+                align-self: center;
+                min-width: 44%;
+            }
+        }
+    }
+}

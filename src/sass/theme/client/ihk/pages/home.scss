@@ -1,0 +1,243 @@
+/* Home Page */
+
+body.home {
+
+    #content {
+        > .kb-row-layout-wrap {
+            margin: 0 15%;
+
+            @media only #{$screen-not-large} {
+                margin: 0 5%;
+            }
+            > .kt-row-column-wrap {
+                > .wp-block-kadence-column {
+                    @media #{$screen-mobile} {
+                        max-width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    h1 {
+        font-size: 33px;
+        color: var(--ihk-white);
+        text-align: center;
+    }
+
+    .gutslider{
+        &-content {
+            &-inner {
+                * {
+                    color: var(--ihk-white);
+                    text-align: center;
+                }
+            }
+            &-position {
+                justify-content: center;
+                min-height: 400px;
+            }
+        }
+        &-title {
+            font-size: 44px;
+            font-weight: 300;
+            line-height: 1.1em;
+        }
+        &-description {
+            font-size: 33px;
+            font-weight: 400;
+            line-height: 1.1em;
+        }
+    }
+
+    .ihk-info-overlay {
+        .wp-block-kadence-infobox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            align-content: center;
+
+            .kt-blocks-info-box-link-wrap {
+                background: none;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        overflow: hidden;
+        min-height: 250px;
+        max-height: 400px;
+        justify-content: center;
+
+        h3 {
+            font-weight: 700;
+        }
+
+        &:hover {
+            figure {
+                img {
+                    transform: scale(1.1);
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .wp-block-cover {
+        .wp-block-cover__inner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            p {
+                height: 100%;
+                width: 100%;
+                display: flex;
+
+                a {
+                    align-items: center;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+
+    .ihk-home-seasons {
+        .ihk-info-overlay {
+            border-style: solid;
+            border-width: 7px;
+
+            &:nth-of-type(1) {
+                border-color: var(--ihk-spring);
+                color: var(--ihk-spring);
+            }
+            &:nth-of-type(2) {
+                border-color:  var(--ihk-summer);
+                color: var(--ihk-summer);
+            }
+            &:nth-of-type(3) {
+                border-color: var(--ihk-autumn);
+                color: var(--ihk-autumn);
+            }
+            &:nth-of-type(4) {
+                border-color: var(--ihk-winter);
+                color: var(--ihk-winter);
+            }
+
+            .kt-inside-inner-col {
+                height: 100%;
+
+                & > * {
+                    height: 100%;
+                }
+
+                img {
+                    min-height: 100%;
+                    min-width: 100%;
+
+                    @media #{$screen-mobile} {
+                        min-width: auto;
+                    }
+                }
+            }
+            
+            .wp-block-kadence-infobox {
+                .kt-blocks-info-box-text {
+                    color: var(--ihk-gray-dark);
+                }
+            }
+        
+            figure {
+                opacity: 0;
+            }
+            
+            &:hover {
+                figure {
+                    opacity: 1;
+                }
+
+                .wp-block-kadence-infobox {
+                    opacity: 0;
+                }
+            }
+
+            @media #{$screen-mobile} {
+
+                .wp-block-kadence-column {
+                    min-height: 320px;
+                    max-height: 400px;
+                    margin-bottom: 0!important;
+                }
+
+                figure {
+                    margin-top: -33%;
+                }
+
+                .kadence-info-box-image-inner-intrisic-container {
+                    .kadence-info-box-image-intrisic {
+                        height: auto;
+                        padding: 0;
+
+                        img {
+                            width: auto;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+            @media #{$screen-phone} {
+                figure {
+                    margin-top: -11%;
+                }
+            }
+        }
+    }
+
+    .ihk-home-cycles {
+        .wp-block-kadence-infobox {
+            height: 100%;
+            .kt-infobox-textcontent {
+                text-align: center;
+            }
+            .kt-blocks-info-box-link-wrap {
+                height: 100%;
+
+                @media #{$screen-mobile} {
+                   display: flex;
+                   flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .ihk-home-subject {
+        .wp-block-heading {
+            font-weight: 400;
+        }
+    }
+}
+
+span.has-background-dim:not([class*="-background-color"]) {
+    background-color: var(--ihk-gray-dark) !important;
+    opacity: 0.5;
+    display: block;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,129 @@
+.pms {
+    &-account-navigation {
+        width: 30%;
+        float: left;
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        ul {
+            list-style: none;
+            display: block!important;
+            width: fit-content;
+            li.pms-account-navigation-link {
+                padding: 0 10px;
+                margin: 10px 0;
+                a {
+                    border-bottom: 1px dashed var(--ihk-feb)!important;
+                    width: 100%;
+                    display: inline-block;
+                    color: var(--ihk-gray-dark);
+                    padding: 5px 0;
+                    font-weight: 400;
+                    &:before {
+                        content: "";
+                        width: 1px;
+                        height: 100%;
+                        border-left: 2px solid transparent!important;
+                        border-left-color: transparent;
+                        position: absolute;
+                        left: 0px;
+                        top: 0;
+                    }
+                    &.pms-account-navigation-link--active {
+                        box-shadow: none!important;
+                        &:before {
+                            border-left-color: var(--ihk-feb)!important;
+                        }
+                    }
+                    &:hover, &:active {
+                        color: var(--ihk-jul);
+                        box-shadow: none!important;
+                        &:before {
+                            border-left-color: var(--ihk-jul)!important;
+                        }
+                    }
+                }
+                :last-child {
+                    a {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+        @media #{$screen-phone} {
+            display: block;
+            float: none;
+            width: 100%;
+            ul {
+                width: 100%;
+            }
+            li.pms-account-navigation-link {
+                width: 100%;
+                a {
+                    width: 100%;
+                }
+            }
+        }
+
+        + table {
+            width: 70%;
+            float: right;
+            @media #{$screen-phone} {
+                width: 100%;
+                float: none;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &-form-fields-wrapper {
+        list-style: none;
+        
+        label {
+            font-weight: 600;
+            color: var(--ihk-gray-dark);
+            margin-bottom: 5px;
+            background-color: var(--ihk-white);
+        };
+    }
+    
+    &-form .beehive, .wppb-user-forms .beehive {
+        display: none;
+    }
+    &-subscription-plans-discount-messages-loading {
+        display: none;
+    }
+
+    &-account-subscription-details-table {
+        @media #{$screen-phone} {
+            display: block;
+            border-color: var(--ihk-gray-lt);
+            * {
+                display: block;
+            }
+
+            td {
+                &:first-child {
+                    background-color: var(--ihk-gray-lt);
+                }
+            }
+        }
+        
+        &__actions {
+            .pms-account-subscription-action-link {
+                padding-right: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+                border-right: 1px solid var(--ihk-gray-lt);
+
+                &:last-child {
+                    border-right: none;
+                }
+                @media #{$screen-phone} {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
