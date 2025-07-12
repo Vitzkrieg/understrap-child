@@ -13,6 +13,10 @@ if ( !defined( 'SCRIPT_DEBUG' ) ) {
 	define( 'SCRIPT_DEBUG', is_local() );
 }
 
+if ( !defined( 'THEME_URL' ) ) {
+	define( 'THEME_URL', get_stylesheet_directory_uri() );
+}
+
 
 /**
  * Load the child theme's text domain
