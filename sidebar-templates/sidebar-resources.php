@@ -1,13 +1,25 @@
 <?php
 
 /**
- * Sidebar for Resouces page
- * 
- * $link_base = string
- * $fields = array
- * $fieldKeys = array
- * $selections = array
- * $single_tax = string
+ * Sidebar for Resources page
+ *
+ * @package understrap-child
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
+
+/**
+ * Sidebar for Resources page
+ * @param array $args
+ * Optional. Arguments for the sidebar.
+ * @type string $link_base Base URL for the filter form action.
+ * @type array $fields Array of fields for the filter form.
+ * @type array $fieldKeys Array of field keys for the filter form.
+ * @type array $selections Array of selected filter values.
+ * @type string $single_tax The single taxonomy for the filter form.
+ * @var string $link_base Base URL for the filter form action
  */
 extract($args);
 
@@ -79,7 +91,7 @@ $isSidebar = true;
 
         if (!empty($terms) && !is_wp_error($terms)) {
             echo '<div class="filter-selector">';
-            echo '<h3 class="filter-title"><span>' . ucwords($key) . '</span><i class="la la-location-arrow"></i></h3>';
+            echo '<h3 id="' . esc_attr($key) . '-label" class="filter-title"><span>' . ucwords($key) . '</span><i class="la la-location-arrow"></i></h3>';
             $term_size = 0;
             foreach ($terms as $term) {
                 // Check if term is excluded
@@ -92,7 +104,7 @@ $isSidebar = true;
             if ($term_size == 0) {
                 continue;
             }
-            echo '<select name="' . $key . '" id="' . $key . '" multiple size="' . $term_size . '">';
+            echo '<select name="' . $key . '" id="' . $key . '" multiple size="' . $term_size . '" aria-labelledby="' . $key . '-label" class="form-control filter-select">';
             foreach ($terms as $term) {
                 // Check if term is excluded
                 if ( in_array($term->slug, $exclude_slugs) ) {
