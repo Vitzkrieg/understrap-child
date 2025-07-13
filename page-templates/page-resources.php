@@ -54,6 +54,10 @@ foreach ($query as $param) {
 	}
 }
 
+// Enqueue the scripts and styles
+wp_enqueue_script( 'owl-carousel' );
+wp_enqueue_style( 'owl-carousel' );
+
 get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );
@@ -65,7 +69,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-            <div class="col-md-4 widget-area" id="left-sidebar">
+            <aside class="col-md-2 widget-area" id="left-sidebar">
 
 			    <?php get_template_part( 'sidebar-templates/sidebar', 'resources', array(
                     'link_base' => $link_base,
@@ -76,9 +80,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                 ) );
                 ?>
 
-            </div><!-- #resources-sidebar -->
+            </aside><!-- #resources-sidebar -->
 
-			<div class="col-md-8 content-area" id="primary">
+			<div class="col-md-10 content-area" id="primary">
 
                 <main class="site-main" id="main">
 

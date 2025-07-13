@@ -24,6 +24,7 @@
     #post-slider-blog-books {
         .post-slider-item {
             .post-img-block {
+                position: relative;
                 border: 1px solid var(--ihk-gray-dark);
                 padding: 6px;
             }

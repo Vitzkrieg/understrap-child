@@ -1,47 +1,57 @@
-#content {
-    .wp-block-buttons {
-        .wp-block-button {
+
+.wp-block-buttons {
+    .wp-block-button {
+
+        &.is-style-outline {
+            .wp-block-button__link {
+                color: var(#{--bs-btn-color});
+                border-width: 1px;
+                border-color: var(#{--bs-button-color});
     
-            &.is-style-outline {
-                .wp-block-button__link {
-                    color: var(#{--bs-btn-color});
+                &:hover,
+                &:focus {
+                    color: var(#{--bs-primary});
                     border-width: 1px;
-                    border-color: var(#{--bs-button-color});
-        
-                    &:hover,
-                    &:focus {
-                        color: var(#{--bs-primary});
-                        border-width: 1px;
-                        border-color: var(#{--bs-primary});
-                        box-shadow: none;
-                        //margin: -1px; //keep button from moving - diff in border thickness
-                    }
+                    border-color: var(#{--bs-primary});
+                    box-shadow: none;
+                    //margin: -1px; //keep button from moving - diff in border thickness
                 }
             }
+        }
+
+        &.is-style-fill {
+            .wp-block-button__link {
+                color: var(#{--bs-btn-color});
+                background-color: var(#{--bs-button-color});
+                border-color: var(#{--bs-button-color-hover});
     
-            &.is-style-fill {
-                .wp-block-button__link {
-                    color: var(#{--bs-btn-color});
-                    background-color: var(#{--bs-button-color});
-                    border-color: var(#{--bs-button-color-hover});
-        
-                    &:hover,
-                    &:focus {
-                        background-color: var(#{--bs-button-color-hover});
-                        box-shadow: none;
-                    }
+                &:hover,
+                &:focus {
+                    background-color: var(#{--bs-button-color-hover});
+                    box-shadow: none;
                 }
             }
         }
     }
+}
 
+a {
+    &.wp-element-button {
+        @extend .text-light;
+    }
+
+    &:hover, &:focus {
+        box-shadow: none;
+    }
+}
+
+.kb-button, .kt-button {
+    color: var(--bs-btn-color);
+    background-color: var(--bs-button-color);
+}
+
+.wp-block-cover {
     a {
-        &.wp-element-button {
-            @extend .text-light;
-        }
-
-        &:hover, &:focus {
-            box-shadow: none;
-        }
+        color: var(--bs-btn-color)
     }
 }

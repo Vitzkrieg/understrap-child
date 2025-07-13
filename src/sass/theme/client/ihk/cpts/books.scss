@@ -134,14 +134,12 @@ body.tax-book-authors {
 
 .family-read-aloud {
     border: 7px solid var(--ihk-jul)!important;
-    padding: 0!important;
-    overflow: hidden;
 
     &:after {
         content: "Read Aloud";
         position: absolute;
-        top: 12px;
-        right: -36px;
+        top: 14px;
+        right: -40px;
         transform: rotate(45deg);
         background: var(--ihk-jul);
         padding: 7px 33px;
@@ -154,7 +152,8 @@ body.tax-book-authors {
     bottom: 7px;
     left: 7px;
     width: 100px;
-    height: 100PX;
+    height: 100px;
+    margin-bottom: 0;
 }
 
 #blog-posts-page {

@@ -11,22 +11,16 @@
  */
 extract($args);
 
-if ( !isset($link_base) || empty($link_base) ) {
-    $link_base = get_permalink();
-}
-if ( !isset($fields) || empty($fields) ) {
-    $fields = ihk_get_resources_fields();
-}
-if ( !isset($fieldKeys) || empty($fieldKeys) ) {
-    $fieldKeys = array_keys($fields);
-}
-if ( !isset($selections) || empty($selections) ) {
+$link_base = $link_base ?? get_permalink();
+$fields = $fields ?? ihk_get_resources_fields();
+$fieldKeys = $fieldKeys ?? array_keys($fields);
+$single_tax = $single_tax ?? null;
+
+$selections = $selections ?? array();
+// Check if the selections array is empty
+if ( !is_array($selections) ) {
     $selections = array();
 }
-if ( !isset($single_tax) || empty($single_tax) ) {
-    $single_tax = null;
-}
-
 $hasFilters = !empty( $selections );
 
 $sidebar_name = 'malina_sticky_sidebar' . ( is_archive() ? '_archive' : '' );
@@ -150,7 +144,7 @@ $isSidebar = true;
         }
     }
 
-    echo '<br /><input type="submit" value="' . __('Filter', 'ihk') . '" />';
+    echo '<br /><input type="submit" value="' . __('Filter', 'ihk') . '" class="btn btn-primary form-control rounded-0" />';
     echo '</form>';
     echo '</div>';
 

@@ -33,18 +33,18 @@ function ihk_enqueue_scripts_styles()
 	wp_dequeue_script( 'mep-calendar-scripts' );
 	wp_register_script( 'ihk-calendar-scripts', IHK_JS_DIR.'/partial/calendar.js', array('jquery', 'mep-moment-js'), 1, true );
 
+	wp_register_script( 'owl-carousel', IHK_JS_DIR.'/owl.carousel.min.js', array('jquery'), '2.3.4', true );
+
 	/* ------------------------------------------------------------------------ */
 	/* Register Stylesheets */
 	/* ------------------------------------------------------------------------ */
 	wp_register_style( 'child-stylesheet', IHK_CSS_DIR.'/ihk.min.css', array(), IHK_VERSION, 'all' ); // Main Stylesheet
 	wp_enqueue_style( 'child-stylesheet' );
 	
-	wp_dequeue_style( 'line-awesome' );
 	wp_enqueue_style( 'ihk-line-awesome', IHK_URL . '/framework/fonts/line-awesome/css/line-awesome.min.css', array(), '2.0', 'all' );
-	
-	wp_dequeue_style( 'malina-font-awesome' );
 	wp_enqueue_style( 'ihk-malina-font-awesome', IHK_URL . '/framework/fonts/font-awesome/css/all.min.css', array(), ' 6.6.0', 'all' );
 
+	wp_register_style( 'owl-carousel', IHK_URL . '/framework/css/owl.carousel.css', array(), '2.3.4', 'all' );
 	/* ------------------------------------------------------------------------ */
 	/* AJAX */
 	/* ------------------------------------------------------------------------ */
