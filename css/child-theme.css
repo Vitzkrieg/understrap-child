@@ -16432,16 +16432,17 @@ header .navbar-toggler .navbar-toggler-icon {
   text-transform: capitalize;
 }
 
-#content a {
+a {
   text-decoration: none;
   box-shadow: none;
   color: rgba(var(--bs-link-color-rgb), 1);
 }
-#content a:hover, #content a:focus {
+a:hover, a:focus {
   box-shadow: 0px -1.5px 0px 0px var(--bs-link-color) inset;
   color: rgba(var(--bs-link-color-rgb), 0.8);
 }
-#content .menu-item a:hover, #content .menu-item a:focus {
+
+.menu-item a:hover, .menu-item a:focus {
   box-shadow: none;
   color: inherit;
 }
@@ -17586,6 +17587,19 @@ h1, .h1, .single-tribe_events .site-main .tribe-events-single-event-title, h2, .
 .single-tribe_events .site-main .tribe-common .tribe-events-calendar-day__time-separator-text,
 .tribe-common .single-tribe_events .site-main .tribe-events-calendar-day__time-separator-text, .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text *, .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text *, h3, .h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name .h3, .single-tribe_events .site-main .tribe-block__organizer__details h3, .single-tribe_events .site-main .tribe-block__organizer__details .h3, h4, .h4 {
   font-family: "Josefin Sans", sans-serif;
+  color: var(--bs-headings-color);
+}
+h1 a, .h1 a, .single-tribe_events .site-main .tribe-events-single-event-title a, h2 a, .h2 a, .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__all-day a,
+.single-tribe_events .site-main .tribe-events-schedule__separator a,
+.single-tribe_events .site-main .tribe-events-schedule__timezone a,
+.single-tribe_events .site-main .tribe-events-schedule__time a,
+.single-tribe_events .site-main .tribe-block__organizer__header h2 a,
+.single-tribe_events .site-main .tribe-block__venue__header h2 a,
+.single-tribe_events .site-main h2 a,
+.single-tribe_events .site-main .h2 a, .single-tribe_events .site-main h2.tribe-events-schedule__datetime * a, .tribe-common .tribe-events-calendar-day__time-separator-text a,
+.single-tribe_events .site-main .tribe-common .tribe-events-calendar-day__time-separator-text a,
+.tribe-common .single-tribe_events .site-main .tribe-events-calendar-day__time-separator-text a, h3 a, .h3 a, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name h3 a, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name .h3 a, .single-tribe_events .site-main .tribe-block__organizer__details h3 a, .single-tribe_events .site-main .tribe-block__organizer__details .h3 a, h4 a, .h4 a {
+  color: var(--bs-headings-color);
 }
 
 body h1, body .h1, body .single-tribe_events .site-main .tribe-events-single-event-title, .single-tribe_events .site-main body .tribe-events-single-event-title, body h2, body .h2, body .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__all-day, .single-tribe_events .site-main .tribe-events-schedule__date body .tribe-events-schedule__all-day,
@@ -17733,6 +17747,7 @@ body h1, body .h1, body .single-tribe_events .site-main .tribe-events-single-eve
 
 body h1, body .h1, body .single-tribe_events .site-main .tribe-events-single-event-title, .single-tribe_events .site-main body .tribe-events-single-event-title {
   text-transform: uppercase;
+  margin-bottom: 0.4rem;
 }
 
 .ihk-heading-1, .archive #content header p, .page-title {
@@ -17873,19 +17888,22 @@ body .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datet
 body .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header *,
 .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header body * {
   font-size: 33px;
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 body h3, body .h3, body .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name body h3, body .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name .h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name body .h3, body .single-tribe_events .site-main .tribe-block__organizer__details h3, .single-tribe_events .site-main .tribe-block__organizer__details body h3, body .single-tribe_events .site-main .tribe-block__organizer__details .h3, .single-tribe_events .site-main .tribe-block__organizer__details body .h3, body h4, body .h4 {
-  font-size: 22px;
   letter-spacing: 1px;
 }
 
 body h3, body .h3, body .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name body h3, body .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name .h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name body .h3, body .single-tribe_events .site-main .tribe-block__organizer__details h3, .single-tribe_events .site-main .tribe-block__organizer__details body h3, body .single-tribe_events .site-main .tribe-block__organizer__details .h3, .single-tribe_events .site-main .tribe-block__organizer__details body .h3 {
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
 }
 
 body h4, body .h4 {
+  font-size: 22px;
   font-weight: 300;
 }
 

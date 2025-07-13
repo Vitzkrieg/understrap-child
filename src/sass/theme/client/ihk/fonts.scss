@@ -8,6 +8,10 @@
 
 h1, h2, h3, h4 {
     font-family: $ihk-josefin-font;
+    color: var(--bs-headings-color);
+    a {
+        color: var(--bs-headings-color);
+    }
 }
 
 body h1, body h2 {
@@ -22,22 +26,26 @@ body h1, .ihk-heading-1, .page-title {
 }
 body h1 {
     text-transform: uppercase;
+    margin-bottom: 0.4rem;
 }
 .ihk-heading-1, .page-title {
     font-weight: 300!important;
 }
 body h2 {
     font-size: 33px;
-    margin-top: 0.5em
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 body h3, body h4 {
-    font-size: 22px;
     letter-spacing: 1px;
 }
 body h3 {
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 0.3rem
 }
 body h4 {
+    font-size: 22px;
     font-weight: 300;
 }
 
