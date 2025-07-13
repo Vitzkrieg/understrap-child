@@ -149,16 +149,9 @@ if (($post_style == 'style_1' || $post_style == 'style_4') || $pagination == 'tr
 <article <?php post_class($article_style); ?> id="post-<?php the_ID(); ?>">
 
     <?php
-        inharmony_get_page_header();
+        inharmony_get_title( 'article' );
     ?>
 
-    <header class="post-content entry-header">
-        <?php
-        $title_tag_open = '<h1 class="'. $title_style . '">';
-        $title_tag_close = '</h1>';
-        the_title( $title_tag_open, $title_tag_close );
-        ?>
-    </header>
 <div class="resources-list">
 <?php
 

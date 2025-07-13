@@ -67,9 +67,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
+        <?php
+            inharmony_get_title( 'above' );
+        ?>
+
 		<div class="row">
 
-            <aside class="col-md-2 widget-area" id="left-sidebar">
+            <aside class="col-md-3 col-xl-2 widget-area" id="left-sidebar">
 
 			    <?php get_template_part( 'sidebar-templates/sidebar', 'resources', array(
                     'link_base' => $link_base,
@@ -82,7 +86,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
             </aside><!-- #resources-sidebar -->
 
-			<div class="col-md-10 content-area" id="primary">
+			<div class="col-md-9 col-xl-10 content-area" id="primary">
 
                 <main class="site-main" id="main">
 
