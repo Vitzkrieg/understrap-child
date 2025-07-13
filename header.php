@@ -55,7 +55,7 @@ $menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
 $menu_margin_bottom = get_theme_mod( 'inharmony_menu_margin_bottom', '0' );
 $nav_col_classes = array(
 	'nav-col',
-	$show_widget_column ? 'col-lg-8' : 'col-lg-10',
+	$show_widget_column ? 'col-lg-10' : 'col-lg-12',
 	'col-12',
 	'd-flex',
 	'justify-content-center',
