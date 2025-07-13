@@ -295,10 +295,11 @@ add_action( 'wp_head', 'ihk_preload_fonts', 1 );
 
 function ihk_preload_fonts() : void {
 	// Preload fonts
+	$domain = get_site_url();
 	?>
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Open+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Bad+Script:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" as="font" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="https://inharmonykids.com/wp-content/themes/malina-ihk/framework/fonts/line-awesome/fonts/la-regular-400.woff2" as="font" type="font/woff2" crossorigin onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="https://inharmonykids.com/wp-content/themes/malina-ihk/framework/fonts/line-awesome/fonts/la-solid-900.woff2" as="font" type="font/woff2" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="<?php echo esc_url( $domain ); ?>/wp-content/themes/malina-ihk/framework/fonts/line-awesome/fonts/la-regular-400.woff2" as="font" type="font/woff2" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="<?php echo esc_url( $domain ); ?>/wp-content/themes/malina-ihk/framework/fonts/line-awesome/fonts/la-solid-900.woff2" as="font" type="font/woff2" crossorigin onload="this.onload=null;this.rel='stylesheet'">
 	<link rel="preload" href="https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2" as="font" type="font/woff2" crossorigin onload="this.onload=null;this.rel='stylesheet'">
 	<link rel="preload" href="https://fonts.gstatic.com/s/josefinsans/v32/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2" as="font" type="font/woff2" crossorigin onload="this.onload=null;this.rel='stylesheet'">
 	<?php
