@@ -81,7 +81,7 @@ add_action( 'wp_head', function() {
 
 function preload_filter( $html, $handle ) {
 	// Add the preload attribute
-	$html = str_replace( "rel='stylesheet", "rel='preload stylesheet' as='style'", $html );
+	$html = str_replace( "rel='stylesheet", "rel='preload stylesheet' as='style", $html );
 
 	return $html;
 }
