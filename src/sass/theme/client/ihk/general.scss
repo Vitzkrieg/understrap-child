@@ -43,21 +43,19 @@
     }
 }
 
-#header {
-    &.header8 {
-        .logo {
-            padding: 20px 0 0 0;
-        }
-        #navigation-block {
-            .search-and-open {
-                width: 15%;
-                padding-right: 5px;
-            }
+#main-nav {
+    .logo {
+        padding: 20px 0 0 0;
+    }
+    .nav-col  {
+        .search-and-open {
+            width: 15%;
+            padding-right: 5px;
         }
     }
 }
 
-#navigation-block {
+.nav-col {
     .search-and-open {
 
         a {
@@ -108,18 +106,22 @@
 }
 
 body {
-    #navigation {
-        .logged-in {
-            display: none;
+    header {
+        nav {
+            .logged-in {
+                display: none;
+            }
         }
     }
     &.logged-in {
-        #navigation {
-            .logged-in {
-                display: inline-block;
-            }
-            .not-logged-in {
-                display: none;
+        header {
+            nav {
+                .logged-in {
+                    display: inline-block;
+                }
+                .not-logged-in {
+                    display: none;
+                }
             }
         }
     }

@@ -17976,46 +17976,46 @@ a.disabled {
   max-width: 785px;
 }
 
-#header.header8 .logo {
+#main-nav .logo {
   padding: 20px 0 0 0;
 }
-#header.header8 #navigation-block .search-and-open {
+#main-nav .nav-col .search-and-open {
   width: 15%;
   padding-right: 5px;
 }
 
-#navigation-block .search-and-open a {
+.nav-col .search-and-open a {
   color: var(--ihk-gray-dark);
   font-size: unset;
 }
-#navigation-block .search-and-open a:visited {
+.nav-col .search-and-open a:visited {
   color: var(--ihk-gray-dark);
 }
-#navigation-block .search-and-open i {
+.nav-col .search-and-open i {
   font-size: 20px;
   line-height: 20px;
 }
-#navigation-block .account-link a i {
+.nav-col .account-link a i {
   font-size: 15px;
   line-height: 15px;
 }
-#navigation-block .account-link.logged-in a {
+.nav-col .account-link.logged-in a {
   color: var(--ihk-sep);
 }
-#navigation-block .account-link.logged-in a:visited {
+.nav-col .account-link.logged-in a:visited {
   color: var(--ihk-sep);
 }
-#navigation-block .menu-item .sub-menu .menu-item a:hover:before, #navigation-block .menu-item .sub-menu .menu-item a:active:before {
+.nav-col .menu-item .sub-menu .menu-item a:hover:before, .nav-col .menu-item .sub-menu .menu-item a:active:before {
   border-color: var(--ihk-jul);
 }
 
-body #navigation .logged-in {
+body header nav .logged-in {
   display: none;
 }
-body.logged-in #navigation .logged-in {
+body.logged-in header nav .logged-in {
   display: inline-block;
 }
-body.logged-in #navigation .not-logged-in {
+body.logged-in header nav .not-logged-in {
   display: none;
 }
 

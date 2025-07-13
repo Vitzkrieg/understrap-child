@@ -159,6 +159,12 @@ function ihk_get_resources_fields() {
 
 add_filter( 'body_class', 'ihk_body_classes' );
 function ihk_body_classes( $classes ) {
+
+	if ( is_user_logged_in()) {
+		$classes[] = 'logged-in';
+	} else {
+		$classes[] = 'not-logged-in';
+	}
 	
 	if ( $parent = get_post_parent() ) {
 		$classes[] = 'has-parent';
