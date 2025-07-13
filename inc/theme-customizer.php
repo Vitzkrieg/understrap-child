@@ -118,6 +118,8 @@ function inharmony_custom_colors() {
 	$button_bg_rgb = inharmony_HexToRGB( $button_bg_hex );
 	$button_bg_hover_hex = get_theme_mod( 'inharmony_color_buttons_bg_hover', '#82b3b4');
 	$button_bg_hover_rgb = inharmony_HexToRGB( $button_bg_hover_hex );
+	$nav_link_color = get_theme_mod( 'inharmony_nav_link_color', '#333');
+	$nav_link_hover_color = get_theme_mod( 'inharmony_nav_link_hover_color', '#82b3b4');
 
 	echo "<style id='inharmony-theme-css' type='text/css'>";
 	echo ":root {";
@@ -125,6 +127,9 @@ function inharmony_custom_colors() {
 		echo "--bs-primary-rgb: $primary_rgb !important;";
 		echo "--bs-secondary: $secondary_hex !important;";
 		echo "--bs-secondary-rgb: $secondary_rgb !important;";
+		echo "--bs-navbar-color: $nav_link_color !important;";
+		echo "--bs-navbar-hover-color: $nav_link_hover_color !important;";
+		echo "--bs-nav-link-color: $nav_link_color !important;";
 		echo "--bs-headings-color: $title_hex !important;";
 		echo "--bs-body-color: $body_hex !important;";
 		echo "--bs-link-color: $link_hex !important;";
@@ -137,7 +142,21 @@ function inharmony_custom_colors() {
 		echo "--tec-color-button-primary: $button_bg_hex !important;";
 		echo "--tec-color-button-primary-hover: $button_bg_hex !important;";
 	echo "}";
+	echo ".navbar-nav {";
+		echo "--bs-nav-link-color: $nav_link_color !important;";
+		echo "--bs-nav-link-hover-color: $nav_link_hover_color !important;";
+	echo "}";
 	echo "</style>";
 }
 
-add_action('wp_head', 'inharmony_custom_colors');
+add_action('wp_head', 'inharmony_custom_colors', 100);
+
+function inharmony_menu_classes($classes, $item, $args) {
+  if($args->theme_location == 'primary') {
+	$px_md = get_theme_mod('inharmony_menu_item_margin_medium', '2');
+	$px_lg = get_theme_mod('inharmony_menu_item_margin_large', '3');
+    $classes[] = 'px-md-' . $px_md . ' px-lg-' . $px_lg;
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'inharmony_menu_classes', 1, 3);

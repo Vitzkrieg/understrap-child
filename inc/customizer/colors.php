@@ -17,6 +17,16 @@ inharmony_add_color_setting($section,
     'Secondary Color'
 );
 inharmony_add_color_setting($section,
+    'inharmony_nav_link_color',
+    '',
+    'Nav Link Color'
+);
+inharmony_add_color_setting($section,
+    'inharmony_nav_link_hover_color',
+    '',
+    'Nav Link Hover Color'
+);
+inharmony_add_color_setting($section,
     'inharmony_color_title',
     '',
     'Title Text Color'

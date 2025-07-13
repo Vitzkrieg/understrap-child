@@ -16347,10 +16347,6 @@ header #header-menu-container {
 header .navbar {
   padding: 0 0.75em;
 }
-header .navbar#main-menu .nav-link {
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-}
 header .navbar-toggler {
   position: relative;
   display: inline-block;
@@ -16455,6 +16451,11 @@ a:hover, a:focus {
 }
 .wp-block-quote cite {
   font-size: 1em;
+}
+
+.menu-item a:hover, .menu-item a:focus {
+  box-shadow: none;
+  color: var(--bs-nav-link-hover-color);
 }
 
 .btn.btn-outline-primary, .tribe-common .tribe-common-c-btn,

@@ -35,12 +35,21 @@ $bg_opacity_choices = array(
     '100'   => '100'
 );
 $bs_spacers = array(
-    '0'    => '0',
-    '1'    => '1',
-    '2'    => '2',
-    '3'    => '3',
-    '4'    => '4',
-    '5'    => '5'
+    '0'    => 'None',
+    '1'    => 'Small',
+    '2'    => 'Medium',
+    '3'    => 'Large',
+    '4'    => 'X-Large',
+    '5'    => 'XX-Large'
+);
+
+
+$bs_sizes = array(
+    'sm'    => 'Small',
+    'md'    => 'Medium',
+    'lg'    => 'Large',
+    'xl'    => 'X-Large',
+    'xxl'   => 'XX-Large'
 );
 
 
@@ -67,4 +76,10 @@ $bs_flex_choices = array(
     'column-reverse-center'     => __( 'Column Reverse Center', 'inharmony' ),
     'column-reverse-end'        => __( 'Column Reverse End', 'inharmony' ),
     'column-reverse-start'      => __( 'Column Reverse Start', 'inharmony' ),
+); 
+
+$bs_flex_align = array(
+    'start'                 => __( 'Start', 'inharmony' ),
+    'center'                => __( 'Center', 'inharmony' ),
+    'end'                   => __( 'End', 'inharmony' ),
 ); 

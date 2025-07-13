@@ -21,13 +21,15 @@ $headerClass = $isSidebar ? 'sidebar-title' : 'page-title';
     />
 </figure>
 <?php endif; ?>
+<?php if ( !empty($term_name)) : ?>
 <?php if ($isSidebar ) : ?>
-    <h3><?php echo esc_attr($term_name); ?></h3>
+    <h2><?php echo esc_attr($term_name); ?></h2>
 <?php else : ?>
     <h1><?php echo esc_attr($term_name); ?></h1>
 <?php endif; ?>
 <?php if( $term_description ) : ?>
 <p><?php echo esc_html($term_description); ?></p>
+<?php endif; ?>
 <?php endif; ?>
 </header>
 <?php

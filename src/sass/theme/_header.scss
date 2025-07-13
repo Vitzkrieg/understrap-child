@@ -53,13 +53,6 @@ header {
 
     .navbar {
         padding: 0 $navbar-padding-x;
-
-        &#main-menu {
-            .nav-link {
-                padding-right: 1.5em;
-                padding-left: 1.5em;
-            }
-        }
     }
 
     .navbar-toggler {

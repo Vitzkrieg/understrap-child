@@ -72,13 +72,9 @@ inharmony_add_select_setting($section,
     'md',
     'Logo Size',
     '',
-    array(
-        'sm'     => __( 'Small', 'inharmonylife' ),
-        'md'     => __( 'Medium', 'inharmonylife' ),
-        'lg'     => __( 'Large', 'inharmonylife' ),
-        'xl'     => __( 'Extra Large', 'inharmonylife' ),
+    array_merge($bs_sizes , array(
         'custom' => __( 'Custom', 'inharmonylife' ),
-    )
+    ))
 );
 
 inharmony_add_text_setting($section,
@@ -99,12 +95,7 @@ inharmony_add_select_setting($section,
     'left',
     'Logo Size - Mobile',
     '',
-    array(
-        'small'     => __( 'Small', 'inharmonylife' ),
-        'medium'    => __( 'Medium', 'inharmonylife' ),
-        'large'     => __( 'Large', 'inharmonylife' ),
-        'xlarge'    => __( 'Extra Large', 'inharmonylife' ),
-    )
+    $bs_sizes 
 );
 
 inharmony_add_select_setting($section,
@@ -112,11 +103,23 @@ inharmony_add_select_setting($section,
     'center',
     'Menu Alignment',
     '',
-    array(
-        'flex-start'   => __( 'Left', 'inharmonylife' ),
-        'center'       => __( 'Center', 'inharmonylife' ),
-        'flex-end'     => __( 'Right', 'inharmonylife' ),
-    )
+    $bs_flex_align
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_menu_item_margin_large',
+    '3',
+    'Menu Item Margin - Large',
+    '',
+    $bs_spacers
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_menu_item_margin_medium',
+    '2',
+    'Menu Item Margin - Medium',
+    '',
+    $bs_spacers
 );
 
 inharmony_add_select_setting($section,
@@ -124,14 +127,7 @@ inharmony_add_select_setting($section,
     '0',
     'Menu Margin Bottom',
     '',
-    array(
-        '0'   => __( 'No Margin', 'inharmonylife' ),
-        '1'   => __( 'X-Small Margin', 'inharmonylife' ),
-        '2'   => __( 'Small Margin', 'inharmonylife' ),
-        '3'   => __( 'Medium Margin', 'inharmonylife' ),
-        '4'   => __( 'Large Margin', 'inharmonylife' ),
-        '5'   => __( 'X-Large Margin', 'inharmonylife' ),
-    )
+    $bs_spacers
 );
 
 inharmony_add_checkbox_setting($section,
