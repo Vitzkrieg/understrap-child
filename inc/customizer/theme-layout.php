@@ -149,6 +149,18 @@ inharmony_add_checkbox_setting($section,
 );
 
 
+inharmony_add_select_setting($section,
+    'inharmony_title_position',
+    'article',
+    'Title Position',
+    '',
+    array(
+        'article'     => __( 'In Content', 'inharmonylife' ),
+        'above'       => __( 'Above Content', 'inharmonylife' ),
+    )
+);
+
+
 inharmony_add_checkbox_setting($section,
     'inharmony_hide_entry_header[all]',
     false,

@@ -43,3 +43,20 @@ function inharmony_visually_hide_entry_header() {
 }
 
 add_action( 'wp_head', 'inharmony_visually_hide_entry_header' );
+
+
+function inharmony_get_title($position = 'article') {
+    $title_position = get_theme_mod( 'inharmony_title_position', 'article' );
+
+    if ( $title_position != $position ) {
+        return;
+    }
+
+    echo "<header class=\"post-content entry-header\">";
+
+    $title_tag_open = '<h1 class="'. $title_style . '">';
+    $title_tag_close = '</h1>';
+    the_title( $title_tag_open, $title_tag_close );
+
+    echo "</header>";
+}

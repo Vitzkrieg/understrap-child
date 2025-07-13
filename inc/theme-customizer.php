@@ -110,6 +110,7 @@ function inharmony_custom_colors() {
 	$secondary_hex = get_theme_mod( 'inharmony_color_secondary', '#82b3b4');
 	$secondary_rgb = inharmony_HexToRGB( $secondary_hex );
 	$body_hex = get_theme_mod( 'inharmony_color_body', '#333');
+	$title_hex = get_theme_mod( 'inharmony_color_title', '#333');
 	$link_hex = get_theme_mod( 'inharmony_color_links', '#78939e');
 	$link_rgb = inharmony_HexToRGB( $link_hex );
 	$button_text_hex = get_theme_mod( 'inharmony_color_buttons_text', '#fff');
@@ -124,6 +125,7 @@ function inharmony_custom_colors() {
 		echo "--bs-primary-rgb: $primary_rgb !important;";
 		echo "--bs-secondary: $secondary_hex !important;";
 		echo "--bs-secondary-rgb: $secondary_rgb !important;";
+		echo "--bs-headings-color: $title_hex !important;";
 		echo "--bs-body-color: $body_hex !important;";
 		echo "--bs-link-color: $link_hex !important;";
 		echo "--bs-link-color-rgb: $link_rgb !important;";

@@ -17,6 +17,11 @@ inharmony_add_color_setting($section,
     'Secondary Color'
 );
 inharmony_add_color_setting($section,
+    'inharmony_color_title',
+    '',
+    'Title Text Color'
+);
+inharmony_add_color_setting($section,
     'inharmony_color_body',
     $color_grey_dark,
     'Body Text Color'
@@ -44,11 +49,6 @@ inharmony_add_color_setting($section,
 
 
 
-inharmony_add_color_setting($section,
-    'inharmony_color_picker_1',
-    '',
-    'Color Picker Option 1'
-);
 inharmony_add_color_setting($section,
     'inharmony_color_picker_2',
     '',
