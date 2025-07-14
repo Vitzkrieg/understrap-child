@@ -20,9 +20,6 @@ function understrap_body_classes( $classes ) {
 
     // Adds a body class based on the presence of a sidebar.
     $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
-    debug_log( array(
-        'understrap_sidebar_position' => $sidebar_pos,
-    ) );
     if ( is_page_template(
         array(
             'page-templates/fullwidthpage.php',
@@ -54,9 +51,6 @@ function understrap_body_classes( $classes ) {
 
 
 add_filter( 'theme_mod_understrap_sidebar_position', function( $position ) {
-    debug_log( array(
-        'theme_mod_understrap_sidebar_position' => $position,
-    ) );
     if ( is_page_template( 'page-templates/page-resources.php' ) ) {
         return 'left';
     }

@@ -151,12 +151,15 @@ function inharmony_custom_colors() {
 
 add_action('wp_head', 'inharmony_custom_colors', 100);
 
-function inharmony_menu_classes($classes, $item, $args) {
-  if($args->theme_location == 'primary') {
-	$px_md = get_theme_mod('inharmony_menu_item_margin_medium', '2');
-	$px_lg = get_theme_mod('inharmony_menu_item_margin_large', '3');
-    $classes[] = 'px-md-' . $px_md . ' px-lg-' . $px_lg;
+function inharmony_menu_classes($classes, $item, $args, $depth) {
+
+  if ( $args->theme_location == 'primary' ) {
+	if ( $depth == 0 ) {
+		$px_md = get_theme_mod('inharmony_menu_item_margin_medium', '2');
+		$px_lg = get_theme_mod('inharmony_menu_item_margin_large', '3');
+		$classes[] = 'px-md-' . $px_md . ' px-lg-' . $px_lg;
+	}
   }
   return $classes;
 }
-add_filter('nav_menu_css_class', 'inharmony_menu_classes', 1, 3);
+add_filter('nav_menu_css_class', 'inharmony_menu_classes', 1, 4);

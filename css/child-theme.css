@@ -18672,11 +18672,6 @@ ul.selected-filters-list li {
 .filter-selector.toggle.closed select {
   height: 0;
 }
-@starting-style {
-  .filter-selector.toggle.closed select {
-    height: 0;
-  }
-}
 .filter-selector.toggle.closed .selected-filters-list {
   display: block;
 }
@@ -19903,6 +19898,39 @@ body.tax-book-authors .label-date {
     display: none;
   }
 }
+.dropdown-menu {
+  --bs-dropdown-border-color: var(--ihk-gray-lt);
+  --bs-dropdown-border-radius: 0;
+  --bs-dropdown-item-padding-x: 0;
+  --bs-dropdown-font-size: 0.75em;
+  --bs-dropdown-link-hover-bg: transparent;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+  --bs-nav-link-hover-color: var(--ihk-jul);
+}
+.dropdown-menu .menu-item {
+  position: relative;
+}
+.dropdown-menu .dropdown-item {
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.dropdown-menu .dropdown-item:before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: transparent;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  pointer-events: none;
+}
+.dropdown-menu .dropdown-item:hover:before {
+  border-left-color: var(--bs-nav-link-hover-color);
+}
+
 /*
  * Plugins
  */
