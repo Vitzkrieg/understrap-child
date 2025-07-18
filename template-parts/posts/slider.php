@@ -13,15 +13,15 @@ if( empty($posts_array) ) {
 
 // $slideshow = get_theme_mod('malina_home_slider_slideshow','true') || 'true';
 $slideshow = 'false';
-// $loop = get_theme_mod('malina_home_slider_loop','false');
-// $loop = false; // Force loop to false for now
+// $slider_loop = get_theme_mod('malina_home_slider_loop','false');
+// $slider_loop = false; // Force loop to false for now
 // $sliderwidth = get_theme_mod('malina_home_slider_width', 'fullwidth');
 $sliderwidth = 'fullwidth'; // Force slider width to fullwidth
 // $style = get_theme_mod('malina_home_slider_style', 'center');
 $style = 'three_per_row'; // Force slider style
 $description_style = 'style_1';
 $nav = 'false';
-$loop = ($loop) ? 'true' : 'false';
+$slider_loop = !empty($slider_loop) ? 'true' : 'false';
 // $overlay = get_theme_mod('malina_home_slider_overlay', 1);
 $overlay = 1; // Force overlay to 1
 $show_date = false;
@@ -44,7 +44,7 @@ if( $style == 'center' ){
 	$center = 'true';
 	$items = '2';
 	$margin = '25';
-	$loop = 'true';
+	$slider_loop = 'true';
 	$nav = 'true';
 	$centerClass = 'post-slider-center';
 	if($sliderwidth == 'container'){
@@ -54,7 +54,7 @@ if( $style == 'center' ){
 	$center = 'true';
 	$items = '2';
 	$margin = '0';
-	$loop = 'true';
+	$slider_loop = 'true';
 	$nav = 'true';
 	$overlay = !$show_date;
 	// $thumbsize = 'malina-masonry';
@@ -121,7 +121,7 @@ $owl_custom = 'jQuery(document).ready(function($){
 				navText: [\'<i class="la la-arrow-left"></i>\',\'<i class="la la-arrow-right"></i>\'],
 				autoplay: '.$slideshow.',
 				responsiveClass:true,
-				loop: '.$loop.',
+				loop: '.$slider_loop.',
 				smartSpeed: 450,
 				autoHeight: false,
 				autoWidth:'.$center.',
