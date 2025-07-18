@@ -66,6 +66,7 @@ $nav_col_classes = array(
 	'mt-3',
 	'mb-' . $menu_margin_bottom,
 );
+$nav_col_classes = apply_filters( 'understrap_nav_col_classes', $nav_col_classes );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -144,6 +145,7 @@ endif;
 						?>
 						<!-- end custom logo -->
 					</div>
+					<?php // .nav-col ?>
 					<div class="<?php echo join(' ', $nav_col_classes); ?>">
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 							<span class="navbar-toggler-icon"></span>
@@ -178,9 +180,13 @@ endif;
 						);
 						?>
 					</div>
-					<?php $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
-					<div class="<?php echo $widget_class; ?>">
-					</div>
+					<?php // $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
+					<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
+						<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-lg-2"] ); ?>
+						<div class="<?php echo join(' ', $widget_classes); ?>">
+							<?php dynamic_sidebar( 'header-widget' ); ?>
+						</div>
+					<?php endif; ?>
 				</div><!-- .container -->
 			</nav><!-- .site-navigation -->
 		</div><!-- #wrapper-navbar end -->

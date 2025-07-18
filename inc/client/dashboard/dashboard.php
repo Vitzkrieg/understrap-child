@@ -157,3 +157,21 @@ function ihk_get_post_like_labels() {
 		'updating' => esc_html__('Updating', 'ihk'),
 	);
 }
+
+add_filter('understrap_nav_col_classes', 'ihk_dashboard_nav_col_classes');
+
+function ihk_dashboard_nav_col_classes($classes) {
+	if (!is_ihk_dashboard_page()) {
+		return $classes;
+	}
+	$classes[] = 'd-none';
+	return $classes;
+}
+
+add_filter('inharmony_header_widget_class', 'ihk_dashboard_header_widget_class');
+function ihk_dashboard_header_widget_class($classes) {
+	if (is_ihk_dashboard_page()) {
+		return ['widget-col', 'col-12'];
+	}
+	return $classes;
+}
