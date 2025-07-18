@@ -45,7 +45,7 @@ function inharmony_visually_hide_entry_header() {
 add_action( 'wp_head', 'inharmony_visually_hide_entry_header' );
 
 
-function inharmony_get_title($position = 'article') {
+function inharmony_get_title($position = 'article', $title_style = 'entry-title') {
     $title_position = get_theme_mod( 'inharmony_title_position', 'article' );
 
     if ( $title_position != $position ) {
