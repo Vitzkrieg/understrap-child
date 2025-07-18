@@ -2,7 +2,7 @@
 /**
  * Template: displays header search, account, cart icons
  */
-?><div class="search-and-open">
+?><div class="search-and-open d-flex justify-content-around align-items-center">
     <?php debug_log(array(
         'show_search' => get_theme_mod('inharmony_header_search_button', false) ? 'true' : 'false',
         'show_cart' => get_theme_mod('inharmony_header_shopping_cart', false) ? 'true' : 'false',
@@ -14,14 +14,7 @@
         </div>
     <?php } ?>
     <button data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link d-block d-lg-none"><i class="la la-bars"></i></button>
-    <?php if( get_theme_mod('inharmony_header_shopping_cart', false) && class_exists('WooCommerce') ) { ?>
-        <div class="cart-main menu-item cart-contents">
-            <a class="my-cart-link" href="<?php echo wc_get_cart_url(); ?>" title="<?php echo esc_attr_e( 'Shopping Cart', 'inharmonylife' ); ?>"><i class="la la-shopping-cart"></i>
-                <span class="cart-contents-count"></span>
-            </a>
-        </div>
-    <?php } ?>
-    <?php if( class_exists('WooCommerce') ) {
+    <?php if ( class_exists('WooCommerce') ) {
         $title = "Login";
         $classes = array(
             'account-link',
@@ -34,6 +27,13 @@
         <div class="<?php echo implode(' ', $classes); ?>">
             <a href="<?php echo $account_link; ?>" class="my-account" title="<?php echo $title; ?>"><i class="<?php echo $icon; ?>"></i></a>
         </div>
+        <?php if ( get_theme_mod('inharmony_header_shopping_cart', false) ) { ?>
+        <div class="cart-main menu-item cart-contents">
+            <a class="my-cart-link" href="<?php echo wc_get_cart_url(); ?>" title="<?php echo esc_attr_e( 'Shopping Cart', 'inharmonylife' ); ?>"><i class="la la-shopping-cart"></i>
+                <span class="cart-contents-count"></span>
+            </a>
+        </div>
+        <?php } ?>
     <?php } ?>
     <?php
         $nav_mobile_classes = array(

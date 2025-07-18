@@ -18113,14 +18113,6 @@ a.disabled {
   max-width: 785px;
 }
 
-#main-nav .logo {
-  padding: 20px 0 0 0;
-}
-#main-nav .nav-col .search-and-open {
-  width: 15%;
-  padding-right: 5px;
-}
-
 .nav-col .search-and-open a {
   color: var(--ihk-gray-dark);
   font-size: unset;

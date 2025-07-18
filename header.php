@@ -179,14 +179,14 @@ endif;
 							)
 						);
 						?>
+						<?php // $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
+						<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
+							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-lg-2"] ); ?>
+							<div class="<?php echo join(' ', $widget_classes); ?>">
+								<?php dynamic_sidebar( 'header-widget' ); ?>
+							</div>
+						<?php endif; ?>
 					</div>
-					<?php // $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
-					<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
-						<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-lg-2"] ); ?>
-						<div class="<?php echo join(' ', $widget_classes); ?>">
-							<?php dynamic_sidebar( 'header-widget' ); ?>
-						</div>
-					<?php endif; ?>
 				</div><!-- .container -->
 			</nav><!-- .site-navigation -->
 		</div><!-- #wrapper-navbar end -->

@@ -37,6 +37,8 @@ function ihk_enqueue_scripts_styles()
 	wp_dequeue_script( 'mep-calendar-scripts' );
 	wp_register_script( 'ihk-calendar-scripts', IHK_JS_DIR.'/partial/calendar.js', array('jquery', 'mep-moment-js'), 1, true );
 
+	wp_dequeue_style( 'line-awesome' );
+	wp_enqueue_style( 'ihk-line-awesome', IHK_URL . '/framework/fonts/line-awesome/css/line-awesome.min.css', array(), '2.0', 'all' );
 	/* ------------------------------------------------------------------------ */
 	/* AJAX */
 	/* ------------------------------------------------------------------------ */

@@ -304,3 +304,8 @@ function ihk_preload_fonts() : void {
 	<link rel="preload" href="https://fonts.gstatic.com/s/josefinsans/v32/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2" as="font" type="font/woff2" crossorigin>
 	<?php
 }
+
+
+add_action( 'wp_head', function() {
+	include IHK_DIR . '/template-parts/header/search-bar.php';
+} );
