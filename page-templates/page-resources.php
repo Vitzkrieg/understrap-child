@@ -68,7 +68,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <?php
-            inharmony_get_title( 'above' );
+            inharmony_get_title( 'above', 'page-title' );
         ?>
 
 		<div class="row">
@@ -93,7 +93,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <?php
                     while ( have_posts() ) {
                         the_post();
-                        get_template_part( 'loop-templates/content', 'resources' );
+                        get_template_part( 'loop-templates/content', 'resources', array(
+							'link_base' => $link_base,
+							'fields' => $fields,
+							'fieldKeys' => $fieldKeys,
+							'selections' => $selections,
+							'single_tax' => $single_tax,
+						) );
                     }
                     ?>
 

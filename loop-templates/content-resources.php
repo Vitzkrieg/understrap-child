@@ -132,6 +132,8 @@ $out = '';
 $post_style = get_theme_mod('malina_archive_style', 'style_1');
 $excerpt_count = get_theme_mod('malina_archive_excerpt_count','17');
 
+$article_style = 'row g-0';
+
 
 if ($post_style == 'style_4'){
     $thumbsize = 'malina-masonry';
