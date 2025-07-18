@@ -7,3 +7,4 @@ require_once('plugins/index.php');
 require_once('dashboard/index.php');
 require_once('ajax/index.php');
 require_once('settings/index.php');
+require_once('shortcodes/index.php');
