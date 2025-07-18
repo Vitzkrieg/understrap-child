@@ -137,6 +137,18 @@ inharmony_add_checkbox_setting($section,
     ''
 );
 
+inharmony_add_checkbox_setting($section,
+    'inharmony_header_shopping_cart',
+    false,
+    'Show Shopping Cart',
+);
+
+inharmony_add_checkbox_setting($section,
+    'inharmony_header_search_button',
+    false,
+    'Show Search Button',
+);
+
 
 inharmony_add_checkbox_setting($section,
     'inharmony_enable_comments',
