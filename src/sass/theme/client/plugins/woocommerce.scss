@@ -5,8 +5,19 @@
 }
 
 
-#content {
+.entry-content {
     .woocommerce {
+        display: flex;
+        flex-wrap: wrap;
+
+        .woocommerce-table {
+            @extend .table;
+        }
+
+        .u-column1.col-1 {
+            @extend .col-12;
+        }
+
         ul.products {
             li.product {
                 

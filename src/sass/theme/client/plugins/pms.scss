@@ -67,6 +67,7 @@
         }
 
         + table {
+            @extend .table;
             width: 70%;
             float: right;
             @media #{$screen-phone} {
