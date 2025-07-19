@@ -58,8 +58,7 @@ $nav_col_classes = array(
 	$show_widget_column ? 'col-lg-10' : 'col-lg-12',
 	'col-12',
 	'd-flex',
-	'flex-column',
-	'flex-md-row',
+	'flex-row',
 	'align-items-center',
 	'justify-content-center',
 	'justify-content-md-' . $menu_align,
@@ -136,7 +135,7 @@ endif;
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-			<nav id="main-nav" class="navbar navbar-expand-md navbar-light" aria-labelledby="main-nav-label">
+			<nav id="main-nav" class="navbar navbar-expand-lg navbar-light" aria-labelledby="main-nav-label">
 
 				<h2 id="main-nav-label" class="sr-only">
 					<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -204,7 +203,7 @@ endif;
 						?>
 						<?php // $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
 						<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
-							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-lg-2"] ); ?>
+							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-12","col-lg-2"] ); ?>
 							<div class="<?php echo join(' ', $widget_classes); ?>">
 								<?php dynamic_sidebar( 'header-widget' ); ?>
 							</div>

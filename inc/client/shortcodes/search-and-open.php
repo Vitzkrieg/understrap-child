@@ -13,7 +13,6 @@
             <a href="javascript:void(0);" class="search-button" title="Open Search" rel="nofollow"><i class="la la-search"></i></a>
         </div>
     <?php } ?>
-    <button data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link d-block d-lg-none"><i class="la la-bars"></i></button>
     <?php if ( class_exists('WooCommerce') ) {
         $title = "Login";
         $classes = array(
