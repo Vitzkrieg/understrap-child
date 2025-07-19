@@ -52,18 +52,21 @@ $logo_classes = array(
 );
 
 $menu_align = get_theme_mod( 'inharmony_menu_align' , 'center' );
-$menu_margin_bottom = get_theme_mod( 'inharmony_menu_margin_bottom', '0' );
+$menu_margin_bottom_mobile = get_theme_mod( 'inharmony_menu_margin_bottom_mobile', '0' );
+$menu_margin_bottom_desktop = get_theme_mod( 'inharmony_menu_margin_bottom_desktop', '0' );
+
 $nav_col_classes = array(
 	'nav-col',
+	$show_widget_column ? 'col-9' : 'col-12',
 	$show_widget_column ? 'col-lg-10' : 'col-lg-12',
-	'col-12',
 	'd-flex',
 	'flex-row',
 	'align-items-center',
 	'justify-content-center',
 	'justify-content-md-' . $menu_align,
 	'mt-3',
-	'mb-' . $menu_margin_bottom,
+	'mb-' . $menu_margin_bottom_mobile,
+	'mb-md-' . $menu_margin_bottom_desktop,
 );
 $nav_col_classes = apply_filters( 'understrap_nav_col_classes', $nav_col_classes );
 ?>
@@ -100,6 +103,7 @@ $nav_col_classes = apply_filters( 'understrap_nav_col_classes', $nav_col_classes
 // This menu displays at the top of the page
 get_template_part( 'global-templates/header-menu' );
 ?>
+<?php if ( get_theme_mod('inharmony_header_search_button', false) ) { ?>
 <div class="search-area modal" tabindex="-1">
 	<div class="modal-dialog modal-fullscreen">
 		<div class="modal-content">
@@ -123,6 +127,7 @@ get_template_part( 'global-templates/header-menu' );
 		</div>
 	</div>
 </div>
+<?php } ?>
 <?php
 if ( $header_placement == "above" ) :
 	get_template_part( 'global-templates/custom-header', null, array(
@@ -169,7 +174,7 @@ endif;
 					</div>
 					<?php // .nav-col ?>
 					<div class="<?php echo join(' ', $nav_col_classes); ?>">
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+						<button class="navbar-toggler col-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 
@@ -203,7 +208,7 @@ endif;
 						?>
 						<?php // $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
 						<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
-							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-12","col-lg-2"] ); ?>
+							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-12","col-lg-2","col-xl-1"] ); ?>
 							<div class="<?php echo join(' ', $widget_classes); ?>">
 								<?php dynamic_sidebar( 'header-widget' ); ?>
 							</div>

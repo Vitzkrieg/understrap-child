@@ -123,9 +123,17 @@ inharmony_add_select_setting($section,
 );
 
 inharmony_add_select_setting($section,
-    'inharmony_menu_margin_bottom',
-    '0',
-    'Menu Margin Bottom',
+    'inharmony_menu_margin_bottom_desktop',
+    '4',
+    'Menu Margin Bottom - Desktop',
+    '',
+    $bs_spacers
+);
+
+inharmony_add_select_setting($section,
+    'inharmony_menu_margin_bottom_mobile',
+    '2',
+    'Menu Margin Bottom - Mobile',
     '',
     $bs_spacers
 );

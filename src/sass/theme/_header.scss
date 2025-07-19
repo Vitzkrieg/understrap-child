@@ -59,11 +59,21 @@ header {
         position: relative;
         display: inline-block;
         z-index: 10000;
+        border: none;
 
         .navbar-toggler-icon {
             position: relative;
             z-index: -1;
             user-select: none;
+            border: 2px solid transparent;
+        }
+
+        &:focus {
+            border: none;
+            box-shadow: none;
+            .navbar-toggler-icon {
+                border-color: var(--bs-button-color-hover);
+            }
         }
     }
      

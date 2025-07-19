@@ -169,6 +169,7 @@
 
 .cart-main {
     .my-cart-link {
+        position: relative;
         &:visited, &:active, &:hover {
             span {
                 background-color: var(--ihk-jul);
@@ -189,7 +190,10 @@
             transition: none;
             vertical-align: text-bottom;
             &.has-count {
-                display: inline-block;
+                display: block;
+                position: absolute;
+                top: -8px;
+                right: 2px;
             }
         }
     }

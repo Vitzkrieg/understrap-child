@@ -98,6 +98,27 @@ function ihk_dashboard_navigation_show() {
     echo wp_kses_post( html_entity_decode( $content ) );
 }
 
+add_action( 'wp_nav_menu_objects', 'ihk_dashboard_nav_menu_objects', 10, 2 );
+function ihk_dashboard_nav_menu_objects( $items, $args ) {
+	if ( ! is_ihk_dashboard_page() || $args->theme_location !== 'primary' ) {
+		return $items;
+	}
+
+	$dashpage = ihk_get_dash_page();
+	$site_url = get_site_url();
+
+	foreach ( $items as $item ) {
+		if ( in_array( $item->title, array_keys( ihk_get_dashboard_nav_items() ) ) ) {
+			$item->url = $site_url . '/' . ihk_dashboard_get_nav_url( $item->title );
+			if ( $dashpage == $item->title ) {
+				$item->classes[] = 'ihk-dashboard-nav-link--active';
+			}
+		}
+	}
+
+	return $items;
+}
+
 
 add_action( 'ihk_dashboard_family', 'ihk_dashboard_family_show' );
 function ihk_dashboard_family_show() {

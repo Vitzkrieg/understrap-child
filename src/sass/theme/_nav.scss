@@ -12,3 +12,35 @@
         color:var(--bs-primary);
     }
 }
+
+.navbar {
+    &-collapse {
+        @media #{$screen-mobile} {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            background: white;
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+            z-index: 10;
+
+            .menu-item {
+                width: 100%;
+            }
+            .nav-link {
+                width: 100%;
+                background-image: linear-gradient(to right, var(--bs-secondary) 33%,rgba(255,255,255,0) 0%);
+                background-position: top;
+                background-size: 7px 1px;
+                background-repeat: repeat-x;
+            }
+
+            .dropdown-menu {
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+    }
+}

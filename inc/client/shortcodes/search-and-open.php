@@ -43,19 +43,4 @@
             $nav_mobile_classes = array_merge($nav_mobile_classes, ['d-lg-block']);
         }
     ?>
-    <ul id="nav-mobile" class="<?php echo join(' ', $nav_mobile_classes); ?>">
-        <?php
-        if (is_ihk_dashboard_page()) {
-            do_action( 'ihk_dashboard_navigation' );
-        } elseif ( has_nav_menu('mobile_navigation') ){
-            wp_nav_menu(array(
-                'theme_location' => 'mobile_navigation',
-                'container' => false,
-                'menu_id' => 'nav-mobile',
-                'items_wrap'=>'%3$s',
-                'fallback_cb' => false,
-                'walker' => new Malina_Mobile_Walker_Nav_Menu()
-            ));
-        } ?>
-    </ul>
 </div>

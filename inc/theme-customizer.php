@@ -111,13 +111,17 @@ function inharmony_custom_colors() {
 	$secondary_rgb = inharmony_HexToRGB( $secondary_hex );
 	$body_hex = get_theme_mod( 'inharmony_color_body', '#333');
 	$title_hex = get_theme_mod( 'inharmony_color_title', '#333');
+	// Link colors
 	$link_hex = get_theme_mod( 'inharmony_color_links', '#78939e');
 	$link_rgb = inharmony_HexToRGB( $link_hex );
+	// Button colors
 	$button_text_hex = get_theme_mod( 'inharmony_color_buttons_text', '#fff');
 	$button_bg_hex = get_theme_mod( 'inharmony_color_buttons_bg', '#82b3b4');
 	$button_bg_rgb = inharmony_HexToRGB( $button_bg_hex );
 	$button_bg_hover_hex = get_theme_mod( 'inharmony_color_buttons_bg_hover', '#82b3b4');
 	$button_bg_hover_rgb = inharmony_HexToRGB( $button_bg_hover_hex );
+	$button_border_radius = get_theme_mod( 'inharmony_button_border_radius', '375rem') ?: '375rem';
+	// Navigation colors
 	$nav_link_color = get_theme_mod( 'inharmony_nav_link_color', '#333');
 	$nav_link_hover_color = get_theme_mod( 'inharmony_nav_link_hover_color', '#82b3b4');
 
@@ -142,9 +146,13 @@ function inharmony_custom_colors() {
 		echo "--tec-color-button-primary: $button_bg_hex !important;";
 		echo "--tec-color-button-primary-hover: $button_bg_hex !important;";
 	echo "}";
+	echo ".btn {";
+		echo "--bs-btn-border-radius: $button_border_radius !important;";
+	echo "}";
 	echo ".navbar-nav {";
 		echo "--bs-nav-link-color: $nav_link_color !important;";
 		echo "--bs-nav-link-hover-color: $nav_link_hover_color !important;";
+		echo "--bs-navbar-toggler-border-radius: $button_border_radius !important;";
 	echo "}";
 	echo "</style>";
 }

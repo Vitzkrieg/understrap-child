@@ -45,6 +45,7 @@
 
 .nav-col {
     .search-and-open {
+        position: relative;
 
         a {
             color: var(--ihk-gray-dark);
@@ -62,6 +63,7 @@
 
     .account-link {
         a {
+        vertical-align: super;
             i {
                 font-size: 15px;
                 line-height: 15px;

@@ -16108,6 +16108,9 @@ figure.woocommerce-product-gallery__wrapper {
 /**
  * Change default Bootstrap colors
  */
+/*
+ * Variables
+ */
 @font-face {
   font-family: "Bad Script";
   src: url("../fonts/Bad_Script/static/BadScript-Regular.ttf");
@@ -16355,6 +16358,7 @@ header .navbar-toggler {
   position: relative;
   display: inline-block;
   z-index: 10000;
+  border: none;
 }
 header .navbar-toggler .navbar-toggler-icon {
   position: relative;
@@ -16362,6 +16366,14 @@ header .navbar-toggler .navbar-toggler-icon {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  border: 2px solid transparent;
+}
+header .navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+header .navbar-toggler:focus .navbar-toggler-icon {
+  border-color: var(--bs-button-color-hover);
 }
 
 .home #page-wrapper {
@@ -16418,6 +16430,34 @@ header .navbar-toggler .navbar-toggler-icon {
 
 .navbar.navbar-light .navbar-brand {
   color: var(--bs-primary);
+}
+
+@media screen and (max-width: 781px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: white;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  .navbar-collapse .menu-item {
+    width: 100%;
+  }
+  .navbar-collapse .nav-link {
+    width: 100%;
+    background-image: linear-gradient(to right, var(--bs-secondary) 33%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 7px 1px;
+    background-repeat: repeat-x;
+  }
+  .navbar-collapse .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
 
 .t-upper, .single-tribe_events .site-main .tribe-events-schedule__time {
@@ -17377,10 +17417,6 @@ root {
   --ihk-oceania: #a681bc;
 }
 
-/*
- * Variables
- */
-/* Fonts */
 /* Sizes */
 .w-25 {
   width: 25%;
@@ -17562,6 +17598,7 @@ div:first-of-type.span1, div:first-of-type.span2, div:first-of-type.span3, div:f
   margin: 77px;
 }
 
+/* Fonts */
 /* Fonts */
 .josephinsans {
   font-family: "Josefin Sans", sans-serif;
@@ -18117,6 +18154,9 @@ a.disabled {
   max-width: 785px;
 }
 
+.nav-col .search-and-open {
+  position: relative;
+}
 .nav-col .search-and-open a {
   color: var(--ihk-gray-dark);
   font-size: unset;
@@ -18127,6 +18167,9 @@ a.disabled {
 .nav-col .search-and-open i {
   font-size: 20px;
   line-height: 20px;
+}
+.nav-col .account-link a {
+  vertical-align: super;
 }
 .nav-col .account-link a i {
   font-size: 15px;
@@ -20988,6 +21031,9 @@ body.tax-book-authors .label-date {
   border-radius: 0;
 }
 
+.cart-main .my-cart-link {
+  position: relative;
+}
 .cart-main .my-cart-link:visited span, .cart-main .my-cart-link:active span, .cart-main .my-cart-link:hover span {
   background-color: var(--ihk-jul);
 }
@@ -21007,7 +21053,10 @@ body.tax-book-authors .label-date {
   vertical-align: text-bottom;
 }
 .cart-main .my-cart-link .cart-contents-count.has-count {
-  display: inline-block;
+  display: block;
+  position: absolute;
+  top: -8px;
+  right: 2px;
 }
 
 .coming-soon {
