@@ -101,6 +101,29 @@ $nav_col_classes = apply_filters( 'understrap_nav_col_classes', $nav_col_classes
 // This menu displays at the top of the page
 get_template_part( 'global-templates/header-menu' );
 ?>
+<div class="search-area modal" tabindex="-1">
+	<div class="modal-dialog modal-fullscreen">
+		<div class="modal-content">
+			<div class="modal-header justify-content-end">
+				<a href="#" class="close-search"><i class="la la-times"></i></a>
+			</div>
+			<div class="modal-body d-flex justify-content-center align-items-center">
+				<form class="container col-12 d-flex justify-content-center" action="<?php echo esc_url(home_url('/')); ?>" id="header-searchform" method="get">
+					<div class="col-12 col-md-10 col-lg-8 col-xl-6">
+						<div class="search-label mb-4 text-center">
+							<h2><?php esc_html_e('What are you looking for?', 'inharmony'); ?></h2>
+						</div>
+						<div class="input-group search-box">
+							<label class="sr-only" for="header-s"><?php esc_html_e('Search for:', 'inharmony'); ?></label>
+							<input class="form-control" type="text" id="header-s" name="s" value="" placeholder="<?php esc_attr_e('Search...', 'inharmony'); ?>" autocomplete="off" />
+							<button class="btn btn-primary" type="submit"><i class="la la-search"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 <?php
 if ( $header_placement == "above" ) :
 	get_template_part( 'global-templates/custom-header', null, array(

@@ -233,7 +233,7 @@ foreach ($posts_array as $cat_post) {
 		$out .= '</div>';
 	}
 	$out .= '<div class="post-content-block"><header class="title">';
-	$out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.esc_attr($post_title).'</a></h3>';
+	$out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.esc_attr($post_title).'</a></h3>';
 	$out .= '</header></div>';
 	$out .= '</div>';
 	if( $style == 'center2' && ( $post_count == 2 || $last == ' last-one' ) ){

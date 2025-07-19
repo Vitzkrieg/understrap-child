@@ -138,3 +138,28 @@ button[type="submit"],
         }
     }
 }
+
+
+.search-area {
+    &.opened {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+.modal {
+    &-header{
+        background-color: var(--ihk-gray-lt);
+    }
+    .close-search {
+        i.la {
+            font-size: 22px;
+            line-height: 22px;
+            color: var(--bs-button-color);
+            cursor: pointer;
+            &:hover {
+                color: var(--bs-button-hover-color);
+            }
+        }
+    }
+}

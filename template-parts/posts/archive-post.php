@@ -26,7 +26,7 @@ foreach ($posts_array as $cat_post) {
             $out .= '<div class="post-block-title">';
                 if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                 $out .= '<header class="title">';
-                $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                 $out .= '</header>';
             $out .= '</div>';
             $out .= '<div class="post-img-block">';
@@ -41,7 +41,7 @@ foreach ($posts_array as $cat_post) {
                 }
                 $out .= '</div>';
                 $out .= '<div class="post-meta'.$bottom_lines.'">';
-                    $out .= '<div class="post-more"><a href="'.esc_url(get_the_permalink()).'" rel="bookmark"><span>'.esc_html__('Read more', 'malina').'</span><i class="la la-long-arrow-right"></i></a></div>';
+                    $out .= '<div class="post-more"><a href="'.esc_url(get_the_permalink()).'" rel="bookmark"><span>'.esc_html__('Read more', 'inharmony').'</span><i class="la la-long-arrow-right"></i></a></div>';
                     if(function_exists('MalinaSharebox')){
                         $out .= MalinaSharebox( get_the_ID() );
                     }
@@ -58,7 +58,7 @@ foreach ($posts_array as $cat_post) {
                 $out .= '<div class="post-content-side">';
                     if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                     $out .= '<header class="title">';
-                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h3>';
+                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h3>';
                     $out .= '</header>';
                 $out .= '<div class="post-content">';
                 $out .= '</div>';
@@ -77,7 +77,7 @@ foreach ($posts_array as $cat_post) {
                 $out .= '<div class="post-title-block">';
                     if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                     $out .= '<header class="title">';
-                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                     $out .= '</header>';
                 $out .= '</div>';
             $out .= '</div>';
@@ -94,7 +94,7 @@ foreach ($posts_array as $cat_post) {
                         if( $display_categories == 'true' ){
                             $out .= '<div class="meta-categories">'.get_the_category_list(' ').'</div>';
                         }
-                        $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                        $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                         $out .= '<div class="meta-date"><time datetime="'.get_the_date(DATE_W3C).'">'.get_the_time(get_option('date_format')).'</time></div>';
                         $out .= '</header>';
                         $out .= '</div>';
@@ -128,7 +128,7 @@ foreach ($posts_array as $cat_post) {
                 $out .= '<div class="post-content-side">';
                     if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                     $out .= '<header class="title">';
-                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                     $out .= '</header>';
                 $out .= '<div class="post-content">';
                 $out .= '</div>';
@@ -146,7 +146,7 @@ foreach ($posts_array as $cat_post) {
             $out .= '<div class="post-content-side">';
                 if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                 $out .= '<header class="title">';
-                $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                 $out .= '</header>';
             $out .= '<div class="post-content">';
             $out .= '</div>';
@@ -163,7 +163,7 @@ foreach ($posts_array as $cat_post) {
                 $out .= '<div class="post-content-side">';
                     if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                     $out .= '<header class="title">';
-                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                     $out .= '</header>';
                 $out .= '<div class="post-content">';
                 $out .= '</div>';
@@ -181,7 +181,7 @@ foreach ($posts_array as $cat_post) {
                 $out .= '<div class="post-content-block">';
                     $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                     $out .= '<header class="title">';
-                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_html__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_html__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                     $out .= '</header>';
                 if( function_exists('MalinaSharebox') ){
                     $out .= '<div class="meta-sharebox"><i class="la la-share-alt"></i>';
@@ -202,7 +202,7 @@ foreach ($posts_array as $cat_post) {
                 $out .= '<div class="post-content-block">';
                 if( $display_categories ) $out .= '<div class="meta-categories">'.get_the_category_list(', ').'</div>';
                     $out .= '<header class="title">';
-                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'malina').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
+                    $out .= '<h3 itemprop="headline"><a href="'.get_the_permalink().'" title="'.esc_attr__('Permalink to', 'inharmony').' '.esc_attr(the_title_attribute('echo=0')).'" rel="bookmark">'.get_the_title().'</a></h2>';
                     $out .= '</header>';
                     
                 $out .= '<div class="post-content">';
@@ -216,7 +216,7 @@ foreach ($posts_array as $cat_post) {
 $out .= '</div>';
 if( $pagination == 'true' && get_next_posts_link() ) {
     $out .= '<div id="pagination" class="hide">'.get_next_posts_link().'</div>';
-    $out .= '<div class="loadmore-container"><a href="#" class="loadmore button"><span>'.esc_html__('Load More', 'malina').'</span></a></div>';
+    $out .= '<div class="loadmore-container"><a href="#" class="loadmore button"><span>'.esc_html__('Load More', 'inharmony').'</span></a></div>';
 } else {
     if(malina_custom_pagination() != '') {
         $out .= '<div id="pagination">'.malina_custom_pagination().'</div>';
