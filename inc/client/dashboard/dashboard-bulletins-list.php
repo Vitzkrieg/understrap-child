@@ -156,7 +156,7 @@ function ihk_list_user_bulletins() {
         $parent_bulletins[$event_id];
         $event_link = get_permalink($parent_bulletins[$event_id]);
 ?>
-<div class="bulletins-list">
+<div class="bulletins-list mep_event_list">
     <div class="row"><?php
         $section_title = '<a href="' . $event_link . '" class="bulletin-title-link">' . get_the_title($event_id) . '</a>';
         $post_type = "bulletins";
