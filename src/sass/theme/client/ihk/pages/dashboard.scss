@@ -1,17 +1,4 @@
-.ihk-dashboard-main {
-    #navigation {
-        .menu {
-            li {
-                a {
-                    color: var(--ihk-gray-lt);
-                }
-            }
-        }
-    }
-    #nav {
-        width: 100%;
-    }
-}
+
 
 body.is-ihk-dashboard.logged-in {
 
@@ -57,20 +44,40 @@ body.is-ihk-dashboard.logged-in {
 }
 
 body.is-ihk-dashboard.logged-in {
-    #ihk-dashboard-navigation {
+    #main-nav {
+        width: 100%;
+        .nav-col {
+            background-color: var(--ihk-sep);
+            height: 30px;
+
+            .account-link.logged-in {
+                a {
+                    color: var(--ihk-gray-lt);
+                    &:visited {
+                        color: var(--ihk-gray-dark);
+                    }
+                }
+            }
+
+            .cart-main .my-cart-link .cart-contents-count.has-count {
+                color: var(--ihk-gray-dark);
+                background-color: var(--ihk-gray-lt);
+            }
+        }
+    }
+    .ihk-dashboard-navigation {
         background: var(--ihk-sep);
 
         ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
 
             li {
                 margin: 0 5px;
 
                 a {
+                    font-size: 12px;
+                    text-transform: uppercase;
                     color: var(--ihk-gray-lt);
+                    font-weight: 500;
                     &:visited {
                         color: var(--ihk-gray-lt);
                     }
@@ -79,9 +86,6 @@ body.is-ihk-dashboard.logged-in {
                         color: var(--ihk-gray-dark)!important;
                     }
                 }
-            }
-            @media only #{$screen-not-large} {
-                flex-direction: column;
             }
         }
     }

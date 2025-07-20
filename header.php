@@ -206,7 +206,6 @@ endif;
 							)
 						);
 						?>
-						<?php // $widget_class = ( $show_widget_column ) ? "widget-col col-lg-2" : "d-none"; ?>
 						<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
 							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-12","col-lg-2","col-xl-1"] ); ?>
 							<div class="<?php echo join(' ', $widget_classes); ?>">

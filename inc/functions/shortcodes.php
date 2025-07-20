@@ -190,3 +190,43 @@ function inharmony_menu_shortcode($atts){
     );
 }
 add_shortcode('ih_disp_menu', 'inharmony_menu_shortcode');
+
+
+ // Register shortcode widget
+class IHK_Shortcode_Widget extends WP_Widget {
+    public function __construct() {
+        parent::__construct(
+            'shortcode_widget',
+            __( 'IHK Shortcode Widget', 'inharmony' ),
+            array(
+                'description' => __( 'A widget that displays a shortcode.', 'inharmony' ),
+            )
+        );
+    }
+
+    public function widget( $args, $instance ) {
+        $shortcode = ! empty( $instance['shortcode'] ) ? $instance['shortcode'] : '';
+        echo do_shortcode( $shortcode );
+    }
+
+    public function form( $instance ) {
+        $shortcode = ! empty( $instance['shortcode'] ) ? $instance['shortcode'] : '';
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'shortcode' ); ?>"><?php _e( 'Shortcode:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'shortcode' ); ?>" name="<?php echo $this->get_field_name( 'shortcode' ); ?>" type="text" value="<?php echo esc_attr( $shortcode ); ?>" />
+        </p>
+        <?php
+    }
+
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['shortcode'] = ! empty( $new_instance['shortcode'] ) ? $new_instance['shortcode'] : '';
+
+        return $instance;
+    }
+}
+function register_ihk_shortcode_widget() {
+    register_widget( 'IHK_Shortcode_Widget' );
+}
+add_action( 'widgets_init', 'register_ihk_shortcode_widget' );

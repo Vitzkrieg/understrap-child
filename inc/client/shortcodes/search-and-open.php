@@ -34,13 +34,4 @@
         </div>
         <?php } ?>
     <?php } ?>
-    <?php
-        $nav_mobile_classes = array(
-            'dropdown-menu',
-            'd-none',
-        );
-        if ( is_ihk_dashboard_page() ) {
-            $nav_mobile_classes = array_merge($nav_mobile_classes, ['d-lg-block']);
-        }
-    ?>
 </div>

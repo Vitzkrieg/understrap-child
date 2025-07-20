@@ -6808,13 +6808,12 @@
 	});
 
 	jQuery(function ($) {
-	  console.log('search-area.js loaded');
 	  const searchArea = $('header .search-area');
 	  if (!searchArea.length) {
 	    return;
 	  }
 	  // Open search area
-	  jQuery('header .search-button').click(function () {
+	  $('header .search-button').click(function () {
 	    searchArea.addClass('opened');
 	    return false;
 	  });

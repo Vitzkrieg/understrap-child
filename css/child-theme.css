@@ -18435,13 +18435,6 @@ span.has-background-dim:not([class*=-background-color]) {
   height: 100%;
 }
 
-.ihk-dashboard-main #navigation .menu li a {
-  color: var(--ihk-gray-lt);
-}
-.ihk-dashboard-main #nav {
-  width: 100%;
-}
-
 body.is-ihk-dashboard.logged-in .page-title {
   height: 0px;
   overflow: hidden;
@@ -18471,31 +18464,40 @@ body.is-ihk-dashboard.logged-in #navigation-block .search-and-open .my-cart-link
   background-color: var(--ihk-gray-lt);
 }
 
-body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation {
-  background: var(--ihk-sep);
-}
-body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
+body.is-ihk-dashboard.logged-in #main-nav {
   width: 100%;
 }
-body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul li {
+body.is-ihk-dashboard.logged-in #main-nav .nav-col {
+  background-color: var(--ihk-sep);
+  height: 30px;
+}
+body.is-ihk-dashboard.logged-in #main-nav .nav-col .account-link.logged-in a {
+  color: var(--ihk-gray-lt);
+}
+body.is-ihk-dashboard.logged-in #main-nav .nav-col .account-link.logged-in a:visited {
+  color: var(--ihk-gray-dark);
+}
+body.is-ihk-dashboard.logged-in #main-nav .nav-col .cart-main .my-cart-link .cart-contents-count.has-count {
+  color: var(--ihk-gray-dark);
+  background-color: var(--ihk-gray-lt);
+}
+body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation {
+  background: var(--ihk-sep);
+}
+body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li {
   margin: 0 5px;
 }
-body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul li a {
+body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--ihk-gray-lt);
+  font-weight: 500;
+}
+body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:visited {
   color: var(--ihk-gray-lt);
 }
-body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul li a:visited {
-  color: var(--ihk-gray-lt);
-}
-body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul li a:hover, body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul li a:active, body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul li a.ihk-dashboard-nav-link--active {
+body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:hover, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:active, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a.ihk-dashboard-nav-link--active {
   color: var(--ihk-gray-dark) !important;
-}
-@media only screen and (max-width: 1279px) {
-  body.is-ihk-dashboard.logged-in #ihk-dashboard-navigation ul {
-    flex-direction: column;
-  }
 }
 
 .ihk-dashboard .family-icon {
@@ -21055,8 +21057,8 @@ body.tax-book-authors .label-date {
 .cart-main .my-cart-link .cart-contents-count.has-count {
   display: block;
   position: absolute;
-  top: -8px;
-  right: 2px;
+  top: 0px;
+  right: 5px;
 }
 
 .coming-soon {

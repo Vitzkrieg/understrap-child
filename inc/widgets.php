@@ -110,3 +110,15 @@ function register_custom_widget_area() {
 }
 add_action( 'widgets_init', 'register_custom_widget_area' );
 
+/** 
+ * Removes empty paragraph tags from shortcodes in WordPress.
+ */
+function tg_remove_empty_paragraph_tags_from_shortcodes_wordpress( $content ) {
+    $toFix = array( 
+        '<p>['    => '[', 
+        ']</p>'   => ']', 
+        ']<br />' => ']'
+    ); 
+    return strtr( $content, $toFix );
+}
+add_filter( 'the_content', 'tg_remove_empty_paragraph_tags_from_shortcodes_wordpress' );
