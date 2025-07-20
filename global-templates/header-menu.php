@@ -1,6 +1,11 @@
 <?php
 $container = get_theme_mod( 'understrap_container_type', 'container' );
 $header_container = get_theme_mod( 'inharmony_header_container_type', $container );
+if ( $header_container === 'container' ) {
+    $header_container = 'container-lg';
+} else {
+    $header_container = 'container-fluid no-gutters';
+}
 
 $layout_mobile = get_theme_mod( 'inharmony_header_menu_layout_mobile' );
 $layout_desktop = get_theme_mod( 'inharmony_header_menu_layout_desktop' );

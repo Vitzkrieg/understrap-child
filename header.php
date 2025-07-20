@@ -28,7 +28,7 @@ if ( is_front_page() && is_home() ) {
 $home_hide_header = is_front_page() && get_theme_mod( 'inharmony_home_hide_header' );
 
 $container_classes = array(
-	'container' === $header_container ? 'container' : 'container-fluid',
+	'container' === $header_container ? 'container-lg' : 'container-fluid',
 	'flex-wrap',
 	$header_placement == 'behind' ? 'site-header-image' : '',
 );
@@ -207,7 +207,7 @@ endif;
 						);
 						?>
 						<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
-							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-12","col-lg-2","col-xl-1"] ); ?>
+							<?php $widget_classes = apply_filters( 'inharmony_header_widget_class', ["header-widget", "widget-col", "col-9","col-lg-2","col-xl-1"] ); ?>
 							<div class="<?php echo join(' ', $widget_classes); ?>">
 								<?php dynamic_sidebar( 'header-widget' ); ?>
 							</div>

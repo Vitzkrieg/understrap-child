@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		$home_widget_classes = get_theme_mod( 'inharmony_home_widget_classes', 'col-md-12' );
 		$home_widget_classes .= ' mt-3 mb-3';
 		$hero_container = get_theme_mod( 'inharmony_home_widget_container', 'container' );
-		$hero_container = 'container' === $hero_container ? 'container' : 'container-fluid no-gutters';
+		$hero_container = 'container' === $hero_container ? 'container-lg' : 'container-fluid no-gutters';
 		$hero_container .= ' ' . $home_widget_classes;
 	?>
 		<section class="<?php echo esc_attr( $hero_container ); ?>" id="home-hero" role="complementary">
