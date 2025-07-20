@@ -123,16 +123,6 @@ function ihk_dashboard_init() {
 			update_post_meta( get_page_by_path( 'ihk-dashboard' )->ID, '_wp_page_template', 'template-parts/ihk-dashboard.php' );
 		}
 	}
-	// Add rewrite rules for the dashboard
-	// if ( ! get_option( 'ihk_dashboard_rewrite_rules' ) ) {
-	// 	ihk_dashboard_rewrite_rules();
-	// 	flush_rewrite_rules();
-	// 	update_option( 'ihk_dashboard_rewrite_rules', true );
-	// }
-	// Add query vars for the dashboard
-	// if ( ! in_array( 'ihkdash', get_query_var( 'ihk_dashboard_query_vars', array() ) ) ) {
-	// 	add_filter( 'query_vars', 'ihk_add_query_vars' );
-	// }
 }
 
 
