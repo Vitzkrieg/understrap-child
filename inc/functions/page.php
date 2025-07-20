@@ -49,6 +49,11 @@ function inharmony_get_title($position = 'article', $title_style = 'entry-title'
     $title_position = get_theme_mod( 'inharmony_title_position', 'article' );
 
     if ( $title_position != $position ) {
+        debug_log(array(
+            'title_position' => $title_position,
+            'position' => $position,
+            'return' => 'true',
+        ));
         return;
     }
 

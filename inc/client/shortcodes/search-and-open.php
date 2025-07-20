@@ -3,11 +3,6 @@
  * Template: displays header search, account, cart icons
  */
 ?><div class="search-and-open d-flex justify-content-around align-items-center">
-    <?php debug_log(array(
-        'show_search' => get_theme_mod('inharmony_header_search_button', false) ? 'true' : 'false',
-        'show_cart' => get_theme_mod('inharmony_header_shopping_cart', false) ? 'true' : 'false',
-        'is_woocommerce' => class_exists('WooCommerce') ? 'true' : 'false',
-    )); ?>
     <?php if ( get_theme_mod('inharmony_header_search_button', false) ) { ?>
         <div class="search-link">
             <a href="javascript:void(0);" class="search-button" title="Open Search" rel="nofollow"><i class="la la-search"></i></a>
