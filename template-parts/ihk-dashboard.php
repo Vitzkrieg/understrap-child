@@ -8,7 +8,7 @@
 
 $dashpage = get_query_var('ihkdash') ?: 'ihk-dashboard';
 ?>
-<div class="ihk-dashboard d-flex flex-wrap">
+<div class="ihk-dashboard d-flex flex-wrap mt-3">
 	<div class="ihk-dashboard-sidebar col-lg-3 col-md-4 col-12 <?php echo $dashpage; ?>">
 		<?php
 			/**
