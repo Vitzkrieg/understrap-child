@@ -45,6 +45,24 @@ function ihk_get_dash_page() {
 	return get_query_var('ihkdash') ?: "ihk-dashboard";
 }
 
+function ihk_get_dash_page_title() {
+	global $ihk_dash_nav_items;
+	$dashpage = ihk_get_dash_page();
+
+	return $ihk_dash_nav_items[$dashpage] ?? __( 'Dashboard', 'ihk' );
+}
+
+add_filter( 'the_title', 'ihk_dashboard_page_title' );
+function ihk_dashboard_page_title( $title ) {
+	static $is_title_set = false;
+	if ( !$is_title_set && is_ihk_dashboard_page() && in_the_loop() && is_main_query()) {
+		$is_title_set = true;
+		return ihk_get_dash_page_title();
+	}
+
+	return $title;
+}
+
 function is_ihk_dashboard_page() {
 	global $wp;
 	static $is_dashboard;
@@ -83,7 +101,7 @@ function ihk_dashboard_navigation_show($echo = true) {
 				$url = $site_url . '/' . ihk_dashboard_get_nav_url( $slug );
 				$active = ($dashpage == $slug) ? 'ihk-dashboard-nav-link--active' : '';
 			?>
-				<li data-slug="<?php echo $dashpage . ':' . $slug; ?>" class="ihk-dashboard-nav-link ihk-dashboard-nav-link--<?php echo esc_attr( $slug ); ?> menu-item nav-item px-md-3 px-lg-3">
+				<li data-slug="<?php echo $dashpage . ':' . $slug; ?>" class="ihk-dashboard-nav-link ihk-dashboard-nav-link--<?php echo esc_attr( $slug ); ?> menu-item nav-item px-md-1 px-lg-2">
 					<a class="<?php echo esc_attr( $active ); ?>" href="<?php echo esc_url( $url ); ?>">
 						<i class="<?php echo $ihk_dash_nav_icons[$slug]; ?>"></i>
 						<span><?php echo esc_html( $name ); ?></span>
@@ -128,14 +146,7 @@ function ihk_dashboard_init() {
 
 // add_action( 'wp_nav_menu_objects', 'ihk_dashboard_nav_menu_objects', 10, 2 );
 function ihk_dashboard_nav_menu_objects( $items, $args ) {
-	debug_log(array(
-		'location' => $args->theme_location,
-		'is_dash' => is_ihk_dashboard_page(),
-	));
 	if ( ! is_ihk_dashboard_page() || $args->theme_location !== 'primary' ) {
-		debug_log(array(
-			'return' => 'true',
-		));
 		return $items;
 	}
 

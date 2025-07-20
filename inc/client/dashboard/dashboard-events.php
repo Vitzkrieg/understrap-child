@@ -101,8 +101,7 @@ function ihk_list_user_events() {
     $unq_id = 'dec'.uniqid();
 
 ?>
-<h1>My Events</h1>
-    <div class="list_with_filter_section mep_event_list ihk-test">
+    <div class="list_with_filter_section mep_event_list">
         <?php if ($cat_f == 'yes') {
             /**
              * This is the hook where category filter lists are fired from inc/template-parts/event_list_tax_name_list.php File

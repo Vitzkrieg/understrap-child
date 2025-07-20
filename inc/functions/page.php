@@ -56,7 +56,22 @@ function inharmony_get_title($position = 'article', $title_style = 'entry-title'
 
     $title_tag_open = '<h1 class="'. $title_style . '">';
     $title_tag_close = '</h1>';
-    the_title( $title_tag_open, $title_tag_close );
+
+    $title = get_the_title();
+
+    if ( is_ihk_dashboard_page() ) {
+        $dash_title = ihk_get_dash_page_title();
+        if ( $dash_title ) {
+            $title_tag_open = '<h1 class="'. $title_style . ' ihk-dashboard-title">';
+            $title_tag_open .= '<span class="ihk-dashboard-title-text">' . esc_html( $dash_title ) . '</span>';
+            $title_tag_close = '</h1>';
+            $title = $title_tag_open . $title_tag_close;
+        }
+    }
+
+    echo $title_tag_open;
+    echo esc_html( $title );
+    echo $title_tag_close;
 
     echo "</header>";
 }

@@ -20,9 +20,9 @@ function ihk_list_user_library() {
         'completed'    => 'Have read',
         'listed'       => 'Want to read',
     ];
+    $unq_id = 'del'.uniqid();
 ?>
-<h1>My Library</h1>
-<div class="list_with_filter_section mep_event_list ihk-test">
+<div class="list_with_filter_section mep_event_list">
     <div class="all_filter_item mep_event_list_sec" id="mep_event_list_<?php echo esc_attr($unq_id); ?>">
         <?php
         foreach ($display_order as $post_type) {
