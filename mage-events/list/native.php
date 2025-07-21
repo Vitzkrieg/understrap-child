@@ -17,7 +17,7 @@ $event_location_icon = mep_get_option('mep_event_location_icon', 'icon_setting_s
     <?php do_action('mep_event_minimal_list_loop_header', $event_id); ?>
     <div class="mep_list_thumb">
         <a href="<?php echo get_the_permalink($event_id); ?>">
-            <div class="mep_bg_thumb" data-bg-image="<?php mep_get_list_thumbnail_src($event_id, 'thumbnail'); ?>"></div>
+            <div class="mep_bg_thumb" data-bg-image="<?php ihk_get_list_thumbnail_src($event_id, 'thumbnail'); ?>"></div>
         </a>
     </div>
 

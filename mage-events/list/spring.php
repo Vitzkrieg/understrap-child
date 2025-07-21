@@ -64,7 +64,7 @@ $event_location_icon        = mep_get_option('mep_event_location_icon', 'icon_se
     </div>
     <div class="mep_list_spring_thumb_wrapper">
         <a href="<?php echo get_the_permalink($event_id); ?>">
-            <div class="mep_list_spring_thumb" style="background-image:url(<?php mep_get_list_thumbnail_src($event_id); ?>)">
+            <div class="mep_list_spring_thumb" style="background-image:url(<?php ihk_get_list_thumbnail_src($event_id); ?>)">
             </div>
         </a>
     </div>

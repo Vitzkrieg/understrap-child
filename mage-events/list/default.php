@@ -98,7 +98,7 @@ $eventClasses = array(
             </div>
             <span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
         <?php } ?>
-            <div class="mep_bg_thumb" data-bg-image="<?php mep_get_list_thumbnail_src($event_id, 'large'); ?>"></div>
+            <div class="mep_bg_thumb" data-bg-image="<?php ihk_get_list_thumbnail_src($event_id, 'large'); ?>"></div>
         <?php if ( !$isDashEvent) { ?>
         </a>
         <?php } ?>

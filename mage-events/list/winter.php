@@ -45,7 +45,7 @@ $year = date('Y', strtotime($start_date));
     </div>
     <div class="mep_list_winter_thumb_wrapper">
         <a href="<?php echo get_the_permalink($event_id); ?>">
-            <div class="mep_list_winter_thumb" data-bg-image="<?php mep_get_list_thumbnail_src($event_id, 'full'); ?>"></div>
+            <div class="mep_list_winter_thumb" data-bg-image="<?php ihk_get_list_thumbnail_src($event_id, 'full'); ?>"></div>
         </a>
     </div>
     <div class="mep_list_event_details">
