@@ -188,15 +188,11 @@ function ihk_dashboard_family_show() {
 
 add_action('init', 'ihk_dashboard_rewrite_rules');
 function ihk_dashboard_rewrite_rules() {
-	if ( ! get_option( 'ihk_dashboard_rewrite_rules' ) ) {
-		add_rewrite_rule(
-			'ihk-dashboard/([^/]*)/?$',
-			'index.php?pagename=ihk-dashboard&ihkdash=$matches[1]',
-			'top'
-		);
-		flush_rewrite_rules();
-		update_option( 'ihk_dashboard_rewrite_rules', true );
-	}
+	add_rewrite_rule(
+		'ihk-dashboard/([^/]*)/?$',
+		'index.php?pagename=ihk-dashboard&ihkdash=$matches[1]',
+		'top'
+	);
 }
 
 
