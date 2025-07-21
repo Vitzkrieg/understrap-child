@@ -7,8 +7,9 @@ add_action('ihk_dashboard_content_events', 'ihk_list_user_events');
 function ihk_list_user_events() {
     ob_start();
 
-    $_user_set_status    = mep_get_option( 'seat_reserved_order_status', 'general_setting_sec', array( 'processing', 'completed' ) );
-    $_order_status       = ! empty( $_user_set_status ) ? $_user_set_status : array( 'processing', 'completed' );
+    $default_status      = apply_filters( 'ihk_default_order_status', array( 'processing', 'completed' ) );
+    $_user_set_status    = mep_get_option( 'seat_reserved_order_status', 'general_setting_sec', $default_status  );
+    $_order_status       = ! empty( $_user_set_status ) ? $_user_set_status : $default_status ;
     $order_status        = array_values( $_order_status );
     $order_status_filter = array(
         'key'     => 'ea_order_status',
@@ -46,6 +47,35 @@ function ihk_list_user_events() {
 
     // order oldest to newest
     $event_ids = array_reverse($event_ids);
+
+    $current_event_ids      = array();
+    $past_event_ids         = array();
+    $future_event_ids       = array();
+
+    $current_count          = 0;
+    $past_count             = 0;
+    $future_count           = 0;
+
+    foreach ( $event_ids as $start_time => $event_id ) {
+        $date = get_post_meta($event_id, 'event_start_datetime', true);
+        if ( empty($date) ) {
+            continue;
+        }
+        $date = date('Y-m-d', strtotime($date));
+        if ( $date > current_time('Y-m-d') ) {
+            // future
+            $future_event_ids[$start_time] = $event_id;
+            $future_count++;
+        } elseif ( ihk_get_event_has_expired($event_id) ) {
+            // past
+            $past_event_ids[$start_time] = $event_id;
+            $past_count++;
+        } else {
+            // current
+            $current_event_ids[$start_time] = $event_id;
+            $current_count++;
+        }
+    }
 
     $params = array(
         "cat"               => "0",
@@ -98,65 +128,52 @@ function ihk_list_user_events() {
     $flex_column    = $column;
     $mage_div_count = 0;
     $event_expire_on = mep_get_option('mep_event_expire_on_datetimes', 'general_setting_sec', 'event_start_datetime');
-    $unq_id = 'dec'.uniqid();
+    $unq_id_base = 'dec'.uniqid();
+
+    $show = true;
 
 ?>
-    <div class="list_with_filter_section mep_event_list">
-        <?php if ($cat_f == 'yes') {
-            /**
-             * This is the hook where category filter lists are fired from inc/template-parts/event_list_tax_name_list.php File
-             */
-            do_action('mep_event_list_cat_names',$cat,$unq_id);
-        }
-        if ($org_f == 'yes') {
-            /**
-             * This is the hook where Organization filter lists are fired from inc/template-parts/event_list_tax_name_list.php File
-             */
-            do_action('mep_event_list_org_names',$org,$unq_id);
-        }
-        if ($filter == 'yes' && $style != 'timeline') {
-            do_action('mpwem_list_with_filter_section', $loop, $params);
-        }
-        ?>
-
-        <div class="all_filter_item mep_event_list_sec" id="mep_event_list_<?php echo esc_attr($unq_id); ?>">
-            <?php
-            $total_item = $loop->post_count;
-            echo $main_div;
-            echo $time_line_div_start;
-
-            foreach ($event_ids as $event_id) {
-
-                mep_update_event_upcoming_date( $event_id );
-
-                if ($style == 'grid' && (int)$column>0 && $pagination != 'carousal') {
-	                $columnNumber='column_style';
-	                $width=100/(int)$column;
-                }elseif($pagination == 'carousal' && $style == 'grid'){
-                    $columnNumber = 'grid';
-                    $width=100;                    
-                } else {
-                    $columnNumber = 'one_column';
-                    $width=100;
-                }
-
-                /**
-                 * This is the hook where Event Loop List fired from inc/template-parts/event_loop_list.php File
-                 */
-                do_action('mep_event_list_shortcode', $event_id, $columnNumber, $style, $width, $unq_id);
-            }
-
-            echo $time_line_div_end;
-            ?>
-        </div>
-    </div>
+<nav class="nav nav-tabs" id="nav-tab" role="tablist">
+  <a class="nav-link active" id="nav-current-tab" data-bs-toggle="tab" href="#nav-current" role="tab" aria-controls="nav-current" aria-selected="true">Current<span class="badge bg-secondary"><?php echo $current_count; ?></span></a>
+  <a class="nav-link" id="nav-future-tab" data-bs-toggle="tab" href="#nav-future" role="tab" aria-controls="nav-future" aria-selected="false">Future<span class="badge bg-secondary"><?php echo $future_count; ?></span></a>
+  <a class="nav-link" id="nav-past-tab" data-bs-toggle="tab" href="#nav-past" role="tab" aria-controls="nav-past" aria-selected="false">Past<span class="badge bg-secondary"><?php echo $past_count; ?></span></a>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active py-5" id="nav-current" role="tabpanel" aria-labelledby="nav-current-tab">
     <?php
-    do_action('mpwem_pagination',$params,$total_item);
+    $unq_id = $unq_id_base . 'current';
+     if ( empty($current_event_ids) ) {
+         echo '<p class="no-events">No current events found.</p>';
+     } else {
+        $event_ids = $current_event_ids;
+        include( 'dashboard-events-list.php' );
+     }
     ?>
-    </div>
+  </div>
+  <div class="tab-pane fade py-5" id="nav-future" role="tabpanel" aria-labelledby="nav-future-tab">
+    <?php
+    $unq_id = $unq_id_base . 'future';
+     if ( empty($future_event_ids) ) {
+         echo '<p class="no-events">No future events found.</p>';
+     } else {
+        $event_ids = $future_event_ids;
+        include( 'dashboard-events-list.php' );
+     }
+    ?>
+  </div>
+  <div class="tab-pane fade py-5" id="nav-past" role="tabpanel" aria-labelledby="nav-past-tab">
+    <?php
+    $unq_id = $unq_id_base . 'past';
+     if ( empty($past_event_ids) ) {
+         echo '<p class="no-events">No past events found.</p>';
+     } else {
+        $event_ids = $past_event_ids;
+        include( 'dashboard-events-list.php' );
+     }
+    ?>
+  </div>
+</div>
 <?php
-
     $content = ob_get_clean();
-    echo html_entity_decode( $content );
-    
+    echo $content;
 }

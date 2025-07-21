@@ -20765,6 +20765,8 @@ body.tax-book-authors .label-date {
 
 .mep-list-footer ul li i {
   color: var(--ihk--aug);
+  margin-right: 5px;
+  min-width: 25px;
 }
 
 .df-sidebar-part .mep_list_ihk_details {
@@ -20787,6 +20789,19 @@ body.tax-book-authors .label-date {
 }
 .df-sidebar-part .mep_list_ihk_details li .evl-cc {
   padding-left: 10px;
+}
+
+.tab-pane .mep_event_list .mep-event-list-loop {
+  display: flex !important;
+}
+
+.badge {
+  --bs-badge-padding-x: 0.5em;
+  --bs-badge-padding-y: 0.4em;
+  width: 20px;
+  height: 20px;
+  font-size: 1em;
+  margin-left: 5px;
 }
 
 .wp-block-kadence-tabs .kt-title-item {

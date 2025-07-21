@@ -17,6 +17,13 @@ $dashpage = get_query_var('ihkdash');
 $is_ihkdash = !empty($dashpage);
 $isDashEvent = $dashpage == 'ihk-events';
 
+debug_log(array(
+    'event_id' => $event_id,
+    'date' => $date,
+    'end_date' => get_post_meta($event_id, 'event_end_datetime', true),
+    'now' => current_time('Y-m-d'),
+));
+
 /*
  * override is on IHK Dashboard
  */
@@ -222,10 +229,7 @@ $eventClasses = array(
             } else {
                 echo ihk_get_reserve_link($event_id);
             }
-        }
-        ?>
-        <?php
-        if ( $is_ihkdash ) {
+        } else {
             // shows individual dates/times
             mep_date_in_default_theme($event_id, false);
         }

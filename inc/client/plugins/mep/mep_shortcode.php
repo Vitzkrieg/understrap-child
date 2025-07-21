@@ -303,3 +303,15 @@ function ihk_mep_event_list_upcoming_date_li($event_id, $type = 'grid') {
         }
     }
 }
+
+
+function ihk_get_event_has_expired($event_id) {
+    $event_dates = mep_get_event_dates_arr($event_id);
+    $last_date = end($event_dates);
+    $now = current_time('Y-m-d H:i:s');
+    // Check if the last date is in the past
+    if ( !empty($last_date) && strtotime($last_date['end']) < strtotime($now) ) {
+        return true;
+    }
+    return false;
+}

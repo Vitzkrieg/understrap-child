@@ -155,6 +155,12 @@ function inharmony_custom_colors() {
 		echo "--bs-nav-link-hover-color: $nav_link_hover_color !important;";
 		echo "--bs-navbar-toggler-border-radius: $button_border_radius !important;";
 	echo "}";
+	echo ".badge {";
+		echo "--bs-badge-font-size: 1em;";
+		echo "--bs-badge-border-radius: 50%;";
+		echo "--bs-badge-font-weight: normal;";
+	echo "}";
+
 	echo "</style>";
 }
 

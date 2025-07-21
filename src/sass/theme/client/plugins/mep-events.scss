@@ -521,6 +521,8 @@
 
 .mep-list-footer ul li i {
     color: var(--ihk--aug);
+    margin-right: 5px;
+    min-width: 25px;
 }
 
 .df-sidebar-part {
@@ -549,4 +551,22 @@
             }
         }
     }
+}
+
+.tab-pane {
+    .mep_event_list {
+        .mep-event-list-loop {
+            display: flex!important;
+        }
+    }
+}
+
+
+.badge {
+    --bs-badge-padding-x: 0.5em;
+    --bs-badge-padding-y: 0.4em;  
+    width: 20px;
+    height: 20px;
+    font-size: 1em;
+    margin-left: 5px;
 }
