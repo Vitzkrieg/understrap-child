@@ -199,6 +199,12 @@
     }
 }
 
+@media (min-width: 768px) {
+  .woocommerce-cart #coupon_code.input-text {
+    width: auto !important;
+  }
+}
+
 
 .coming-soon {
     font-family: $ihk-josefin-font !important;

@@ -126,7 +126,7 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 	if ( ! is_admin() ) {
 		if ( basename($template) == 'blogpage.php' ) {
 			$post_excerpt = $post_excerpt . ' [...]';
-		} else {
+		} else if ( !is_product() ){
 			$more_styles = array(
 				'btn',
 				'btn-' . get_theme_mod( 'inharmony_color_blog_buttons_bg', 'primary'),

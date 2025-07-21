@@ -21129,6 +21129,11 @@ body.tax-book-authors .label-date {
   right: 2px;
 }
 
+@media (min-width: 768px) {
+  .woocommerce-cart #coupon_code.input-text {
+    width: auto !important;
+  }
+}
 .coming-soon {
   font-family: "Josefin Sans", sans-serif !important;
   font-size: 14px !important;
