@@ -28,7 +28,7 @@ if ( is_front_page() && is_home() ) {
 $home_hide_header = is_front_page() && get_theme_mod( 'inharmony_home_hide_header' );
 
 $container_classes = array(
-	'container' === $header_container ? 'container-lg' : 'container-fluid',
+	'container' === $header_container ? 'container-lg no-gutters-lg' : 'container-fluid',
 	'flex-wrap',
 	$header_placement == 'behind' ? 'site-header-image' : '',
 );
@@ -66,7 +66,7 @@ $nav_col_classes = array(
 	'justify-content-md-' . $menu_align,
 	'mt-3',
 	'mb-' . $menu_margin_bottom_mobile,
-	'mb-md-' . $menu_margin_bottom_desktop,
+	'mb-lg-' . $menu_margin_bottom_desktop,
 );
 $nav_col_classes = apply_filters( 'understrap_nav_col_classes', $nav_col_classes );
 ?>

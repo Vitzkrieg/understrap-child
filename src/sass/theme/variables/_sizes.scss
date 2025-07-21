@@ -1,6 +1,51 @@
 /*
  * Variables
  */
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+// scss-docs-end grid-breakpoints
+
+// scss-docs-start grid-breakpoint variables
+$grid-breakpoint-xs: map-get($grid-breakpoints, xs);
+$grid-breakpoint-sm: map-get($grid-breakpoints, sm);
+$grid-breakpoint-md: map-get($grid-breakpoints, md);
+$grid-breakpoint-lg: map-get($grid-breakpoints, lg);
+$grid-breakpoint-xl: map-get($grid-breakpoints, xl);
+$grid-breakpoint-xxl: map-get($grid-breakpoints, xxl);
+// scss-docs-end grid-breakpoint variables
+// scss-docs-start grid-breakpoint variables with calc
+$grid-breakpoint-xs-max: calc($grid-breakpoint-xs - 1px);
+$grid-breakpoint-sm-max: calc($grid-breakpoint-sm - 1px);
+$grid-breakpoint-md-max: calc($grid-breakpoint-md - 1px);
+$grid-breakpoint-lg-max: calc($grid-breakpoint-lg - 1px);
+$grid-breakpoint-xl-max: calc($grid-breakpoint-xl - 1px);
+$grid-breakpoint-xxl-max: calc($grid-breakpoint-xxl - 1px);
+// scss-docs-end grid-breakpoint variables with calc
+// scss-docs-start screen media queries
+$screen-xs: "screen and (max-width: " + $grid-breakpoint-xs-max + ")";
+$screen-sm: "screen and (max-width: " + $grid-breakpoint-sm-max + ")";
+$screen-md: "screen and (min-width: " + $grid-breakpoint-md + ")";
+$screen-lg: "screen and (min-width: " + $grid-breakpoint-lg + ")";
+$screen-xl: "screen and (min-width: " + $grid-breakpoint-xl + ")";
+$screen-xxl: "screen and (min-width: " + $grid-breakpoint-xxl + ")";
+$screen-only-md: "only screen and (min-width: " + $grid-breakpoint-md + ") and (max-width: " + $grid-breakpoint-md-max + ")";   
+$screen-only-lg: "only screen and (min-width: " + $grid-breakpoint-lg + ") and (max-width: " + $grid-breakpoint-xl + ")";
+$screen-not-md: "screen and (max-width: " + $grid-breakpoint-md-max + ")";
+$screen-not-lg: "screen and (max-width: " + $grid-breakpoint-lg-max + ")";
+$screen-not-xl: "screen and (max-width: " + $grid-breakpoint-xl-max + ")";
+$screen-not-xxl: "screen and (max-width: " + $grid-breakpoint-xxl-max + ")";
+$screen-xl-up: "screen and (min-width: " + $grid-breakpoint-xl + ")";
+$screen-xxl-up: "screen and (min-width: " + $grid-breakpoint-xxl + ")";
+// scss-docs-end screen media queries
+
  
 $width-phone:       480px;
 $width-tablet:      560px;
@@ -13,11 +58,20 @@ $width-phone-max:  calc($width-phone - 1px);
 $width-mobile-max:  calc($width-desktop - 1px);
 $width-not-large:  calc($width-large - 1px);
 
-$screen-phone: "screen and (max-width: " + $width-phone-max + ")";
-$screen-mobile: "screen and (max-width: " + $width-mobile-max + ")";
-$screen-desktop: "screen and (min-width: " + $width-desktop+ ")";
-$screen-medium: "screen and (min-width: " + $width-medium+ ")";
-$screen-only-medium: "only screen and (min-width: " + $width-desktop + ") and (max-width: " + $width-medium + ")";
-$screen-only-desktop: "only screen and (min-width: " + $width-tablet + ") and (max-width: " + $width-wide + ")";
-$screen-not-large: "screen and (max-width: " + $width-not-large + ")";
-$screen-large: "screen and (min-width: " + $width-large + ")";
+// $screen-phone: "screen and (max-width: " + $width-phone-max + ")";
+// $screen-mobile: "screen and (max-width: " + $width-mobile-max + ")";
+// $screen-desktop: "screen and (min-width: " + $width-desktop+ ")";
+// $screen-medium: "screen and (min-width: " + $width-medium+ ")";
+// $screen-only-medium: "only screen and (min-width: " + $width-desktop + ") and (max-width: " + $width-medium + ")";
+// $screen-only-desktop: "only screen and (min-width: " + $width-tablet + ") and (max-width: " + $width-wide + ")";
+// $screen-not-large: "screen and (max-width: " + $width-not-large + ")";
+// $screen-large: "screen and (min-width: " + $width-large + ")";
+
+$screen-phone: $screen-xs;
+$screen-mobile: $screen-sm;
+$screen-desktop: $screen-md;
+$screen-medium: $screen-md;
+$screen-only-medium: $screen-only-md;
+$screen-only-desktop: $screen-only-lg;
+$screen-not-large: $screen-not-lg;
+$screen-large: $screen-lg;

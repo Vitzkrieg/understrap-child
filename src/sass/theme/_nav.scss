@@ -15,7 +15,7 @@
 
 .navbar {
     &-collapse {
-        @media #{$screen-mobile} {
+        @media #{$screen-not-large} {
             position: absolute;
             top: 100%;
             width: 100%;
@@ -40,6 +40,23 @@
                 background: transparent;
                 margin-top: 0;
                 padding-top: 0;
+            }
+        }
+    }
+}
+
+header {
+    .navbar {
+        &.navbar-expand {
+            &-lg {
+                @media #{$screen-not-lg} {
+                    padding: 0;
+                }
+            }
+            &-md {
+                @media #{$screen-not-md} {
+                    padding: 0;
+                }
             }
         }
     }

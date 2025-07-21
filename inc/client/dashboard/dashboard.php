@@ -101,8 +101,8 @@ function ihk_dashboard_navigation_show($echo = true) {
 				$url = $site_url . '/' . ihk_dashboard_get_nav_url( $slug );
 				$active = ($dashpage == $slug) ? 'ihk-dashboard-nav-link--active' : '';
 			?>
-				<li data-slug="<?php echo $dashpage . ':' . $slug; ?>" class="ihk-dashboard-nav-link ihk-dashboard-nav-link--<?php echo esc_attr( $slug ); ?> menu-item nav-item px-md-1 px-lg-2">
-					<a class="<?php echo esc_attr( $active ); ?>" href="<?php echo esc_url( $url ); ?>">
+				<li data-slug="<?php echo $dashpage . ':' . $slug; ?>" class="ihk-dashboard-nav-link ihk-dashboard-nav-link--<?php echo esc_attr( $slug ); ?> menu-item nav-item px-md-1 px-lg-2 px-xl-3">
+					<a class="nav-link py-2 py-lg-0 <?php echo esc_attr( $active ); ?>" href="<?php echo esc_url( $url ); ?>">
 						<i class="<?php echo $ihk_dash_nav_icons[$slug]; ?>"></i>
 						<span><?php echo esc_html( $name ); ?></span>
 					</a>

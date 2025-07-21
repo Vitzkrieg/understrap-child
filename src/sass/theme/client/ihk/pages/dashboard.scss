@@ -66,27 +66,37 @@ body.is-ihk-dashboard.logged-in {
         }
     }
     .ihk-dashboard-navigation {
-        background: var(--ihk-sep);
-
         ul {
-
             li {
                 margin: 0 5px;
-
                 a {
+                    display: inline-block;
+                    width: 100%;
                     font-size: 12px;
                     text-transform: uppercase;
                     color: var(--ihk-gray-lt);
                     font-weight: 500;
-                    &:visited {
-                        color: var(--ihk-gray-lt);
+                    background-image: linear-gradient(to right, var(--ihk-sep) 33%,rgba(255,255,255,0) 0%);
+                
+                    @media #{$screen-lg} {
+                        background-image: none;
                     }
 
-                    &:hover, &:active, &.ihk-dashboard-nav-link--active {
-                        color: var(--ihk-gray-dark)!important;
+                    &:visited {
+                        color: var(--ihk-sep);
+                        @media #{$screen-lg} {
+                            color: var(--ihk-gray-lt);
+                        }
+                    }
+
+                    &:hover, &:active, &:focus, &.ihk-dashboard-nav-link--active {
+                        color: var(--ihk-gray-dark);
                     }
                 }
             }
+        }
+        @media #{$screen-lg} {
+            background: var(--ihk-sep);
         }
     }
 }

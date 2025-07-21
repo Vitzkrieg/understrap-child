@@ -32,6 +32,31 @@ body {
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+
+    &-md {
+        @media #{$screen-not-md} {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+    &-lg {
+        @media #{$screen-not-lg} {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+    &-xl {
+        @media #{$screen-not-xl} {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
 }
 
 select {

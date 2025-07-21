@@ -280,6 +280,13 @@
 }
 
 .mep_event_list {
+    .owl-nav {
+        > button {
+            &:hover {
+                color: var(--bs-btn-color)!important;
+            }
+        }
+    }
     .mep_event_winter_list {
         background-color: var(--ihk-gray);
 

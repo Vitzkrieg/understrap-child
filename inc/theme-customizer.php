@@ -145,6 +145,7 @@ function inharmony_custom_colors() {
 		echo "--bs-button-color-hover-rgb: $button_bg_hover_rgb !important;";
 		echo "--tec-color-button-primary: $button_bg_hex !important;";
 		echo "--tec-color-button-primary-hover: $button_bg_hex !important;";
+		echo "--mpev-base: $button_bg_hex !important;";
 	echo "}";
 	echo ".btn {";
 		echo "--bs-btn-border-radius: $button_border_radius !important;";

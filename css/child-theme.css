@@ -16241,6 +16241,30 @@ body {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+@media screen and (max-width: 767px) {
+  .no-gutters-md {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .no-gutters-lg {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .no-gutters-xl {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
 
 select {
   display: block;
@@ -16432,7 +16456,7 @@ header .navbar-toggler:focus .navbar-toggler-icon {
   color: var(--bs-primary);
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 991px) {
   .navbar-collapse {
     position: absolute;
     top: 100%;
@@ -16457,6 +16481,17 @@ header .navbar-toggler:focus .navbar-toggler-icon {
     background: transparent;
     margin-top: 0;
     padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  header .navbar.navbar-expand-lg {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  header .navbar.navbar-expand-md {
+    padding: 0;
   }
 }
 
@@ -17430,12 +17465,12 @@ root {
   width: 50%;
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   .w-25, .w-33, .w-50 {
     width: 100%;
   }
 }
-@media only screen and (min-width: 560px) and (max-width: 1300px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
   #header.header4 > .container > .span12 #navigation-block {
     padding-top: 0;
   }
@@ -18114,7 +18149,7 @@ a.disabled {
   color: var(--ihk-gray);
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   body h4, body .h4 {
     font-weight: 500;
     font-size: 28px;
@@ -18253,12 +18288,12 @@ button[type=submit].membership:active,
 body.home #content > .kb-row-layout-wrap {
   margin: 0 15%;
 }
-@media only screen and (max-width: 1279px) {
+@media only screen and (max-width: 991px) {
   body.home #content > .kb-row-layout-wrap {
     margin: 0 5%;
   }
 }
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   body.home #content > .kb-row-layout-wrap > .kt-row-column-wrap > .wp-block-kadence-column {
     max-width: 90%;
   }
@@ -18368,7 +18403,7 @@ body.home .ihk-home-seasons .ihk-info-overlay .kt-inside-inner-col img {
   min-height: 100%;
   min-width: 100%;
 }
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   body.home .ihk-home-seasons .ihk-info-overlay .kt-inside-inner-col img {
     min-width: auto;
   }
@@ -18385,7 +18420,7 @@ body.home .ihk-home-seasons .ihk-info-overlay:hover figure {
 body.home .ihk-home-seasons .ihk-info-overlay:hover .wp-block-kadence-infobox {
   opacity: 0;
 }
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   body.home .ihk-home-seasons .ihk-info-overlay .wp-block-kadence-column {
     min-height: 320px;
     max-height: 400px;
@@ -18417,7 +18452,7 @@ body.home .ihk-home-cycles .wp-block-kadence-infobox .kt-infobox-textcontent {
 body.home .ihk-home-cycles .wp-block-kadence-infobox .kt-blocks-info-box-link-wrap {
   height: 100%;
 }
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   body.home .ihk-home-cycles .wp-block-kadence-infobox .kt-blocks-info-box-link-wrap {
     display: flex;
     flex-direction: column;
@@ -18481,23 +18516,38 @@ body.is-ihk-dashboard.logged-in #main-nav .nav-col .cart-main .my-cart-link .car
   color: var(--ihk-gray-dark);
   background-color: var(--ihk-gray-lt);
 }
-body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation {
-  background: var(--ihk-sep);
-}
 body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li {
   margin: 0 5px;
 }
 body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a {
+  display: inline-block;
+  width: 100%;
   font-size: 12px;
   text-transform: uppercase;
   color: var(--ihk-gray-lt);
   font-weight: 500;
+  background-image: linear-gradient(to right, var(--ihk-sep) 33%, rgba(255, 255, 255, 0) 0%);
+}
+@media screen and (min-width: 992px) {
+  body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a {
+    background-image: none;
+  }
 }
 body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:visited {
-  color: var(--ihk-gray-lt);
+  color: var(--ihk-sep);
 }
-body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:hover, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:active, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a.ihk-dashboard-nav-link--active {
-  color: var(--ihk-gray-dark) !important;
+@media screen and (min-width: 992px) {
+  body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:visited {
+    color: var(--ihk-gray-lt);
+  }
+}
+body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:hover, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:active, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a:focus, body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation ul li a.ihk-dashboard-nav-link--active {
+  color: var(--ihk-gray-dark);
+}
+@media screen and (min-width: 992px) {
+  body.is-ihk-dashboard.logged-in .ihk-dashboard-navigation {
+    background: var(--ihk-sep);
+  }
 }
 
 .ihk-dashboard .family-icon {
@@ -18842,7 +18892,7 @@ ul.selected-filters-list li {
   transform: rotate(180deg);
   color: var(--ihk-dec);
 }
-@media only screen and (min-width: 782px) and (max-width: 960px) {
+@media only screen and (min-width: 768px) and (max-width: 767px) {
   .filter-selector.toggle i {
     display: none;
   }
@@ -19576,7 +19626,7 @@ body.single #content .title {
 .single-books .book-cover-inner .post-img {
   padding: 33px;
 }
-@media only screen and (max-width: 781px) {
+@media only screen and (max-width: 575px) {
   .single-books .book-cover {
     margin-bottom: 22px;
   }
@@ -19630,7 +19680,7 @@ body.single #content .title {
   text-align: center;
   margin-bottom: 7px;
 }
-@media only screen and (max-width: 781px) {
+@media only screen and (max-width: 575px) {
   .single-books .book-links-container {
     flex-direction: column;
     gap: 15px;
@@ -19679,7 +19729,7 @@ body.tax-book-authors .label-date {
   -o-object-fit: cover;
   object-fit: cover;
 }
-@media only screen and (max-width: 781px) {
+@media only screen and (max-width: 575px) {
   #blog-posts-page .books .post-img-block {
     height: auto;
     max-height: unset;
@@ -19878,7 +19928,7 @@ body.tax-book-authors .label-date {
 .single-seeds .seed-cover-inner .post-img {
   padding: 33px;
 }
-@media only screen and (max-width: 781px) {
+@media only screen and (max-width: 575px) {
   .single-seeds .seed-cover {
     margin-bottom: 22px;
   }
@@ -19929,7 +19979,7 @@ body.tax-book-authors .label-date {
   text-align: center;
   margin-bottom: 7px;
 }
-@media only screen and (max-width: 781px) {
+@media only screen and (max-width: 575px) {
   .single-seeds .seed-container {
     flex-direction: column;
     gap: 15px;
@@ -20011,7 +20061,7 @@ body.tax-book-authors .label-date {
 .post-like-container a.disabled i:before {
   color: var(--ihk-gray) !important;
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
   .post-like-container {
     position: absolute;
     top: 0;
@@ -20044,7 +20094,7 @@ body.tax-book-authors .label-date {
   }
 }
 
-@media only screen and (max-width: 1279px) {
+@media only screen and (max-width: 991px) {
   #mobile-header-block {
     display: block;
   }
@@ -20088,7 +20138,7 @@ body.tax-book-authors .label-date {
     color: var(--ihk-sep);
   }
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 992px) {
   .dl-trigger, .dl-menu {
     display: none;
   }
@@ -20388,6 +20438,9 @@ body.tax-book-authors .label-date {
   border-radius: 0 !important;
 }
 
+.mep_event_list .owl-nav > button:hover {
+  color: var(--bs-btn-color) !important;
+}
 .mep_event_list .mep_event_winter_list {
   background-color: var(--ihk-gray);
 }
@@ -20768,7 +20821,7 @@ body.tax-book-authors .label-date {
   border-left: 0px solid var(--ihk-jul);
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   .wp-block-kadence-infobox .kt-blocks-info-box-media-align-left .info-box-link {
     flex-direction: column;
   }
@@ -20776,7 +20829,7 @@ body.tax-book-authors .label-date {
     text-align: center;
   }
 }
-@media only screen and (min-width: 782px) and (max-width: 960px) {
+@media only screen and (min-width: 768px) and (max-width: 767px) {
   .wp-block-kadence-infobox .kt-blocks-info-box-media-align-left .kt-blocks-info-box-media-container {
     width: 33%;
   }
@@ -21058,7 +21111,7 @@ body.tax-book-authors .label-date {
   display: block;
   position: absolute;
   top: 0px;
-  right: 5px;
+  right: 2px;
 }
 
 .coming-soon {
@@ -21247,7 +21300,7 @@ body.tax-book-authors .label-date {
 .home .superblockslider .inner-blocks {
   overflow: hidden;
 }
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 575px) {
   .home .superblockslider .inner-blocks .wp-block-column:nth-of-type(2) {
     display: none;
   }
