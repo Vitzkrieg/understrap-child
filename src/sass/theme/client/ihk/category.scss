@@ -16,10 +16,10 @@
                     width: auto;
                 }
             }
-            p {
-                @extend .ihk-heading-1;
-                font-size: 33px;
-            }
+            // p {
+            //     @extend .ihk-heading-1;
+            //     font-size: 1rem;
+            // }
     
             &.title {
                 text-align: center;

@@ -160,7 +160,9 @@ function inharmony_custom_colors() {
 		echo "--bs-badge-border-radius: 50%;";
 		echo "--bs-badge-font-weight: normal;";
 	echo "}";
-
+	echo ".form-control {";
+		echo "border-radius: $button_border_radius !important;";
+	echo "}";
 	echo "</style>";
 }
 

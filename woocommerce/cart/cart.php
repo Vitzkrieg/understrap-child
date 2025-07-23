@@ -22,9 +22,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 <form class="woocommerce-cart-form col-12" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<table class="table shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+	<table class="table table-bordered shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
-			<tr>
+			<tr class="bg-light">
 				<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'woocommerce' ); ?></span></th>
 				<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'woocommerce' ); ?></span></th>
 				<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
@@ -158,14 +158,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<td colspan="6" class="actions">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
-						<div class="coupon d-flex justify-content-start mb-3 col-12 col-lg-6 offset-lg-6">
-							<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text form-control me-3" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="btn btn-outline-primary" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+						<div class="coupon d-flex flex-column flex-lg-row justify-content-start col-12 justify-content-lg-end col-lg-6 offset-lg-6">
+							<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label>
+							<input type="text" name="coupon_code" class="input-text form-control col-6 me-2" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+							<button type="submit" class="btn btn-outline-primary col-6 mt-2 mt-lg-0" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
-
-					<button type="submit" class="btn btn-outline-primary mt-3" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-
+						
+					<?php
+					global $ihl_cart_has_quantity_input;
+					debug_log(array (
+						'qi' => $ihl_cart_has_quantity_input ? 'true' : 'false',
+					));
+					if ( $ihl_cart_has_quantity_input) { ?>
+					<button type="submit" class="btn btn-outline-primary mt-5 float-end" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					<?php } ?>
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>

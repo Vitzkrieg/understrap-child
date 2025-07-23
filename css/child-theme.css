@@ -16612,6 +16612,10 @@ a:hover, a:focus {
   color: rgba(var(--bs-black-rgb), 0.5);
 }
 
+a.remove {
+  color: var(--bs-danger);
+}
+
 .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link {
   color: var(--bs-btn-color);
   border-width: 1px;
@@ -17818,7 +17822,7 @@ body .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datet
 }
 
 /* Copy */
-body h1, body .h1, body .single-tribe_events .site-main .tribe-events-single-event-title, .single-tribe_events .site-main body .tribe-events-single-event-title, .ihk-heading-1, .archive #content header p, .page-title {
+body h1, body .h1, body .single-tribe_events .site-main .tribe-events-single-event-title, .single-tribe_events .site-main body .tribe-events-single-event-title, .ihk-heading-1, .page-title {
   font-size: 44px;
 }
 
@@ -17827,7 +17831,7 @@ body h1, body .h1, body .single-tribe_events .site-main .tribe-events-single-eve
   margin-bottom: 0.4rem;
 }
 
-.ihk-heading-1, .archive #content header p, .page-title {
+.ihk-heading-1, .page-title {
   font-weight: 300 !important;
 }
 
@@ -19079,9 +19083,6 @@ ul.selected-filters-list li {
   height: 100%;
   width: auto;
 }
-.archive #content header p {
-  font-size: 33px;
-}
 .archive #content header.title {
   text-align: center;
 }
@@ -19220,7 +19221,7 @@ ul.selected-filters-list li {
 .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .archive #content * {
   text-align: left;
 }
-.archive #content h3, .archive #content .h3, .archive #content .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name h3, .single-tribe_events .site-main .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__name .archive #content h3, .archive #content .single-tribe_events .site-main .tribe-block__organizer__details h3, .single-tribe_events .site-main .tribe-block__organizer__details .archive #content h3 {
+.archive #content h3, .archive #content .h3 {
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
