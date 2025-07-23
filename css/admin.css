@@ -1,0 +1,20 @@
+.fixed .column-title {
+  width: 16%;
+}
+
+#woocommerce-product-data .hidden {
+  display: block;
+  visibility: visible;
+}
+#woocommerce-product-data .handle-actions .hidden {
+  display: none;
+  visibility: hidden;
+}
+#woocommerce-product-data .inside .product-data-wrapper {
+  background-color: #eee;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+/*# sourceMappingURL=admin.css.map */

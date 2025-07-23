@@ -5,6 +5,21 @@
  *
  * @package UnderstrapChild
  */
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// define constants
+define( 'IHL_VERSION', '0.2.0' );
+// server filesystem directory
+define( 'IHL_DIR', get_stylesheet_directory() );
+// web frontend directory
+define( 'IHL_URL', get_stylesheet_directory_uri() );
+// js directory
+define( 'IHL_JS_DIR', IHL_URL . '/js' );
+// css directory
+define( 'IHL_CSS_DIR', IHL_URL . '/css' );
 
 
 
@@ -95,5 +110,26 @@ function inharmony_admin_enqueue_scripts() {
 	wp_localize_script( 'customize-preview', 'ihl_admin', array(
 		'colors' => $colors
 	));
+
+
+	wp_enqueue_script( 'ihl-admin', IHL_JS_DIR.'/admin.js', array(), '0.1.0' );
+	wp_enqueue_style( 'ihl-admin-stylesheet', IHL_CSS_DIR.'/admin.min.css', array(), '0.1.0' );
 }
 add_action( 'admin_enqueue_scripts', 'inharmony_admin_enqueue_scripts' );
+
+
+add_action( 'wp_head', function() {
+	$path = IHK_URL . "/framework/fonts/line-awesome/fonts/la-regular-400.woff2";
+	echo "<link as='font' rel='preload' type='font/woff2' href='" . $path . "'>";
+	$path = IHK_URL . "/framework/fonts/line-awesome/fonts/la-solid-900.woff2";
+	echo "<link as='font' rel='preload' type='font/woff2' href='" . $path . "'>";
+} );
+
+
+function preload_filter( $html, $handle ) {
+	// Add the preload attribute
+	$html = str_replace( "rel='stylesheet", "rel='preload stylesheet' as='style", $html );
+
+	return $html;
+}
+add_filter( 'style_loader_tag', 'preload_filter', 10, 2 );
