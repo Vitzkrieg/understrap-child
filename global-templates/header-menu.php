@@ -1,5 +1,5 @@
 <?php
-$container = get_theme_mod( 'understrap_container_type', 'container' );
+$container = get_theme_mod( 'inharmony_container_type', 'container' );
 $header_container = get_theme_mod( 'inharmony_header_container_type', $container );
 if ( $header_container === 'container' ) {
     $header_container = 'container-lg';

@@ -30,7 +30,7 @@ class GetThemeModReturnType implements DynamicFunctionReturnTypeExtension {
 	 */
 	private static $themeMods = [
 		'understrap_bootstrap_version',
-		'understrap_container_type',
+		'inharmony_container_type',
 		'understrap_navbar_type',
 		'understrap_sidebar_position',
 		'understrap_site_info_override',

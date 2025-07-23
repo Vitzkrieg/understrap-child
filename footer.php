@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'inharmony_container_type' );
 
 $footer_style = '';
 $footer_style .=  ' bg-' . get_theme_mod( 'inharmony_footer_bg', 'primary');

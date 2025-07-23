@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'footerfull' ) ) {
 	return;
 }
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'inharmony_container_type' );
 
 // Get the footer style from theme customizer
 $footer_style = get_theme_mod( 'understrap_footer_style', 'light' );

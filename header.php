@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type', 'container' );
+$container = get_theme_mod( 'inharmony_container_type', 'container' );
 $header_container = get_theme_mod( 'inharmony_header_container_type', $container );
 
 $custom_header = get_custom_header();
