@@ -16,11 +16,15 @@ function inharmony_default_bootstrap_version() {
 }
 add_filter( 'theme_mod_understrap_bootstrap_version', 'inharmony_default_bootstrap_version', 20 );
 
-function inharmony_default_container_type() {
-	return get_theme_mod( 'inharmony_container_type', 'container' );
+if ( !is_admin() ) {
+	global $inharmony_container_type;
+	$inharmony_container_type = get_theme_mod( 'inharmony_container_type', 'container-xl' );
+	function inharmony_default_container_type() {
+		global $inharmony_container_type;
+		return $inharmony_container_type;
+	}
+	add_filter( 'theme_mod_inharmony_container_type', 'inharmony_default_container_type', 20 );
 }
-add_filter( 'theme_mod_understrap_container_type', 'inharmony_default_container_type', 20 );
-
 
 // Remove Bootstrap option
 $wp_customize->remove_control('understrap_bootstrap_version');
