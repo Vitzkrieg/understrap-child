@@ -16220,6 +16220,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .site > .wrapper:first-of-type {
   flex-grow: 1;
@@ -20851,10 +20852,11 @@ body.tax-book-authors .label-date {
   }
 }
 
-.woocommerce {
+body .entry-content .woocommerce {
   display: flex;
   flex-wrap: wrap;
 }
+
 .woocommerce ul.products {
   list-style: none;
 }

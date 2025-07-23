@@ -1,6 +1,14 @@
+body {
+    .entry-content {
+        // WC pages have .woocommerce on <body>
+        .woocommerce {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
 .woocommerce {
-    display: flex;
-    flex-wrap: wrap;
 
     .woocommerce-table {
         @extend .table;
