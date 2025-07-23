@@ -193,7 +193,7 @@
                 display: block;
                 position: absolute;
                 top: 0px;
-                right: 2px;
+                right: 3px;
             }
         }
     }
@@ -211,4 +211,8 @@
     font-size: 14px !important;
     text-align: center !important;
     text-transform: uppercase! important;
+}
+
+.shop_table {
+    @extend .table;
 }
