@@ -1,8 +1,8 @@
 <?php
 /**
- * Product Loop Start
+ * Product Loop End
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-start.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-end.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -12,15 +12,11 @@
  *
  * @see         https://woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
- * @version     3.3.0
+ * @version     2.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-// $wc_product_columns = wc_get_loop_prop( 'columns' );
-// $bs_product_columns = floor( $wc_product_columns / 12);
-
 ?>
-<ul class="products row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 col-12">
+</ul>
