@@ -238,3 +238,11 @@ inharmony_add_select_setting($section,
         'column'   => __( 'Column', 'inharmonylife' ),
     )
 );
+
+
+
+inharmony_add_checkbox_setting($section,
+    'inharmony_show_wc_breadcrumbs',
+    true,
+    'Show Breadcrumbs'
+);

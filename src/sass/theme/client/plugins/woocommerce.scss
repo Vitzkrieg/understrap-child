@@ -57,6 +57,9 @@
                     }
                 }
             }
+            .price {
+                font-family: 'Josefin Sans';
+            }
         }
     }
 
@@ -148,10 +151,10 @@
         }
     }
 
-    .button {
+    .button, .btn {
         &.single_add_to_cart_button,
         &.woocommerce-Button {
-            border-radius: 0;
+            border-radius: var(--bs-button--bs-btn-border-radius);
         }
     }
 

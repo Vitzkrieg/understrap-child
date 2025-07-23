@@ -20896,6 +20896,9 @@ body.tax-book-authors .label-date {
   color: var(--ihk-aug) !important;
   overflow: visible;
 }
+.woocommerce ul.products li.product .price {
+  font-family: "Josefin Sans";
+}
 .woocommerce a.button {
   border-radius: 0;
 }
@@ -21097,8 +21100,28 @@ body.tax-book-authors .label-date {
 .woocommerce .woocommerce-MyAccount-navigation ul li :last-child a {
   border-bottom: none;
 }
-.woocommerce .button.single_add_to_cart_button, .woocommerce .button.woocommerce-Button {
-  border-radius: 0;
+.woocommerce .button.single_add_to_cart_button, .woocommerce .button.woocommerce-Button, .woocommerce .btn.single_add_to_cart_button, .woocommerce .wpcf7 input.single_add_to_cart_button[type=submit], .wpcf7 .woocommerce input.single_add_to_cart_button[type=submit], .woocommerce .woocommerce-notices-wrapper .woocommerce-message a.single_add_to_cart_button.button, .woocommerce-notices-wrapper .woocommerce-message .woocommerce a.single_add_to_cart_button.button, .woocommerce .single-tribe_events .site-main .single_add_to_cart_button.tribe-common-c-btn, .single-tribe_events .site-main .woocommerce .single_add_to_cart_button.tribe-common-c-btn,
+.woocommerce .single-tribe_events .site-main .single_add_to_cart_button.button.alt,
+.single-tribe_events .site-main .woocommerce .single_add_to_cart_button.button.alt, .woocommerce .tribe-common .single_add_to_cart_button.tribe-common-c-btn, .tribe-common .woocommerce .single_add_to_cart_button.tribe-common-c-btn,
+.woocommerce .tribe-common .single_add_to_cart_button.tribe-common-c-btn-border,
+.tribe-common .woocommerce .single_add_to_cart_button.tribe-common-c-btn-border,
+.woocommerce .tribe-common .single_add_to_cart_button.tribe-common-c-btn-icon,
+.tribe-common .woocommerce .single_add_to_cart_button.tribe-common-c-btn-icon,
+.woocommerce .tribe-common .single_add_to_cart_button.tribe-common-h3,
+.tribe-common .woocommerce .single_add_to_cart_button.tribe-common-h3,
+.woocommerce .tribe-common .single_add_to_cart_button.tribe-events-c-top-bar__datepicker-button,
+.tribe-common .woocommerce .single_add_to_cart_button.tribe-events-c-top-bar__datepicker-button, .woocommerce .btn.woocommerce-Button, .woocommerce .wpcf7 input.woocommerce-Button[type=submit], .wpcf7 .woocommerce input.woocommerce-Button[type=submit], .woocommerce .woocommerce-notices-wrapper .woocommerce-message a.woocommerce-Button.button, .woocommerce-notices-wrapper .woocommerce-message .woocommerce a.woocommerce-Button.button, .woocommerce .single-tribe_events .site-main .woocommerce-Button.tribe-common-c-btn, .single-tribe_events .site-main .woocommerce .woocommerce-Button.tribe-common-c-btn,
+.woocommerce .single-tribe_events .site-main .woocommerce-Button.button.alt,
+.single-tribe_events .site-main .woocommerce .woocommerce-Button.button.alt, .woocommerce .tribe-common .woocommerce-Button.tribe-common-c-btn, .tribe-common .woocommerce .woocommerce-Button.tribe-common-c-btn,
+.woocommerce .tribe-common .woocommerce-Button.tribe-common-c-btn-border,
+.tribe-common .woocommerce .woocommerce-Button.tribe-common-c-btn-border,
+.woocommerce .tribe-common .woocommerce-Button.tribe-common-c-btn-icon,
+.tribe-common .woocommerce .woocommerce-Button.tribe-common-c-btn-icon,
+.woocommerce .tribe-common .woocommerce-Button.tribe-common-h3,
+.tribe-common .woocommerce .woocommerce-Button.tribe-common-h3,
+.woocommerce .tribe-common .woocommerce-Button.tribe-events-c-top-bar__datepicker-button,
+.tribe-common .woocommerce .woocommerce-Button.tribe-events-c-top-bar__datepicker-button {
+  border-radius: var(--bs-button--bs-btn-border-radius);
 }
 .woocommerce .woocommerce-ordering {
   background-color: var(--ihk-gray-lt);

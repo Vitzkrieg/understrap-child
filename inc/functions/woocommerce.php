@@ -52,7 +52,7 @@ function inharmony_woocommerce_post_class($classes) {
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price');
 function inharmony_price_add_to_cart_wrapper_1(){
-	echo '<div class="card-footer add_to_cart_wrapper d-flex justify-content-between p-3">';
+	echo '<div class="card-footer add_to_cart_wrapper d-flex justify-content-between align-items-center p-3">';
 }
 function inharmony_price_add_to_cart_wrapper_2(){
 	echo '</div>';
@@ -90,4 +90,23 @@ function understrap_loop_add_to_cart_args( $args ) {
 	}
 
 	return $args;
+}
+
+
+add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'inharmony_wc_dropdown_variation_attribute_options_args');
+function inharmony_wc_dropdown_variation_attribute_options_args($args) {
+
+	if ( !isset($args['class'])) {
+		$args['class'] = '';
+	}
+
+	$args['class'] .= ' form-select';
+
+	return $args;
+}
+
+
+$show_wc_breadcrumbs = get_theme_mod( 'inharmony_show_wc_breadcrumbs', true);
+if ( !$show_wc_breadcrumbs) {
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
