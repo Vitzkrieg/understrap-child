@@ -59,6 +59,8 @@ $bs_container_choices = array(
     'container-sm'      => __( 'Fluid width small only', 'inharmony' ),
     'container-md'      => __( 'Fluid width up to medium', 'inharmony' ),
     'container-lg'      => __( 'Fluid width up to large', 'inharmony' ),
+    'container-xl'      => __( 'Fluid width up to x-large', 'inharmony' ),
+    'container-xxl'     => __( 'Fluid width up to xx-large', 'inharmony' ),
 );
 
 $bs_flex_choices = array(
