@@ -119,9 +119,9 @@ add_action( 'admin_enqueue_scripts', 'inharmony_admin_enqueue_scripts' );
 
 
 add_action( 'wp_head', function() {
-	$path = IHK_URL . "/framework/fonts/line-awesome/fonts/la-regular-400.woff2";
+	$path = IHL_URL . "/framework/fonts/line-awesome/fonts/la-regular-400.woff2";
 	echo "<link as='font' rel='preload' type='font/woff2' href='" . $path . "'>";
-	$path = IHK_URL . "/framework/fonts/line-awesome/fonts/la-solid-900.woff2";
+	$path = IHL_URL . "/framework/fonts/line-awesome/fonts/la-solid-900.woff2";
 	echo "<link as='font' rel='preload' type='font/woff2' href='" . $path . "'>";
 } );
 
