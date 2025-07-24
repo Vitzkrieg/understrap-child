@@ -23,4 +23,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 // $bs_product_columns = floor( $wc_product_columns / 12);
 
 ?>
-<ul class="products row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 col-12">
+<ul class="products row row-cols-1 row-cols-sm-2 g-3 ?>">

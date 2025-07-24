@@ -237,17 +237,7 @@ function ihk_woocommerce_template_loop_product_thumbnail() {
     $product_id = $product->get_id();
     $coming_soon = ihk_get_product_coming_soon( $product_id );
     
-    echo '<div class="ihk-product-image text-center card-img-top">';
+    echo '<div class="ihk-product-image">';
         woocommerce_template_loop_product_thumbnail();
     echo '</div>';
-}
-
-
-/* Wrap add to cart link in container.
-*
-* @param string $html Add to cart link HTML.
-* @return string Add to cart link HTML.
-*/
-function understrap_loop_add_to_cart_link( $html ) {
-    return '<div class="add-to-cart-container">' . $html . '</div>';
 }
