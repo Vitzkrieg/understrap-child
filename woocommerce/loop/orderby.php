@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $id_suffix = wp_unique_id();
 
 ?>
-<form class="woocommerce-ordering" method="get">
+<form class="woocommerce-ordering col-12 col-md-6 col-lg-4 mb-4 float-end" method="get">
 	<?php if ( $use_label ) : ?>
 		<label for="woocommerce-orderby-<?php echo esc_attr( $id_suffix ); ?>"><?php echo esc_html__( 'Sort by', 'woocommerce' ); ?></label>
 	<?php endif; ?>
