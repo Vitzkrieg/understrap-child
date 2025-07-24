@@ -13040,7 +13040,7 @@ figure.woocommerce-product-gallery__wrapper {
 #add_payment_method .cart-collaterals .cart_totals .discount td,
 .woocommerce-cart .cart-collaterals .cart_totals .discount td,
 .woocommerce-checkout .cart-collaterals .cart_totals .discount td {
-  color: #198754;
+  color: var(--bs-secondary);
 }
 
 .woocommerce-page form .show-password-input {
