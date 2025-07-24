@@ -1290,7 +1290,7 @@ progress {
   width: 91.66666667%;
 }
 
-.col-12, .entry-content .woocommerce .u-column1.col-1 {
+.col-12, .woocommerce .u-column1.col-1 {
   flex: 0 0 auto;
   width: 100%;
 }
@@ -2244,7 +2244,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-.table, .wp-block-table table, .pms-account-navigation + table, .shop_table, .entry-content .woocommerce .woocommerce-table {
+.table, .wp-block-table table, .pms-account-navigation + table, .shop_table, .woocommerce .woocommerce-table {
   --bs-table-color: var(--bs-body-color);
   --bs-table-bg: transparent;
   --bs-table-border-color: var(--bs-border-color);
@@ -2261,16 +2261,16 @@ progress {
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
-.table > :not(caption) > * > *, .wp-block-table table > :not(caption) > * > *, .pms-account-navigation + table > :not(caption) > * > *, .shop_table > :not(caption) > * > *, .entry-content .woocommerce .woocommerce-table > :not(caption) > * > * {
+.table > :not(caption) > * > *, .wp-block-table table > :not(caption) > * > *, .pms-account-navigation + table > :not(caption) > * > *, .shop_table > :not(caption) > * > *, .woocommerce .woocommerce-table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
   background-color: var(--bs-table-bg);
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
-.table > tbody, .wp-block-table table > tbody, .pms-account-navigation + table > tbody, .shop_table > tbody, .entry-content .woocommerce .woocommerce-table > tbody {
+.table > tbody, .wp-block-table table > tbody, .pms-account-navigation + table > tbody, .shop_table > tbody, .woocommerce .woocommerce-table > tbody {
   vertical-align: inherit;
 }
-.table > thead, .wp-block-table table > thead, .pms-account-navigation + table > thead, .shop_table > thead, .entry-content .woocommerce .woocommerce-table > thead {
+.table > thead, .wp-block-table table > thead, .pms-account-navigation + table > thead, .shop_table > thead, .woocommerce .woocommerce-table > thead {
   vertical-align: bottom;
 }
 
@@ -20851,228 +20851,228 @@ body.tax-book-authors .label-date {
   }
 }
 
-.woocommerce #page-wrap {
-  padding: 50px 0;
-}
-
-.entry-content .woocommerce {
+body .entry-content .woocommerce {
   display: flex;
   flex-wrap: wrap;
 }
-.entry-content .woocommerce ul.products li.product .ihk-product-image {
+
+.woocommerce ul.products {
+  list-style: none;
+}
+.woocommerce ul.products li.product .ihk-product-image {
   position: relative;
   overflow: hidden;
 }
-.entry-content .woocommerce ul.products li.product a img {
+.woocommerce ul.products li.product a img {
   margin-bottom: 0;
 }
-.entry-content .woocommerce ul.products li.product a:hover img {
+.woocommerce ul.products li.product a:hover img {
   opacity: 1;
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
-.entry-content .woocommerce ul.products li.product .woocommerce-loop-product__title {
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
   margin-top: 0.5em;
 }
-.entry-content .woocommerce ul.products li.product .add_to_cart_wrapper {
+.woocommerce ul.products li.product .add_to_cart_wrapper {
   padding: 0;
 }
-.entry-content .woocommerce ul.products li.product .add_to_cart_wrapper .button {
+.woocommerce ul.products li.product .add_to_cart_wrapper .button {
   color: var(--ihk-jul) !important;
   padding-right: 0 15px;
   overflow: hidden;
   max-width: unset;
 }
-.entry-content .woocommerce ul.products li.product .add_to_cart_wrapper .button:after {
+.woocommerce ul.products li.product .add_to_cart_wrapper .button:after {
   content: none;
 }
-.entry-content .woocommerce ul.products li.product .add_to_cart_wrapper .button:hover, .entry-content .woocommerce ul.products li.product .add_to_cart_wrapper .button:active {
+.woocommerce ul.products li.product .add_to_cart_wrapper .button:hover, .woocommerce ul.products li.product .add_to_cart_wrapper .button:active {
   color: var(--ihk-aug) !important;
   overflow: visible;
 }
-.entry-content .woocommerce a.button {
+.woocommerce a.button {
   border-radius: 0;
 }
-.entry-content .woocommerce .upsells {
+.woocommerce .upsells {
   clear: both;
 }
-.entry-content .woocommerce .woocommerce-tabs {
+.woocommerce .woocommerce-tabs {
   clear: both;
 }
-.entry-content .woocommerce .wc-tabs {
+.woocommerce .wc-tabs {
   display: none;
 }
-.entry-content .woocommerce .woocommerce-Tabs-panel > h2, .entry-content .woocommerce .woocommerce-Tabs-panel > .h2, .entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .woocommerce-Tabs-panel > .tribe-events-schedule__all-day, .single-tribe_events .site-main .tribe-events-schedule__date .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.entry-content .woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
-.single-tribe_events .site-main .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
-.entry-content .woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
-.single-tribe_events .site-main .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
-.entry-content .woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-schedule__time,
-.single-tribe_events .site-main .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__time,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > h2,
-.single-tribe_events .site-main .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > h2,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > h2,
-.single-tribe_events .site-main .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > h2,
-.entry-content .woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > h2,
-.single-tribe_events .site-main .entry-content .woocommerce .woocommerce-Tabs-panel > h2,
-.entry-content .woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .h2,
-.single-tribe_events .site-main .entry-content .woocommerce .woocommerce-Tabs-panel > .h2,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
-.single-tribe_events .site-main .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
-.single-tribe_events .site-main .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__time,
-.single-tribe_events .site-main .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__time,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .woocommerce-Tabs-panel > h2,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > h2,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .woocommerce-Tabs-panel > h2,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > h2,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .h2,
-.single-tribe_events .site-main .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .h2,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
-.single-tribe_events .site-main .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
-.single-tribe_events .site-main .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__time,
-.single-tribe_events .site-main .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__time,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .h2,
-.single-tribe_events .site-main .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .h2, .entry-content .woocommerce .single-tribe_events .site-main h2.tribe-events-schedule__datetime .woocommerce-Tabs-panel > *, .single-tribe_events .site-main h2.tribe-events-schedule__datetime .entry-content .woocommerce .woocommerce-Tabs-panel > *, .entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .woocommerce-Tabs-panel > *, .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .entry-content .woocommerce .woocommerce-Tabs-panel > *, .entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce-Tabs-panel > *, .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header h2.tribe-events-schedule__datetime .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header h2.tribe-events-schedule__datetime .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.h2 .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.h2 .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__time .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header h2.tribe-events-schedule__datetime .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header h2.tribe-events-schedule__datetime .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.h2 .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.h2 .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__time .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *, .entry-content .woocommerce .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text, .tribe-common .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-common .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.tribe-common .single-tribe_events .site-main .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.single-tribe_events .site-main .tribe-common .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.tribe-common .single-tribe_events .site-main .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .tribe-common .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .tribe-common .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
-.tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text, .entry-content .woocommerce .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *, .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .entry-content .woocommerce .woocommerce-Tabs-panel > *, .entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *, .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
-.tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
-.tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-block__venue__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
-.tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > *,
-.entry-content .woocommerce .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .woocommerce-Tabs-panel > *,
-.tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .entry-content .woocommerce .woocommerce-Tabs-panel > * {
+.woocommerce .woocommerce-Tabs-panel > h2, .woocommerce .woocommerce-Tabs-panel > .h2, .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .woocommerce-Tabs-panel > .tribe-events-schedule__all-day, .single-tribe_events .site-main .tribe-events-schedule__date .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
+.single-tribe_events .site-main .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
+.woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
+.single-tribe_events .site-main .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
+.woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-schedule__time,
+.single-tribe_events .site-main .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__time,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > h2,
+.single-tribe_events .site-main .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > h2,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > h2,
+.single-tribe_events .site-main .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > h2,
+.woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > h2,
+.single-tribe_events .site-main .woocommerce .woocommerce-Tabs-panel > h2,
+.woocommerce .single-tribe_events .site-main .woocommerce-Tabs-panel > .h2,
+.single-tribe_events .site-main .woocommerce .woocommerce-Tabs-panel > .h2,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
+.single-tribe_events .site-main .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
+.single-tribe_events .site-main .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-schedule__time,
+.single-tribe_events .site-main .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__time,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .woocommerce-Tabs-panel > h2,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > h2,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .woocommerce-Tabs-panel > h2,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > h2,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .h2,
+.single-tribe_events .site-main .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .h2,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.single-tribe_events .site-main .tribe-events-schedule__date .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__all-day,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
+.single-tribe_events .site-main .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__separator,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
+.single-tribe_events .site-main .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__timezone,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-schedule__time,
+.single-tribe_events .site-main .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-schedule__time,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .h2,
+.single-tribe_events .site-main .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .h2, .woocommerce .single-tribe_events .site-main h2.tribe-events-schedule__datetime .woocommerce-Tabs-panel > *, .single-tribe_events .site-main h2.tribe-events-schedule__datetime .woocommerce .woocommerce-Tabs-panel > *, .woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .woocommerce-Tabs-panel > *, .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .woocommerce .woocommerce-Tabs-panel > *, .woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce-Tabs-panel > *, .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header h2.tribe-events-schedule__datetime .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header h2.tribe-events-schedule__datetime .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.h2 .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.h2 .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header h2.tribe-events-schedule__datetime .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header h2.tribe-events-schedule__datetime .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main h2.tribe-events-schedule__datetime .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.h2 .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.h2 .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.h2 .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__date .tribe-events-schedule__datetime.tribe-events-schedule__all-day .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__separator .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__separator .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__timezone .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__timezone .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-schedule__time .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-schedule__time .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *, .woocommerce .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text, .tribe-common .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-common .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.tribe-common .single-tribe_events .site-main .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .single-tribe_events .site-main .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.single-tribe_events .site-main .tribe-common .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .tribe-common .single-tribe_events .site-main .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.tribe-common .single-tribe_events .site-main .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .tribe-common .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .tribe-common .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .tribe-common .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text,
+.tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > .tribe-events-calendar-day__time-separator-text, .woocommerce .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *, .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce .woocommerce-Tabs-panel > *, .woocommerce .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *, .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__organizer__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
+.tribe-common .single-tribe_events .site-main .tribe-block__organizer__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .woocommerce-Tabs-panel > *,
+.tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__organizer__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-block__venue__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-block__venue__header .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce-Tabs-panel > *,
+.tribe-common .single-tribe_events .site-main .tribe-block__venue__header .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.single-tribe_events .site-main .tribe-common .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > *,
+.woocommerce .tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .woocommerce-Tabs-panel > *,
+.tribe-common .single-tribe_events .site-main .tribe-events-schedule__datetime.tribe-events-calendar-day__time-separator-text .tribe-block__venue__header .woocommerce .woocommerce-Tabs-panel > * {
   display: none;
 }
-.entry-content .woocommerce .woocommerce-info {
+.woocommerce .woocommerce-info {
   text-align: center;
 }
-.entry-content .woocommerce .woocommerce-info:before {
+.woocommerce .woocommerce-info:before {
   position: unset;
   margin-right: 0.25em;
 }
-.entry-content .woocommerce .return-to-shop {
+.woocommerce .return-to-shop {
   text-align: center;
 }
-.entry-content .woocommerce .quantity .qty {
+.woocommerce .quantity .qty {
   border: 1px solid var(--ihk-feb);
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul {
+.woocommerce .woocommerce-MyAccount-navigation ul {
   list-style: none;
   width: -moz-fit-content;
   width: fit-content;
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li {
+.woocommerce .woocommerce-MyAccount-navigation ul li {
   padding: 0 10px;
   margin: 10px 0;
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li.is-active a {
+.woocommerce .woocommerce-MyAccount-navigation ul li.is-active a {
   box-shadow: none;
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li.is-active a:before {
+.woocommerce .woocommerce-MyAccount-navigation ul li.is-active a:before {
   border-left-color: var(--ihk-feb);
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li a {
+.woocommerce .woocommerce-MyAccount-navigation ul li a {
   border-bottom: 1px dashed var(--ihk-feb);
   width: 100%;
   display: inline-block;
   color: var(--ihk-gray-dark);
   padding: 5px 0;
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li a:before {
+.woocommerce .woocommerce-MyAccount-navigation ul li a:before {
   content: "";
   width: 1px;
   height: 100%;
@@ -21082,23 +21082,23 @@ body.tax-book-authors .label-date {
   left: 0px;
   top: 0;
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li a:hover, .entry-content .woocommerce .woocommerce-MyAccount-navigation ul li a:active {
+.woocommerce .woocommerce-MyAccount-navigation ul li a:hover, .woocommerce .woocommerce-MyAccount-navigation ul li a:active {
   color: var(--ihk-jul);
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li a:hover:before, .entry-content .woocommerce .woocommerce-MyAccount-navigation ul li a:active:before {
+.woocommerce .woocommerce-MyAccount-navigation ul li a:hover:before, .woocommerce .woocommerce-MyAccount-navigation ul li a:active:before {
   border-left-color: var(--ihk-jul);
 }
-.entry-content .woocommerce .woocommerce-MyAccount-navigation ul li :last-child a {
+.woocommerce .woocommerce-MyAccount-navigation ul li :last-child a {
   border-bottom: none;
 }
-.entry-content .woocommerce .button.single_add_to_cart_button, .entry-content .woocommerce .button.woocommerce-Button {
+.woocommerce .button.single_add_to_cart_button, .woocommerce .button.woocommerce-Button {
   border-radius: 0;
 }
-.entry-content .woocommerce .woocommerce-ordering {
+.woocommerce .woocommerce-ordering {
   background-color: var(--ihk-gray-lt);
   border-radius: 0;
 }
-.entry-content .woocommerce .woocommerce-ordering select {
+.woocommerce .woocommerce-ordering select {
   border-radius: 0;
 }
 
