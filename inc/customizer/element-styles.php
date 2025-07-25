@@ -14,6 +14,7 @@ $wp_customize->add_section(
         'capability'  => 'edit_theme_options',
         'description' => __( 'Customize the styles for various elements.', 'inharmony' ),
         'priority'    => apply_filters( $section . '_priority', 170 ),
+        'panel'       => 'inharmony',
     )
 );
 

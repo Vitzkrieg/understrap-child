@@ -14,6 +14,7 @@ $wp_customize->add_section(
         'capability'  => 'edit_theme_options',
         'description' => __( 'Meta data options for the site', 'inharmony' ),
         'priority'    => apply_filters( $section . '_priority', 170 ),
+        'panel'       => 'inharmony',
     )
 );
 
