@@ -20,6 +20,7 @@ body {
 
     ul.products {
         list-style: none;
+        padding: 0;
 
         li.product {
             display: block;
@@ -167,7 +168,7 @@ body {
     }
 
     .woocommerce-ordering {
-        background-color: var(--ihk-gray-lt);
+        // background-color: var(--ihk-gray-lt);
         border-radius: 0;
         select {
             border-radius: 0;

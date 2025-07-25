@@ -20859,6 +20859,7 @@ body .entry-content .woocommerce {
 
 .woocommerce ul.products {
   list-style: none;
+  padding: 0;
 }
 .woocommerce ul.products li.product {
   display: block;
@@ -21126,7 +21127,6 @@ body .entry-content .woocommerce {
   border-radius: var(--bs-button--bs-btn-border-radius);
 }
 .woocommerce .woocommerce-ordering {
-  background-color: var(--ihk-gray-lt);
   border-radius: 0;
 }
 .woocommerce .woocommerce-ordering select {
